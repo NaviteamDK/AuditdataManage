@@ -1,0 +1,24 @@
+{
+    "folders": [
+        {
+            "name": "AuditdataManage",
+            "path": "app"
+        },
+        {
+            "name": "AuditdataManage.Test",
+            "path": "test"
+        }
+    ],
+    "settings": {
+        "al.enableCodeAnalysis": true,
+        "al.codeAnalyzers": [
+            "${AppSourceCop}",
+            "${CodeCop}",
+            "${UICop}"
+        ],
+        "al.incrementalBuild": true,
+        "editor.tabSize": 4,
+        "editor.insertSpaces": true,
+        "files.encoding": "utf8"
+    }
+}
