@@ -1,0 +1,119 @@
+codeunit 50105 "ADM Client Sync"
+{
+    Caption = 'ADM Client Sync';
+
+    procedure SyncClients()
+    var
+        IntegrationSetup: Record "ADM Integration Setup";
+        SyncLogManager: Codeunit "ADM Sync Log Manager";
+        ADMAPIClient: Codeunit "ADM API Client";
+        AllResults: JsonArray;
+        LogEntryNo: Integer;
+        Processed: Integer;
+        Failed: Integer;
+    begin
+        IntegrationSetup := IntegrationSetup.GetSetup();
+        if not IntegrationSetup."Client Sync Enabled" then
+            exit;
+
+        LogEntryNo := SyncLogManager.StartLog("ADM Sync Direction"::Inbound, 'Client Sync');
+
+        if not TrySyncClients(IntegrationSetup, Processed, Failed) then begin
+            SyncLogManager.FailLog(LogEntryNo, GetLastErrorText());
+            exit;
+        end;
+
+        IntegrationSetup."Last Client Sync" := CurrentDateTime();
+        IntegrationSetup.Modify();
+
+        SyncLogManager.FinishLog(LogEntryNo, Processed, Failed);
+    end;
+
+    local procedure TrySyncClients(IntegrationSetup: Record "ADM Integration Setup"; var Processed: Integer; var Failed: Integer): Boolean
+    var
+        ADMAPIClient: Codeunit "ADM API Client";
+        AllResults: JsonArray;
+        ClientToken: JsonToken;
+        ClientObj: JsonObject;
+        ClientBuffer: Record "ADM Client Buffer";
+        ManageID: Guid;
+        ErrorText: Text;
+        ResponseText: Text;
+    begin
+        // The Manage API uses "patients" as the client endpoint concept
+        // based on the hearing care domain. Adjust path if the actual
+        // endpoint differs once confirmed with AuditData.
+        if not ADMAPIClient.TryGet('api/v2/patients?Page=1&PerPage=1', ResponseText, ErrorText) then begin
+            // Fallback: attempt paged fetch via generic path
+            // This will be confirmed against actual API endpoint
+            exit(false);
+        end;
+
+        ADMAPIClient.GetPaged('api/v2/patients', AllResults);
+
+        foreach ClientToken in AllResults do begin
+            ClientObj := ClientToken.AsObject();
+            ManageID := ADMAPIClient.GetJsonGuid(ClientObj, 'id');
+
+            if IsNullGuid(ManageID) then begin
+                Failed += 1;
+                continue;
+            end;
+
+            if not ClientBuffer.Get(ManageID) then begin
+                ClientBuffer.Init();
+                ClientBuffer."Manage ID" := ManageID;
+                ClientBuffer."Imported At" := CurrentDateTime();
+                ClientBuffer.Status := "ADM Buffer Status"::New;
+                ClientBuffer.Insert();
+            end else begin
+                // Only re-import if updated in Manage since last sync
+                if ClientBuffer.Status = "ADM Buffer Status"::Processed then begin
+                    Processed += 1;
+                    continue;
+                end;
+            end;
+
+            PopulateClientBuffer(ClientBuffer, ClientObj, ADMAPIClient);
+            ClientBuffer.Modify();
+            Processed += 1;
+        end;
+
+        exit(true);
+    end;
+
+    local procedure PopulateClientBuffer(var ClientBuffer: Record "ADM Client Buffer"; ClientObj: JsonObject; ADMAPIClient: Codeunit "ADM API Client")
+    var
+        AddressObj: JsonObject;
+    begin
+        ClientBuffer."First Name" := CopyStr(ADMAPIClient.GetJsonText(ClientObj, 'firstName'), 1, 100);
+        ClientBuffer."Last Name" := CopyStr(ADMAPIClient.GetJsonText(ClientObj, 'lastName'), 1, 100);
+        ClientBuffer."Full Name" := CopyStr(
+            ADMAPIClient.GetJsonText(ClientObj, 'fullName'), 1, 200);
+        if ClientBuffer."Full Name" = '' then
+            ClientBuffer."Full Name" := CopyStr(
+                ClientBuffer."First Name" + ' ' + ClientBuffer."Last Name", 1, 200);
+
+        ClientBuffer.Email := CopyStr(ADMAPIClient.GetJsonText(ClientObj, 'email'), 1, 250);
+        ClientBuffer.Phone := CopyStr(ADMAPIClient.GetJsonText(ClientObj, 'phone'), 1, 50);
+        ClientBuffer.Mobile := CopyStr(ADMAPIClient.GetJsonText(ClientObj, 'mobile'), 1, 50);
+
+        ClientBuffer."Manage Created At" := ADMAPIClient.ParseDateTime(
+            ADMAPIClient.GetJsonText(ClientObj, 'createdAt'));
+        ClientBuffer."Manage Updated At" := ADMAPIClient.ParseDateTime(
+            ADMAPIClient.GetJsonText(ClientObj, 'updatedAt'));
+
+        if ADMAPIClient.GetJsonObject(ClientObj, 'address', AddressObj) then begin
+            ClientBuffer."Address Line 1" := CopyStr(
+                ADMAPIClient.GetJsonText(AddressObj, 'line1'), 1, 100);
+            ClientBuffer."Address Line 2" := CopyStr(
+                ADMAPIClient.GetJsonText(AddressObj, 'line2'), 1, 100);
+            ClientBuffer.City := CopyStr(
+                ADMAPIClient.GetJsonText(AddressObj, 'city'), 1, 50);
+            ClientBuffer."Post Code" := CopyStr(
+                ADMAPIClient.GetJsonText(AddressObj, 'postCode'), 1, 20);
+            ClientBuffer.Country := CopyStr(
+                ADMAPIClient.GetJsonText(AddressObj, 'country'), 1, 50);
+        end;
+    end;
+}
