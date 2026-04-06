@@ -1,0 +1,17 @@
+{
+    "name": "Extension",
+    "description": "Ruleset for Extensions",
+    "rules": [
+        {
+            "id": "AA0137",
+            "action": "Error",
+            "justification": "Unused variables makes the code harder to read and understand"
+        },
+        {
+            "id": "AA0214",
+            "action": "None",
+            "justification": "Modifying tables that are used for filtering makes no sense"
+        }
+    ]
+}
+

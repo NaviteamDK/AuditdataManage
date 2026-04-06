@@ -1,5 +1,8 @@
 {
     "folders": [
+    {
+      "path": "Resources"
+    },	
         {
             "name": "AuditdataManage",
             "path": "app"
@@ -12,13 +15,21 @@
     "settings": {
         "al.enableCodeAnalysis": true,
         "al.codeAnalyzers": [
-            "${AppSourceCop}",
             "${CodeCop}",
             "${UICop}"
         ],
         "al.incrementalBuild": true,
         "editor.tabSize": 4,
         "editor.insertSpaces": true,
-        "files.encoding": "utf8"
+        "files.encoding": "utf8",
+		"al.ruleSetPath": "../Resources/.vscode/my.ruleset.json",
+		"al.packageCachePath": "../Resources/.alpackages",
+		"git.openRepositoryInParentFolders": "always",
+		"CRS.ObjectNamePrefix": "ADM ",
+		"CRS.ObjectNameSuffix": "",
+		"CRS.FileNamePattern": "<ObjectNameShort>.<ObjectTypeShortPascalCase>.al",
+		"CRS.FileNamePatternExtensions": "<ObjectNameShort>.<ObjectTypeShortPascalCase>.al",
+		"CRS.FileNamePatternPageCustomizations": "<ObjectNameShort>.<ObjectTypeShortPascalCase>.al",
+		"CRS.OnSaveAlFileAction": "Reorganize"		
     }
 }
