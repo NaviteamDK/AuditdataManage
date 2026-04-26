@@ -80,36 +80,42 @@ codeunit 80305 "ADM Client Sync"
 
     local procedure PopulateClientBuffer(var ClientBuffer: Record "ADM Client Buffer"; ClientObj: JsonObject; ADMAPIClient: Codeunit "ADM API Client")
     var
-        AddressObj: JsonObject;
+        FirstName: Text;
+        MiddleName: Text;
+        LastName: Text;
+        FlatNo: Text;
+        Street: Text;
     begin
-        ClientBuffer."First Name" := CopyStr(ADMAPIClient.GetJsonText(ClientObj, 'firstName'), 1, 100);
-        ClientBuffer."Last Name" := CopyStr(ADMAPIClient.GetJsonText(ClientObj, 'lastName'), 1, 100);
-        ClientBuffer."Full Name" := CopyStr(
-            ADMAPIClient.GetJsonText(ClientObj, 'fullName'), 1, 200);
-        if ClientBuffer."Full Name" = '' then
-            ClientBuffer."Full Name" := CopyStr(
-                ClientBuffer."First Name" + ' ' + ClientBuffer."Last Name", 1, 200);
+        FirstName := ADMAPIClient.GetJsonText(ClientObj, 'firstName');
+        MiddleName := ADMAPIClient.GetJsonText(ClientObj, 'middleName');
+        LastName := ADMAPIClient.GetJsonText(ClientObj, 'lastName');
 
-        ClientBuffer.Email := CopyStr(ADMAPIClient.GetJsonText(ClientObj, 'email'), 1, 250);
-        ClientBuffer.Phone := CopyStr(ADMAPIClient.GetJsonText(ClientObj, 'phone'), 1, 50);
-        ClientBuffer.Mobile := CopyStr(ADMAPIClient.GetJsonText(ClientObj, 'mobile'), 1, 50);
+        ClientBuffer."First Name" := CopyStr(FirstName, 1, 100);
+        ClientBuffer."Last Name" := CopyStr(LastName, 1, 100);
 
-        ClientBuffer."Manage Created At" := ADMAPIClient.ParseDateTime(
-            ADMAPIClient.GetJsonText(ClientObj, 'createdAt'));
-        ClientBuffer."Manage Updated At" := ADMAPIClient.ParseDateTime(
-            ADMAPIClient.GetJsonText(ClientObj, 'updatedAt'));
+        if MiddleName <> '' then
+            ClientBuffer."Full Name" := CopyStr(FirstName + ' ' + MiddleName + ' ' + LastName, 1, 200)
+        else
+            ClientBuffer."Full Name" := CopyStr(FirstName + ' ' + LastName, 1, 200);
 
-        if ADMAPIClient.GetJsonObject(ClientObj, 'address', AddressObj) then begin
-            ClientBuffer."Address Line 1" := CopyStr(
-                ADMAPIClient.GetJsonText(AddressObj, 'line1'), 1, 100);
-            ClientBuffer."Address Line 2" := CopyStr(
-                ADMAPIClient.GetJsonText(AddressObj, 'line2'), 1, 100);
-            ClientBuffer.City := CopyStr(
-                ADMAPIClient.GetJsonText(AddressObj, 'city'), 1, 50);
-            ClientBuffer."Post Code" := CopyStr(
-                ADMAPIClient.GetJsonText(AddressObj, 'postCode'), 1, 20);
-            ClientBuffer.Country := CopyStr(
-                ADMAPIClient.GetJsonText(AddressObj, 'country'), 1, 50);
-        end;
+        ClientBuffer.Email := CopyStr(ADMAPIClient.GetJsonText(ClientObj, 'emailAddress'), 1, 250);
+        ClientBuffer.Phone := CopyStr(ADMAPIClient.GetJsonText(ClientObj, 'homePhone'), 1, 50);
+        ClientBuffer.Mobile := CopyStr(ADMAPIClient.GetJsonText(ClientObj, 'mobilePhone'), 1, 50);
+
+        ClientBuffer."Date of Birth" := ADMAPIClient.ParseDate(
+            ADMAPIClient.GetJsonText(ClientObj, 'dateOfBirth'));
+
+        // Address fields are flat (not nested)
+        FlatNo := ADMAPIClient.GetJsonText(ClientObj, 'homeFlatNumber');
+        Street := ADMAPIClient.GetJsonText(ClientObj, 'street');
+        if FlatNo <> '' then
+            ClientBuffer."Address Line 1" := CopyStr(FlatNo + ' ' + Street, 1, 100)
+        else
+            ClientBuffer."Address Line 1" := CopyStr(Street, 1, 100);
+
+        ClientBuffer."Address Line 2" := CopyStr(ADMAPIClient.GetJsonText(ClientObj, 'county'), 1, 100);
+        ClientBuffer.City := CopyStr(ADMAPIClient.GetJsonText(ClientObj, 'city'), 1, 50);
+        ClientBuffer."Post Code" := CopyStr(ADMAPIClient.GetJsonText(ClientObj, 'postcode'), 1, 20);
+        ClientBuffer.Country := CopyStr(ADMAPIClient.GetJsonText(ClientObj, 'country'), 1, 50);
     end;
 }
