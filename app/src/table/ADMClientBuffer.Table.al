@@ -92,8 +92,19 @@ table 80305 "ADM Client Buffer"
             trigger OnValidate()
             var
                 CustomerMapping: Record "ADM Customer Mapping";
+                ExistingMapping: Record "ADM Customer Mapping";
             begin
+                // Remove any existing mapping for this Manage ID (handles customer change)
+                if CustomerMapping.Get("Manage ID") then
+                    CustomerMapping.Delete();
+
                 if "BC Customer No." <> '' then begin
+                    // Ensure no other Manage ID already maps to the target customer
+                    ExistingMapping.SetRange("Customer No.", "BC Customer No.");
+                    ExistingMapping.SetRange("Customer Type", "ADM Customer Type"::Client);
+                    if not ExistingMapping.IsEmpty() then
+                        ExistingMapping.DeleteAll();
+
                     CustomerMapping.CreateOrUpdate(
                         "Manage ID",
                         "BC Customer No.",
