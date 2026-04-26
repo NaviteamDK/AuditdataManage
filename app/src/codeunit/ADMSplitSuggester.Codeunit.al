@@ -1,4 +1,4 @@
-codeunit 50103 "ADM Split Suggester"
+codeunit 80303 "ADM Split Suggester"
 {
     procedure SuggestSplitLines(var MasterOrderHeader: Record "ADM Master Order Header")
     var

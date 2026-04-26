@@ -1,4 +1,4 @@
-page 50116 "ADM Headline Part"
+page 80316 "ADM Headline Part"
 {
     Caption = 'AuditData Manage';
     PageType = HeadlinePart;

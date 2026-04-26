@@ -1,4 +1,4 @@
-pageextension 50100 "ADM Customer Card Ext" extends "Customer Card"
+pageextension 80300 "ADM Customer Card Ext" extends "Customer Card"
 {
     layout
     {

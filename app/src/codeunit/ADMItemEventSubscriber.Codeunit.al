@@ -1,4 +1,4 @@
-codeunit 50109 "ADM Item Event Subscriber"
+codeunit 80309 "ADM Item Event Subscriber"
 {
     [EventSubscriber(ObjectType::Table, Database::Item, 'OnAfterModifyEvent', '', false, false)]
     local procedure OnAfterItemModify(var Rec: Record Item; var xRec: Record Item; RunTrigger: Boolean)

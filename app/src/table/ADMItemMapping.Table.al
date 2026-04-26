@@ -1,4 +1,4 @@
-table 50102 "ADM Item Mapping"
+table 80302 "ADM Item Mapping"
 {
     Caption = 'AuditData Manage Item Mapping';
     DataClassification = CustomerContent;

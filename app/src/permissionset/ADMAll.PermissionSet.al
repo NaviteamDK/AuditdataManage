@@ -1,6 +1,6 @@
 namespace Manage;
 
-permissionset 50100 "ADM All"
+permissionset 80300 "ADM All"
 {
     Assignable = true;
     Permissions = tabledata "ADM Client Buffer" = RIMD,

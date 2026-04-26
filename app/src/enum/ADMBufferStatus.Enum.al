@@ -1,4 +1,4 @@
-enum 50100 "ADM Buffer Status"
+enum 80300 "ADM Buffer Status"
 {
     Extensible = true;
 

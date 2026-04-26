@@ -1,4 +1,4 @@
-page 50104 "ADM Funder Terms List"
+page 80304 "ADM Funder Terms List"
 {
     Caption = 'Funder Terms';
     PageType = List;

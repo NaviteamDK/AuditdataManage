@@ -1,4 +1,4 @@
-page 50108 "ADM Sale Buffer List"
+page 80308 "ADM Sale Buffer List"
 {
     Caption = 'Sale Buffer';
     PageType = List;

@@ -1,4 +1,4 @@
-page 50109 "ADM Sale Buffer Card"
+page 80309 "ADM Sale Buffer Card"
 {
     Caption = 'Sale Buffer';
     PageType = Card;

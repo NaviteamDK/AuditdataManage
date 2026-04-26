@@ -1,4 +1,4 @@
-table 50109 "ADM Master Order Header"
+table 80309 "ADM Master Order Header"
 {
     Caption = 'AuditData Manage Master Order Header';
     DataClassification = CustomerContent;

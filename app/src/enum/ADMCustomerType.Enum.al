@@ -1,4 +1,4 @@
-enum 50103 "ADM Customer Type"
+enum 80303 "ADM Customer Type"
 {
     Extensible = true;
 

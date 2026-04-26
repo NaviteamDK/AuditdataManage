@@ -1,4 +1,4 @@
-codeunit 50100 "ADM Sync Log Manager"
+codeunit 80300 "ADM Sync Log Manager"
 {
     procedure StartLog(Direction: Enum "ADM Sync Direction"; SyncType: Text[50]): Integer
     var

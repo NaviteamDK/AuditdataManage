@@ -1,4 +1,4 @@
-page 50117 "ADM Buffer Status Part"
+page 80317 "ADM Buffer Status Part"
 {
     Caption = 'Integration Status';
     PageType = CardPart;

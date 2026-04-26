@@ -1,4 +1,4 @@
-codeunit 50105 "ADM Client Sync"
+codeunit 80305 "ADM Client Sync"
 {
     procedure SyncClients()
     var

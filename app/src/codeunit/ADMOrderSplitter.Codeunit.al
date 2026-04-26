@@ -1,4 +1,4 @@
-codeunit 50104 "ADM Order Splitter"
+codeunit 80304 "ADM Order Splitter"
 {
     procedure CreateSalesOrders(var MasterOrderHeader: Record "ADM Master Order Header")
     var

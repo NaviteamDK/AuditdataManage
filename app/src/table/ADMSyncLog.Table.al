@@ -1,4 +1,4 @@
-table 50103 "ADM Sync Log"
+table 80303 "ADM Sync Log"
 {
     Caption = 'AuditData Manage Sync Log';
     DataClassification = CustomerContent;

@@ -1,4 +1,4 @@
-page 50106 "ADM Client Buffer List"
+page 80306 "ADM Client Buffer List"
 {
     Caption = 'Client Buffer';
     PageType = List;

@@ -1,4 +1,4 @@
-codeunit 50110 "ADM Job Queue Manager"
+codeunit 80310 "ADM Job Queue Manager"
 {
     var
         ClientSyncJobDescTxt: Label 'ADM: Sync Clients from AuditData Manage', Locked = true;

@@ -1,4 +1,4 @@
-page 50114 "ADM Order Split Subpage"
+page 80314 "ADM Order Split Subpage"
 {
     Caption = 'Payment Split';
     PageType = ListPart;

@@ -1,4 +1,4 @@
-page 50107 "ADM Funder Buffer List"
+page 80307 "ADM Funder Buffer List"
 {
     Caption = 'Funder Buffer';
     PageType = List;

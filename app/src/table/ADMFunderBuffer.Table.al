@@ -1,4 +1,4 @@
-table 50106 "ADM Funder Buffer"
+table 80306 "ADM Funder Buffer"
 {
     Caption = 'AuditData Manage Funder Buffer';
     DataClassification = CustomerContent;

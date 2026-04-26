@@ -1,4 +1,4 @@
-table 50101 "ADM Customer Mapping"
+table 80301 "ADM Customer Mapping"
 {
     Caption = 'AuditData Manage Customer Mapping';
     DataClassification = CustomerContent;

@@ -1,4 +1,4 @@
-codeunit 50102 "ADM Buffer Processor"
+codeunit 80302 "ADM Buffer Processor"
 {
     procedure ProcessClientBuffer(var ClientBuffer: Record "ADM Client Buffer")
     var

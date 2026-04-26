@@ -1,4 +1,4 @@
-page 50112 "ADM Master Order Card"
+page 80312 "ADM Master Order Card"
 {
     Caption = 'Master Order';
     PageType = Document;

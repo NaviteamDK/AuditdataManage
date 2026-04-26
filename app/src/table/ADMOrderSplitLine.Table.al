@@ -1,4 +1,4 @@
-table 50111 "ADM Order Split Line"
+table 80311 "ADM Order Split Line"
 {
     Caption = 'AuditData Manage Order Split Line';
     DataClassification = CustomerContent;

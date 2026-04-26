@@ -1,4 +1,4 @@
-table 50100 "ADM Integration Setup"
+table 80300 "ADM Integration Setup"
 {
     Caption = 'AuditData Manage Integration Setup';
     DataClassification = CustomerContent;

@@ -1,4 +1,4 @@
-page 50101 "ADM Sync Log List"
+page 80301 "ADM Sync Log List"
 {
     Caption = 'AuditData Manage Sync Log';
     PageType = List;

@@ -1,4 +1,4 @@
-codeunit 50107 "ADM Sale Sync"
+codeunit 80307 "ADM Sale Sync"
 {
     procedure SyncSales()
     var

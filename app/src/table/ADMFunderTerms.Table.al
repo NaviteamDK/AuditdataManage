@@ -1,4 +1,4 @@
-table 50104 "ADM Funder Terms"
+table 80304 "ADM Funder Terms"
 {
     Caption = 'AuditData Manage Funder Terms';
     DataClassification = CustomerContent;

@@ -1,4 +1,4 @@
-enum 50102 "ADM Sync Direction"
+enum 80302 "ADM Sync Direction"
 {
     Extensible = true;
 

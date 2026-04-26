@@ -1,4 +1,4 @@
-table 50110 "ADM Master Order Line"
+table 80310 "ADM Master Order Line"
 {
     Caption = 'AuditData Manage Master Order Line';
     DataClassification = CustomerContent;

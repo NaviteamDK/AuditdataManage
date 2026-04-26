@@ -1,4 +1,4 @@
-page 50111 "ADM Master Order List"
+page 80311 "ADM Master Order List"
 {
     Caption = 'Master Orders';
     PageType = List;

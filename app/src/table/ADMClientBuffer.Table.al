@@ -1,4 +1,4 @@
-table 50105 "ADM Client Buffer"
+table 80305 "ADM Client Buffer"
 {
     Caption = 'AuditData Manage Client Buffer';
     DataClassification = CustomerContent;

@@ -1,4 +1,4 @@
-codeunit 50108 "ADM Product Sync"
+codeunit 80308 "ADM Product Sync"
 {
     var
         ADMAPIClient: Codeunit "ADM API Client";

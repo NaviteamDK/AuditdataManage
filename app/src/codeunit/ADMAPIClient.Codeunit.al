@@ -1,4 +1,4 @@
-codeunit 50101 "ADM API Client"
+codeunit 80301 "ADM API Client"
 {
     var
         IntegrationSetup: Record "ADM Integration Setup";

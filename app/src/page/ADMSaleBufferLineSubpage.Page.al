@@ -1,4 +1,4 @@
-page 50110 "ADM Sale Buffer Line Subpage"
+page 80310 "ADM Sale Buffer Line Subpage"
 {
     Caption = 'Sale Lines';
     PageType = ListPart;

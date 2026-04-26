@@ -1,4 +1,4 @@
-page 50113 "ADM Master Order Line Subpage"
+page 80313 "ADM Master Order Line Subpage"
 {
     Caption = 'Order Lines';
     PageType = ListPart;

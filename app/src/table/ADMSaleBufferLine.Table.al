@@ -1,4 +1,4 @@
-table 50108 "ADM Sale Buffer Line"
+table 80308 "ADM Sale Buffer Line"
 {
     Caption = 'AuditData Manage Sale Buffer Line';
     DataClassification = CustomerContent;

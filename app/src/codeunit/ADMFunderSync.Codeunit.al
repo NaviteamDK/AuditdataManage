@@ -1,4 +1,4 @@
-codeunit 50106 "ADM Funder Sync"
+codeunit 80306 "ADM Funder Sync"
 {
     procedure SyncFunders()
     var

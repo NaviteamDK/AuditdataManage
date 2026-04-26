@@ -1,4 +1,4 @@
-page 50102 "ADM Customer Mapping List"
+page 80302 "ADM Customer Mapping List"
 {
     Caption = 'AuditData Manage Customer Mappings';
     PageType = List;

@@ -1,4 +1,4 @@
-page 50105 "ADM Funder Terms Card"
+page 80305 "ADM Funder Terms Card"
 {
     Caption = 'Funder Terms';
     PageType = Card;

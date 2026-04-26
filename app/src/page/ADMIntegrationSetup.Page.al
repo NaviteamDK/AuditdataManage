@@ -1,4 +1,4 @@
-page 50100 "ADM Integration Setup"
+page 80300 "ADM Integration Setup"
 {
     Caption = 'AuditData Manage Integration Setup';
     PageType = Card;

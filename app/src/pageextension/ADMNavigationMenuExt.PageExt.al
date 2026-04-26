@@ -1,4 +1,4 @@
-pageextension 50101 "ADM Navigation Menu Ext" extends "Finance Manager Role Center"
+pageextension 80301 "ADM Navigation Menu Ext" extends "Finance Manager Role Center"
 {
     actions
     {

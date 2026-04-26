@@ -1,4 +1,4 @@
-enum 50101 "ADM Split Type"
+enum 80301 "ADM Split Type"
 {
     Extensible = true;
 

@@ -1,4 +1,4 @@
-page 50115 "ADM Role Center"
+page 80315 "ADM Role Center"
 {
     Caption = 'AuditData Manage Integration';
     PageType = RoleCenter;
