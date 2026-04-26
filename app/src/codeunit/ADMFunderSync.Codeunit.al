@@ -7,6 +7,7 @@ codeunit 80306 "ADM Funder Sync"
         LogEntryNo: Integer;
         Processed: Integer;
         Failed: Integer;
+        ErrorText: Text;
     begin
         IntegrationSetup := IntegrationSetup.GetSetup();
         if not IntegrationSetup."Funder Sync Enabled" then
@@ -14,8 +15,8 @@ codeunit 80306 "ADM Funder Sync"
 
         LogEntryNo := SyncLogManager.StartLog("ADM Sync Direction"::Inbound, 'Funder Sync');
 
-        if not TrySyncFunders(Processed, Failed) then begin
-            SyncLogManager.FailLog(LogEntryNo, GetLastErrorText());
+        if not TrySyncFunders(Processed, Failed, ErrorText) then begin
+            SyncLogManager.FailLog(LogEntryNo, ErrorText);
             exit;
         end;
 
@@ -25,7 +26,7 @@ codeunit 80306 "ADM Funder Sync"
         SyncLogManager.FinishLog(LogEntryNo, Processed, Failed);
     end;
 
-    local procedure TrySyncFunders(var Processed: Integer; var Failed: Integer): Boolean
+    local procedure TrySyncFunders(var Processed: Integer; var Failed: Integer; var ErrorText: Text): Boolean
     var
         FunderBuffer: Record "ADM Funder Buffer";
         ADMAPIClient: Codeunit "ADM API Client";
@@ -33,7 +34,11 @@ codeunit 80306 "ADM Funder Sync"
         FunderToken: JsonToken;
         FunderObj: JsonObject;
         ManageID: Guid;
+        ResponseText: Text;
     begin
+        if not ADMAPIClient.TryGet('api/v2/invoicing/funders', ResponseText, ErrorText) then
+            exit(false);
+
         ADMAPIClient.GetPaged('api/v2/invoicing/funders', AllResults);
 
         foreach FunderToken in AllResults do begin

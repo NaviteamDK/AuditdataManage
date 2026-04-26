@@ -10,6 +10,7 @@ codeunit 80308 "ADM Product Sync"
         LogEntryNo: Integer;
         Processed: Integer;
         Failed: Integer;
+        ErrorText: Text;
     begin
         IntegrationSetup := IntegrationSetup.GetSetup();
         if not IntegrationSetup."Item Sync Enabled" then
@@ -17,8 +18,8 @@ codeunit 80308 "ADM Product Sync"
 
         LogEntryNo := SyncLogManager.StartLog("ADM Sync Direction"::Outbound, 'Item Sync');
 
-        if not TrySyncItems(Processed, Failed) then begin
-            SyncLogManager.FailLog(LogEntryNo, GetLastErrorText());
+        if not TrySyncItems(Processed, Failed, ErrorText) then begin
+            SyncLogManager.FailLog(LogEntryNo, ErrorText);
             exit;
         end;
 
@@ -28,11 +29,12 @@ codeunit 80308 "ADM Product Sync"
         SyncLogManager.FinishLog(LogEntryNo, Processed, Failed);
     end;
 
-    local procedure TrySyncItems(var Processed: Integer; var Failed: Integer): Boolean
+    local procedure TrySyncItems(var Processed: Integer; var Failed: Integer; var ErrorText: Text): Boolean
     var
         lItemMapping: Record "ADM Item Mapping";
         lItem: Record Item;
     begin
+        ErrorText := '';
         lItemMapping.SetRange("Needs Sync", true);
         if not lItemMapping.FindSet(true) then
             exit(true); // Nothing to sync

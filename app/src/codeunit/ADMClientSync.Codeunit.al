@@ -12,6 +12,7 @@ codeunit 80305 "ADM Client Sync"
         LogEntryNo: Integer;
         Processed: Integer;
         Failed: Integer;
+        ErrorText: Text;
     begin
         IntegrationSetup := IntegrationSetup.GetSetup();
         if not IntegrationSetup."Client Sync Enabled" then
@@ -19,8 +20,8 @@ codeunit 80305 "ADM Client Sync"
 
         LogEntryNo := SyncLogManager.StartLog("ADM Sync Direction"::Inbound, 'Client Sync');
 
-        if not TrySyncClients(Processed, Failed) then begin
-            SyncLogManager.FailLog(LogEntryNo, GetLastErrorText());
+        if not TrySyncClients(Processed, Failed, ErrorText) then begin
+            SyncLogManager.FailLog(LogEntryNo, ErrorText);
             exit;
         end;
 
@@ -30,7 +31,7 @@ codeunit 80305 "ADM Client Sync"
         SyncLogManager.FinishLog(LogEntryNo, Processed, Failed);
     end;
 
-    local procedure TrySyncClients(var Processed: Integer; var Failed: Integer): Boolean
+    local procedure TrySyncClients(var Processed: Integer; var Failed: Integer; var ErrorText: Text): Boolean
     var
         ClientBuffer: Record "ADM Client Buffer";
         ADMAPIClient: Codeunit "ADM API Client";
@@ -38,7 +39,6 @@ codeunit 80305 "ADM Client Sync"
         ClientToken: JsonToken;
         ClientObj: JsonObject;
         ManageID: Guid;
-        ErrorText: Text;
         ResponseText: Text;
     begin
         // The Manage API uses "patients" as the client endpoint concept

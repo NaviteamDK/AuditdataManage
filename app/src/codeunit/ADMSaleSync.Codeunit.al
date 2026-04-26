@@ -7,6 +7,7 @@ codeunit 80307 "ADM Sale Sync"
         LogEntryNo: Integer;
         Processed: Integer;
         Failed: Integer;
+        ErrorText: Text;
     begin
         IntegrationSetup := IntegrationSetup.GetSetup();
         if not IntegrationSetup."Sale Sync Enabled" then
@@ -14,8 +15,8 @@ codeunit 80307 "ADM Sale Sync"
 
         LogEntryNo := SyncLogManager.StartLog("ADM Sync Direction"::Inbound, 'Sale Sync');
 
-        if not TrySyncSales(Processed, Failed) then begin
-            SyncLogManager.FailLog(LogEntryNo, GetLastErrorText());
+        if not TrySyncSales(Processed, Failed, ErrorText) then begin
+            SyncLogManager.FailLog(LogEntryNo, ErrorText);
             exit;
         end;
 
@@ -25,7 +26,7 @@ codeunit 80307 "ADM Sale Sync"
         SyncLogManager.FinishLog(LogEntryNo, Processed, Failed);
     end;
 
-    local procedure TrySyncSales(var Processed: Integer; var Failed: Integer): Boolean
+    local procedure TrySyncSales(var Processed: Integer; var Failed: Integer; var ErrorText: Text): Boolean
     var
         SaleBufferHeader: Record "ADM Sale Buffer Header";
         ADMAPIClient: Codeunit "ADM API Client";
@@ -33,7 +34,11 @@ codeunit 80307 "ADM Sale Sync"
         SaleToken: JsonToken;
         SaleObj: JsonObject;
         ManageSaleID: Guid;
+        ResponseText: Text;
     begin
+        if not ADMAPIClient.TryGet('api/v2/invoicing/sales', ResponseText, ErrorText) then
+            exit(false);
+
         ADMAPIClient.GetPaged('api/v2/invoicing/sales', AllResults);
 
         foreach SaleToken in AllResults do begin

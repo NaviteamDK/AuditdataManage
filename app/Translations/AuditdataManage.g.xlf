@@ -1258,6 +1258,16 @@
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Page ADM Client Buffer List - Action RetryErrors - Property Caption</note>
         </trans-unit>
+        <trans-unit id="Page 2571694013 - Action 1335915796 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Fetches the latest clients from AuditData Manage and imports them into the buffer.</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page ADM Client Buffer List - Action SyncFromManage - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="Page 2571694013 - Action 1335915796 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Sync from AuditData Manage</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page ADM Client Buffer List - Action SyncFromManage - Property Caption</note>
+        </trans-unit>
         <trans-unit id="Page 377361870 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>AuditData Manage Customer Mappings</source>
           <note from="Developer" annotates="general" priority="2"></note>
@@ -1407,6 +1417,16 @@
           <source>Retry Errors</source>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Page ADM Funder Buffer List - Action RetryErrors - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Page 929270616 - Action 1335915796 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Fetches the latest funders from AuditData Manage and imports them into the buffer.</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page ADM Funder Buffer List - Action SyncFromManage - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="Page 929270616 - Action 1335915796 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Sync from AuditData Manage</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page ADM Funder Buffer List - Action SyncFromManage - Property Caption</note>
         </trans-unit>
         <trans-unit id="Page 344560209 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Funder Terms</source>
@@ -2288,6 +2308,16 @@
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Page ADM Role Center - Action History - Property Caption</note>
         </trans-unit>
+        <trans-unit id="Page 2925031089 - Action 3853333744 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>View and manage the scheduled job queue entries for AuditData Manage synchronisation.</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page ADM Role Center - Action JobQueueEntries - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="Page 2925031089 - Action 3853333744 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Job Queue Entries</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page ADM Role Center - Action JobQueueEntries - Property Caption</note>
+        </trans-unit>
         <trans-unit id="Page 2925031089 - Action 3364542941 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
           <source>Review synchronisation history, errors and record counts.</source>
           <note from="Developer" annotates="general" priority="2"></note>
@@ -2682,6 +2712,16 @@
           <source>Promote to Master Order</source>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Page ADM Sale Buffer List - Action PromoteSelected - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Page 2653808003 - Action 1335915796 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Fetches the latest sales from AuditData Manage and imports them into the buffer.</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page ADM Sale Buffer List - Action SyncFromManage - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="Page 2653808003 - Action 1335915796 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Sync from AuditData Manage</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page ADM Sale Buffer List - Action SyncFromManage - Property Caption</note>
         </trans-unit>
         <trans-unit id="Page 4190030683 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>AuditData Manage Sync Log</source>
