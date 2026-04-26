@@ -51,7 +51,8 @@ page 80306 "ADM Client Buffer List"
                 field("BC Customer No."; Rec."BC Customer No.")
                 {
                     ApplicationArea = All;
-                    ToolTip = 'Specifies the Business Central customer number this client has been processed into.';
+                    ToolTip = 'Specifies the Business Central customer number this client has been processed into. You can manually link to an existing customer by entering a customer number here.';
+                    Editable = true;
                 }
                 field("Imported At"; Rec."Imported At")
                 {

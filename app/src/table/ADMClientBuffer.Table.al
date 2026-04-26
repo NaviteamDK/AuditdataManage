@@ -88,6 +88,21 @@ table 80305 "ADM Client Buffer"
             Caption = 'BC Customer No.';
             DataClassification = CustomerContent;
             TableRelation = Customer;
+
+            trigger OnValidate()
+            var
+                CustomerMapping: Record "ADM Customer Mapping";
+            begin
+                if "BC Customer No." <> '' then begin
+                    CustomerMapping.CreateOrUpdate(
+                        "Manage ID",
+                        "BC Customer No.",
+                        "ADM Customer Type"::Client,
+                        CopyStr("Full Name", 1, 100));
+                    Status := "ADM Buffer Status"::Processed;
+                    "Processed At" := CurrentDateTime();
+                end;
+            end;
         }
         field(50; "Imported At"; DateTime)
         {
