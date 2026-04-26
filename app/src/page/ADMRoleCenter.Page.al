@@ -115,6 +115,13 @@ page 80315 "ADM Role Center"
                     RunObject = page "ADM Sync Log List";
                     ToolTip = 'Review synchronisation history, errors and record counts.';
                 }
+                action(JobQueueEntries)
+                {
+                    ApplicationArea = All;
+                    Caption = 'Job Queue Entries';
+                    RunObject = page "Job Queue Entries";
+                    ToolTip = 'View and manage the scheduled job queue entries for AuditData Manage synchronisation.';
+                }
             }
         }
     }

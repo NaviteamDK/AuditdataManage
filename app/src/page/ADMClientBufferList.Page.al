@@ -142,6 +142,21 @@ page 80306 "ADM Client Buffer List"
                     CurrPage.Update(false);
                 end;
             }
+            action(SyncFromManage)
+            {
+                ApplicationArea = All;
+                Caption = 'Sync from AuditData Manage';
+                Image = RefreshLines;
+                ToolTip = 'Fetches the latest clients from AuditData Manage and imports them into the buffer.';
+
+                trigger OnAction()
+                var
+                    ClientSync: Codeunit "ADM Client Sync";
+                begin
+                    ClientSync.SyncClients();
+                    CurrPage.Update(false);
+                end;
+            }
         }
         area(Navigation)
         {

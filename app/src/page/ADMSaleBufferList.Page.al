@@ -130,6 +130,21 @@ page 80308 "ADM Sale Buffer List"
                     CurrPage.Update(false);
                 end;
             }
+            action(SyncFromManage)
+            {
+                ApplicationArea = All;
+                Caption = 'Sync from AuditData Manage';
+                Image = RefreshLines;
+                ToolTip = 'Fetches the latest sales from AuditData Manage and imports them into the buffer.';
+
+                trigger OnAction()
+                var
+                    SaleSync: Codeunit "ADM Sale Sync";
+                begin
+                    SaleSync.SyncSales();
+                    CurrPage.Update(false);
+                end;
+            }
         }
         area(Navigation)
         {
