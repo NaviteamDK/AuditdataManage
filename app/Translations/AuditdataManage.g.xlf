@@ -1853,6 +1853,21 @@
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Page ADM Item Mapping List - Action OpenItem - Property Caption</note>
         </trans-unit>
+        <trans-unit id="Page 3571162605 - Action 2043995615 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Retrieves all products from AuditData Manage and creates item mappings for any product whose SKU matches an existing BC item number.</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page ADM Item Mapping List - Action FetchManageProducts - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="Page 3571162605 - Action 2043995615 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Fetch Products from Manage</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page ADM Item Mapping List - Action FetchManageProducts - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Page 3571162605 - Action 2043995615 - Method 1377591017 - NamedType 1000503204" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Fetch complete.\Linked: %1\Already mapped: %2\No BC item match: %3</source>
+          <note from="Developer" annotates="general" priority="2">%1 = linked count, %2 = already mapped, %3 = unmatched</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page ADM Item Mapping List - Action FetchManageProducts - Method OnAction - NamedType ResultMsg</note>
+        </trans-unit>
         <trans-unit id="Page 3571162605 - Action 2961015198 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
           <source>Marks all items as needing synchronisation to AuditData Manage.</source>
           <note from="Developer" annotates="general" priority="2"></note>

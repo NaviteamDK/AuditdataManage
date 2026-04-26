@@ -260,16 +260,20 @@ codeunit 80301 "ADM API Client"
 
                 if ResponseJson.Get('data', DataToken) then begin
                     // Wrapped: {data: [...]} or {data: {items: [...]}}
-                    if DataToken.IsArray() then
-                        ItemArray := DataToken.AsArray()
-                    else
-                        if DataToken.AsObject().Get('items', ItemsToken) then
-                            ItemArray := ItemsToken.AsArray();
-
-                    if DataToken.AsObject().Get('totalPages', TotalPagesToken) then
-                        TotalPages := TotalPagesToken.AsValue().AsInteger()
-                    else
+                    if DataToken.IsArray() then begin
+                        ItemArray := DataToken.AsArray();
                         TotalPages := Page;
+                    end else
+                        if DataToken.IsObject() then begin
+                            if DataToken.AsObject().Get('items', ItemsToken) then
+                                ItemArray := ItemsToken.AsArray();
+
+                            if DataToken.AsObject().Get('totalPages', TotalPagesToken) then
+                                TotalPages := TotalPagesToken.AsValue().AsInteger()
+                            else
+                                TotalPages := Page;
+                        end else
+                            TotalPages := Page;
                 end else
                     if ResponseJson.Get('items', ItemsToken) then begin
                         // Root-level {items: [...]}

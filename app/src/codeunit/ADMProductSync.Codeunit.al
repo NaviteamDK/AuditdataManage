@@ -159,4 +159,96 @@ codeunit 80308 "ADM Product Sync"
 
         PushItem(lItem, lItemMapping);
     end;
+
+    /// <summary>
+    /// Fetches all products from AuditData Manage and creates/updates ADM Item Mapping records.
+    /// Matches by SKU to BC Item No. Returns counts of linked, unmatched and already-mapped products.
+    /// </summary>
+    procedure FetchManageProducts(var Linked: Integer; var Unmatched: Integer; var AlreadyMapped: Integer; var ErrorText: Text): Boolean
+    var
+        ItemMapping: Record "ADM Item Mapping";
+        AllProducts: JsonArray;
+        ProductToken: JsonToken;
+        ProductObj: JsonObject;
+        ManageProductID: Guid;
+        ManageSKU: Text;
+        ItemNo: Code[20];
+        ResponseText: Text;
+    begin
+        if not ADMAPIClient.TryGet('api/v2/inventory/products', ResponseText, ErrorText) then
+            exit(false);
+
+        ADMAPIClient.GetPaged('api/v2/inventory/products', AllProducts);
+
+        foreach ProductToken in AllProducts do begin
+            ProductObj := ProductToken.AsObject();
+            ManageProductID := ADMAPIClient.GetJsonGuid(ProductObj, 'id');
+            ManageSKU := ADMAPIClient.GetJsonText(ProductObj, 'sku');
+
+            if IsNullGuid(ManageProductID) then
+                continue;
+
+            // Check if already mapped by Manage Product ID
+            ItemMapping.SetRange("Manage Product ID", ManageProductID);
+            if not ItemMapping.IsEmpty() then begin
+                AlreadyMapped += 1;
+                continue;
+            end;
+            ItemMapping.Reset();
+
+            // Try to match BC Item by SKU
+            ItemNo := CopyStr(ManageSKU, 1, 20);
+            if (ItemNo <> '') and ItemMapping.Get(ItemNo) then begin
+                // Item mapping exists but without Manage Product ID — fill it in
+                ItemMapping."Manage Product ID" := ManageProductID;
+                ItemMapping."Manage SKU" := CopyStr(ManageSKU, 1, 100);
+                ItemMapping."Needs Sync" := false;
+                ItemMapping.Modify();
+                Linked += 1;
+            end else
+                if (ItemNo <> '') and not ItemMapping.Get(ItemNo) then begin
+                    // No mapping yet — create one if the BC item exists
+                    if ItemExistsInBC(ItemNo) then begin
+                        ItemMapping.Init();
+                        ItemMapping."Item No." := ItemNo;
+                        ItemMapping."Manage Product ID" := ManageProductID;
+                        ItemMapping."Manage SKU" := CopyStr(ManageSKU, 1, 100);
+                        ItemMapping."Needs Sync" := false;
+                        ItemMapping.Insert();
+                        Linked += 1;
+                    end else
+                        Unmatched += 1;
+                end else
+                    Unmatched += 1;
+        end;
+
+        exit(true);
+    end;
+
+    local procedure ItemExistsInBC(ItemNo: Code[20]): Boolean
+    var
+        Item: Record Item;
+    begin
+        exit(Item.Get(ItemNo));
+    end;
+
+    procedure AddAllBCItemsToMapping(var Added: Integer; var Skipped: Integer)
+    var
+        Item: Record Item;
+        ItemMapping: Record "ADM Item Mapping";
+    begin
+        if not Item.FindSet() then
+            exit;
+
+        repeat
+            if not ItemMapping.Get(Item."No.") then begin
+                ItemMapping.Init();
+                ItemMapping."Item No." := Item."No.";
+                ItemMapping."Needs Sync" := true;
+                ItemMapping.Insert();
+                Added += 1;
+            end else
+                Skipped += 1;
+        until Item.Next() = 0;
+    end;
 }
