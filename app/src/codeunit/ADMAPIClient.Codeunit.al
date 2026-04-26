@@ -34,7 +34,7 @@ codeunit 80301 "ADM API Client"
         if IntegrationSetup."EDI Scheme" <> '' then
             Headers.Add('EdiScheme', IntegrationSetup."EDI Scheme");
         Headers.Add('Accept', 'application/json');
-        Headers.Add('Content-Type', 'application/json');
+        // Headers.Add('Content-Type', 'application/json');
     end;
 
     procedure Get(RelativePath: Text; var ResponseText: Text): Boolean

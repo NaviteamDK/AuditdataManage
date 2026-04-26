@@ -2,7 +2,7 @@
     "id": "041e875e-7e60-4343-a06b-87b43917667d",
     "name": "AuditdataManage",
     "publisher": "Naviteam",
-    "version": "1.0.0.1",
+    "version": "1.0.0.2",
     "brief": "Integration between AuditData Manage and Business Central",
     "description": "Bidirectional integration between AuditData Manage (hearing care practice management) and Microsoft Business Central. Handles item synchronisation, client and funder import, sale import with buffer staging, and order splitting per funder payment terms.",
     "privacyStatement": "",
