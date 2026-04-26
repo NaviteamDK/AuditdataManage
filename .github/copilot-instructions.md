@@ -10,8 +10,9 @@ Naviteam per-tenant BC extension integrating **AuditData Manage** (hearing care 
 - Target: Cloud | Runtime: 15.0
 
 ## API Documentation
-AuditData Manage REST API Swagger UI (V2):
-https://eu-prod-manageapigateway.auditdata.app/swagger/index.html?urls.primaryName=V2
+AuditData Manage REST API Swagger UI:
+- V1: https://eu-prod-manageapigateway.auditdata.app/swagger/index.html?urls.primaryName=V1
+- V2: https://eu-prod-manageapigateway.auditdata.app/swagger/index.html?urls.primaryName=V2
 
 Always consult this before implementing or changing any API call.
 
