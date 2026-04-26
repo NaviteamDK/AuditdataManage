@@ -7,7 +7,7 @@ page 80306 "ADM Client Buffer List"
     UsageCategory = Lists;
     ApplicationArea = All;
     InsertAllowed = false;
-    ModifyAllowed = false;
+    ModifyAllowed = true;
 
     layout
     {
@@ -26,27 +26,32 @@ page 80306 "ADM Client Buffer List"
                     ApplicationArea = All;
                     StyleExpr = StatusStyle;
                     ToolTip = 'Specifies the processing status of this client buffer record.';
+                    editable = false;
                 }
                 field("Full Name"; Rec.GetFullName())
                 {
                     ApplicationArea = All;
                     Caption = 'Full Name';
                     ToolTip = 'Specifies the full name of the client.';
+                    editable = false;
                 }
                 field(Email; Rec.Email)
                 {
                     ApplicationArea = All;
                     ToolTip = 'Specifies the email address of the client.';
+                    editable = false;
                 }
                 field(Phone; Rec.Phone)
                 {
                     ApplicationArea = All;
                     ToolTip = 'Specifies the phone number of the client.';
+                    editable = false;
                 }
                 field(City; Rec.City)
                 {
                     ApplicationArea = All;
                     ToolTip = 'Specifies the city of the client.';
+                    editable = false;
                 }
                 field("BC Customer No."; Rec."BC Customer No.")
                 {
@@ -58,17 +63,20 @@ page 80306 "ADM Client Buffer List"
                 {
                     ApplicationArea = All;
                     ToolTip = 'Specifies when this client was imported from AuditData Manage.';
+                    editable = false;
                 }
                 field("Processed At"; Rec."Processed At")
                 {
                     ApplicationArea = All;
                     ToolTip = 'Specifies when this client was processed into a Business Central customer.';
+                    editable = false;
                 }
                 field("Error Message"; Rec."Error Message")
                 {
                     ApplicationArea = All;
                     StyleExpr = 'Unfavorable';
                     ToolTip = 'Specifies the error message if processing this client failed.';
+                    editable = false;
                 }
             }
         }

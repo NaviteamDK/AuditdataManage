@@ -69,7 +69,8 @@ pageextension 80300 "ADM Customer Card Ext" extends "Customer Card"
 
     local procedure LoadADMData()
     begin
-        if not ADMCustomerTypeRec.Get(Rec."No.") then
+        ADMCustomerTypeRec.setrange("Customer No.", Rec."No.");
+        if not ADMCustomerTypeRec.findfirst() then
             Clear(ADMCustomerTypeRec);
         IsFunder := ADMCustomerTypeRec."Customer Type" = "ADM Customer Type"::Funder;
     end;

@@ -1164,7 +1164,7 @@
           <note from="Xliff Generator" annotates="general" priority="3">Page ADM Client Buffer List - Property Caption</note>
         </trans-unit>
         <trans-unit id="Page 2571694013 - Control 3795985638 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Specifies the Business Central customer number this client has been processed into.</source>
+          <source>Specifies the Business Central customer number this client has been processed into. You can manually link to an existing customer by entering a customer number here.</source>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Page ADM Client Buffer List - Control BC Customer No. - Property ToolTip</note>
         </trans-unit>
