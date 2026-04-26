@@ -220,10 +220,10 @@ codeunit 80301 "ADM API Client"
     procedure GetPaged(BaseRelativePath: Text; var AllResults: JsonArray)
     var
         ResponseText: Text;
+        ResponseToken: JsonToken;
         ResponseJson: JsonObject;
         DataToken: JsonToken;
         ItemsToken: JsonToken;
-        PageToken: JsonToken;
         TotalPagesToken: JsonToken;
         ItemArray: JsonArray;
         Item: JsonToken;
@@ -247,28 +247,36 @@ codeunit 80301 "ADM API Client"
                 RelativePath += StrSubstNo(PageSuffixAndLbl, Page, PageSize)
             else
                 RelativePath += StrSubstNo(PageSuffixQuestLbl, Page, PageSize);
-
             Get(RelativePath, ResponseText);
-            ResponseJson.ReadFrom(ResponseText);
 
-            // Handle both wrapped responses {data: {items: []}} and direct arrays
-            if ResponseJson.Get('data', DataToken) then begin
-                if DataToken.AsObject().Get('items', ItemsToken) then
-                    ItemArray := ItemsToken.AsArray()
-                else
-                    if DataToken.IsArray() then
-                        ItemArray := DataToken.AsArray();
+            ResponseToken.ReadFrom(ResponseText);
 
-                if DataToken.AsObject().Get('totalPages', TotalPagesToken) then
-                    TotalPages := TotalPagesToken.AsValue().AsInteger()
-                else
-                    if DataToken.AsObject().Get('page', PageToken) then
-                        TotalPages := Page; // No totalPages = single page
+            if ResponseToken.IsArray() then begin
+                // Direct top-level array — no paging info, treat as single page
+                ItemArray := ResponseToken.AsArray();
+                TotalPages := Page;
             end else begin
-                // Direct array response
-                ResponseJson.Get('items', ItemsToken);
-                ItemArray := ItemsToken.AsArray();
-                TotalPages := Page; // Assume single page if no paging info
+                ResponseJson := ResponseToken.AsObject();
+
+                if ResponseJson.Get('data', DataToken) then begin
+                    // Wrapped: {data: [...]} or {data: {items: [...]}}
+                    if DataToken.IsArray() then
+                        ItemArray := DataToken.AsArray()
+                    else
+                        if DataToken.AsObject().Get('items', ItemsToken) then
+                            ItemArray := ItemsToken.AsArray();
+
+                    if DataToken.AsObject().Get('totalPages', TotalPagesToken) then
+                        TotalPages := TotalPagesToken.AsValue().AsInteger()
+                    else
+                        TotalPages := Page;
+                end else
+                    if ResponseJson.Get('items', ItemsToken) then begin
+                        // Root-level {items: [...]}
+                        ItemArray := ItemsToken.AsArray();
+                        TotalPages := Page;
+                    end else
+                        TotalPages := Page; // Unknown structure — stop paging
             end;
 
             foreach Item in ItemArray do
