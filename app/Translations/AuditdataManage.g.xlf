@@ -408,6 +408,11 @@
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Table ADM Item Mapping - Property Caption</note>
         </trans-unit>
+        <trans-unit id="Table 1114094915 - Field 2842094365 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Item Description</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table ADM Item Mapping - Field Item Description - Property Caption</note>
+        </trans-unit>
         <trans-unit id="Table 1114094915 - Field 568743302 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Item No.</source>
           <note from="Developer" annotates="general" priority="2"></note>
@@ -1808,6 +1813,11 @@
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Page ADM Item Mapping List - Property Caption</note>
         </trans-unit>
+        <trans-unit id="Page 3571162605 - Control 2842094365 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Specifies the description of the Business Central item.</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page ADM Item Mapping List - Control Item Description - Property ToolTip</note>
+        </trans-unit>
         <trans-unit id="Page 3571162605 - Control 568743302 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
           <source>Specifies the Business Central item number.</source>
           <note from="Developer" annotates="general" priority="2"></note>
@@ -1852,6 +1862,31 @@
           <source>Open Item</source>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Page ADM Item Mapping List - Action OpenItem - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Page 3571162605 - Action 2018552988 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Pushes the selected item to AuditData Manage immediately, regardless of the Needs Sync flag.</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page ADM Item Mapping List - Action SyncSingleItem - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="Page 3571162605 - Action 2018552988 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Sync This Item</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page ADM Item Mapping List - Action SyncSingleItem - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Page 3571162605 - Action 4002873385 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Adds all Business Central items to the item mapping table. Items already present in the table are not duplicated.</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page ADM Item Mapping List - Action AddAllBCItems - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="Page 3571162605 - Action 4002873385 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Add All BC Items</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page ADM Item Mapping List - Action AddAllBCItems - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Page 3571162605 - Action 4002873385 - Method 1377591017 - NamedType 1000503204" size-unit="char" translate="yes" xml:space="preserve">
+          <source>%1 item(s) added to the mapping table. %2 item(s) were already present and skipped.</source>
+          <note from="Developer" annotates="general" priority="2">%1 = added count, %2 = skipped count</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page ADM Item Mapping List - Action AddAllBCItems - Method OnAction - NamedType ResultMsg</note>
         </trans-unit>
         <trans-unit id="Page 3571162605 - Action 2043995615 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
           <source>Retrieves all products from AuditData Manage and creates item mappings for any product whose SKU matches an existing BC item number.</source>

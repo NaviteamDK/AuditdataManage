@@ -43,6 +43,13 @@ table 80302 "ADM Item Mapping"
             Caption = 'Needs Sync';
             DataClassification = CustomerContent;
         }
+        field(25; "Item Description"; Text[100])
+        {
+            Caption = 'Item Description';
+            FieldClass = FlowField;
+            CalcFormula = lookup(Item.Description where("No." = field("Item No.")));
+            Editable = false;
+        }
     }
 
     keys

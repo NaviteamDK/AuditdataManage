@@ -19,6 +19,11 @@ page 80303 "ADM Item Mapping List"
                     ApplicationArea = All;
                     ToolTip = 'Specifies the Business Central item number.';
                 }
+                field("Item Description"; Rec."Item Description")
+                {
+                    ApplicationArea = All;
+                    ToolTip = 'Specifies the description of the Business Central item.';
+                }
                 field("Manage Product ID"; Rec."Manage Product ID")
                 {
                     ApplicationArea = All;
@@ -119,6 +124,23 @@ page 80303 "ADM Item Mapping List"
         }
         area(Navigation)
         {
+            action(SyncSingleItem)
+            {
+                ApplicationArea = All;
+                Caption = 'Sync This Item';
+                Image = SyncONPayroll;
+                ToolTip = 'Pushes the selected item to AuditData Manage immediately, regardless of the Needs Sync flag.';
+
+                trigger OnAction()
+                var
+                    ProductSync: Codeunit "ADM Product Sync";
+                begin
+                    if Rec."Item No." = '' then
+                        exit;
+                    ProductSync.SyncSingleItem(Rec."Item No.");
+                    CurrPage.Update(false);
+                end;
+            }
             action(OpenItem)
             {
                 ApplicationArea = All;
