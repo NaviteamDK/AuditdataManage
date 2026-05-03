@@ -573,6 +573,11 @@
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Table ADM Item Mapping - Property Caption</note>
         </trans-unit>
+        <trans-unit id="Table 1114094915 - Field 4040823459 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>First VAT</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table ADM Item Mapping - Field First VAT - Property Caption</note>
+        </trans-unit>
         <trans-unit id="Table 1114094915 - Field 2842094365 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Item Description</source>
           <note from="Developer" annotates="general" priority="2"></note>
@@ -598,6 +603,16 @@
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Table ADM Item Mapping - Field Last Pushed At - Property Caption</note>
         </trans-unit>
+        <trans-unit id="Table 1114094915 - Field 548416880 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Manage Category ID</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table ADM Item Mapping - Field Manage Category ID - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 1114094915 - Field 2913944437 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Manage Manufacturer ID</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table ADM Item Mapping - Field Manage Manufacturer ID - Property Caption</note>
+        </trans-unit>
         <trans-unit id="Table 1114094915 - Field 1716468865 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Manage Product ID</source>
           <note from="Developer" annotates="general" priority="2"></note>
@@ -608,10 +623,40 @@
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Table ADM Item Mapping - Field Manage SKU - Property Caption</note>
         </trans-unit>
+        <trans-unit id="Table 1114094915 - Field 2159761444 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Manage Supplier ID</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table ADM Item Mapping - Field Manage Supplier ID - Property Caption</note>
+        </trans-unit>
         <trans-unit id="Table 1114094915 - Field 856855346 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Needs Sync</source>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Table ADM Item Mapping - Field Needs Sync - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 1114094915 - Field 910119829 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Second VAT</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table ADM Item Mapping - Field Second VAT - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 2540862241 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>AuditData Manage Manufacturer</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table ADM Manufacturer - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 2540862241 - Field 986743050 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Is Active</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table ADM Manufacturer - Field Is Active - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 2540862241 - Field 2913944437 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Manage Manufacturer ID</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table ADM Manufacturer - Field Manage Manufacturer ID - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 2540862241 - Field 2961552353 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Name</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table ADM Manufacturer - Field Name - Property Caption</note>
         </trans-unit>
         <trans-unit id="Table 965608831 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>AuditData Manage Master Order Header</source>
@@ -858,6 +903,26 @@
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Table ADM Order Split Line - Field Split Type - Property Caption</note>
         </trans-unit>
+        <trans-unit id="Table 2407120429 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>AuditData Manage Product Category</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table ADM Product Category - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 2407120429 - Field 3004954119 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Code</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table ADM Product Category - Field Code - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 2407120429 - Field 548416880 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Manage Category ID</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table ADM Product Category - Field Manage Category ID - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 2407120429 - Field 2961552353 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Name</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table ADM Product Category - Field Name - Property Caption</note>
+        </trans-unit>
         <trans-unit id="Table 2907709384 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>AuditData Manage Sale Buffer Header</source>
           <note from="Developer" annotates="general" priority="2"></note>
@@ -1058,6 +1123,26 @@
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Table ADM Sale Buffer Line - Field VAT Amount - Property Caption</note>
         </trans-unit>
+        <trans-unit id="Table 1188164632 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>AuditData Manage Supplier</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table ADM Supplier - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 1188164632 - Field 986743050 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Is Active</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table ADM Supplier - Field Is Active - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 1188164632 - Field 2159761444 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Manage Supplier ID</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table ADM Supplier - Field Manage Supplier ID - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 1188164632 - Field 2961552353 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Name</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table ADM Supplier - Field Name - Property Caption</note>
+        </trans-unit>
         <trans-unit id="Table 2529335301 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>AuditData Manage Sync Log</source>
           <note from="Developer" annotates="general" priority="2"></note>
@@ -1158,6 +1243,21 @@
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Codeunit ADM Inventory Reference Sync - NamedType SyncColorsLbl</note>
         </trans-unit>
+        <trans-unit id="Codeunit 408026690 - NamedType 2208223227" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Manufacturers Sync</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Codeunit ADM Inventory Reference Sync - NamedType SyncManufacturersLbl</note>
+        </trans-unit>
+        <trans-unit id="Codeunit 408026690 - NamedType 292173052" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Product Categories Sync</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Codeunit ADM Inventory Reference Sync - NamedType SyncProductCategoriesLbl</note>
+        </trans-unit>
+        <trans-unit id="Codeunit 408026690 - NamedType 690927094" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Suppliers Sync</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Codeunit ADM Inventory Reference Sync - NamedType SyncSuppliersLbl</note>
+        </trans-unit>
         <trans-unit id="Codeunit 408026690 - Method 481198499 - NamedType 2863856190" size-unit="char" translate="yes" xml:space="preserve">
           <source>api/v2/inventory/products/%1</source>
           <note from="Developer" annotates="general" priority="2">%1 = product GUID</note>
@@ -1182,6 +1282,21 @@
           <source>Colors sync complete. %1 record(s) upserted.</source>
           <note from="Developer" annotates="general" priority="2">%1 = count</note>
           <note from="Xliff Generator" annotates="general" priority="3">Codeunit ADM Inventory Reference Sync - Method SyncColors - NamedType SyncCompleteMsg</note>
+        </trans-unit>
+        <trans-unit id="Codeunit 408026690 - Method 3168142349 - NamedType 1475435937" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Manufacturers sync complete. %1 record(s) upserted.</source>
+          <note from="Developer" annotates="general" priority="2">%1 = count</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Codeunit ADM Inventory Reference Sync - Method SyncManufacturers - NamedType SyncCompleteMsg</note>
+        </trans-unit>
+        <trans-unit id="Codeunit 408026690 - Method 738427414 - NamedType 1475435937" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Product categories sync complete. %1 record(s) upserted.</source>
+          <note from="Developer" annotates="general" priority="2">%1 = count</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Codeunit ADM Inventory Reference Sync - Method SyncProductCategories - NamedType SyncCompleteMsg</note>
+        </trans-unit>
+        <trans-unit id="Codeunit 408026690 - Method 4132975420 - NamedType 1475435937" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Suppliers sync complete. %1 record(s) upserted.</source>
+          <note from="Developer" annotates="general" priority="2">%1 = count</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Codeunit ADM Inventory Reference Sync - Method SyncSuppliers - NamedType SyncCompleteMsg</note>
         </trans-unit>
         <trans-unit id="Codeunit 442505201 - Method 120160283 - NamedType 3746834869" size-unit="char" translate="yes" xml:space="preserve">
           <source>Master Order %1 is not confirmed for splitting. Please confirm the split before creating sales orders.</source>
@@ -2283,6 +2398,11 @@
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Page ADM Item Mapping List - Property Caption</note>
         </trans-unit>
+        <trans-unit id="Page 3571162605 - Control 4040823459 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Specifies the first VAT rate (0–1). First VAT + Second VAT must equal 1. Default is 1.</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page ADM Item Mapping List - Control First VAT - Property ToolTip</note>
+        </trans-unit>
         <trans-unit id="Page 3571162605 - Control 2842094365 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
           <source>Specifies the description of the Business Central item.</source>
           <note from="Developer" annotates="general" priority="2"></note>
@@ -2308,6 +2428,16 @@
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Page ADM Item Mapping List - Control Last Pushed At - Property ToolTip</note>
         </trans-unit>
+        <trans-unit id="Page 3571162605 - Control 548416880 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Specifies the AuditData Manage product category for this item. Must be set before the item can be synced.</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page ADM Item Mapping List - Control Manage Category ID - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="Page 3571162605 - Control 2913944437 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Specifies the AuditData Manage manufacturer for this item.</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page ADM Item Mapping List - Control Manage Manufacturer ID - Property ToolTip</note>
+        </trans-unit>
         <trans-unit id="Page 3571162605 - Control 1716468865 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
           <source>Specifies the product ID in AuditData Manage linked to this item.</source>
           <note from="Developer" annotates="general" priority="2"></note>
@@ -2318,10 +2448,20 @@
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Page ADM Item Mapping List - Control Manage SKU - Property ToolTip</note>
         </trans-unit>
+        <trans-unit id="Page 3571162605 - Control 2159761444 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Specifies the AuditData Manage supplier for this item.</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page ADM Item Mapping List - Control Manage Supplier ID - Property ToolTip</note>
+        </trans-unit>
         <trans-unit id="Page 3571162605 - Control 856855346 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
           <source>Specifies whether this item is pending synchronisation to AuditData Manage.</source>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Page ADM Item Mapping List - Control Needs Sync - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="Page 3571162605 - Control 910119829 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Specifies the second VAT rate (0–1). First VAT + Second VAT must equal 1. Default is 0.</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page ADM Item Mapping List - Control Second VAT - Property ToolTip</note>
         </trans-unit>
         <trans-unit id="Page 3571162605 - Action 3012649835 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
           <source>Opens the Business Central item card for the selected mapping.</source>
@@ -2399,7 +2539,7 @@
           <note from="Xliff Generator" annotates="general" priority="3">Page ADM Item Mapping List - Action MarkAllNeedsSync - Property Caption</note>
         </trans-unit>
         <trans-unit id="Page 3571162605 - Action 366990303 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Downloads all available colors, battery types and attributes from AuditData Manage into BC for use when assigning products.</source>
+          <source>Downloads all available product categories, manufacturers, suppliers, colors, battery types and attributes from AuditData Manage into BC.</source>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Page ADM Item Mapping List - Action SyncAllReferenceData - Property ToolTip</note>
         </trans-unit>
@@ -2407,6 +2547,36 @@
           <source>Sync Reference Data from Manage</source>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Page ADM Item Mapping List - Action SyncAllReferenceData - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Page 2886514519 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>AuditData Manage Manufacturers</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page ADM Manufacturer List - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Page 2886514519 - Control 986743050 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Specifies whether this manufacturer is active in AuditData Manage.</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page ADM Manufacturer List - Control Is Active - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="Page 2886514519 - Control 2913944437 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Specifies the unique identifier of this manufacturer in AuditData Manage.</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page ADM Manufacturer List - Control Manage Manufacturer ID - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="Page 2886514519 - Control 2961552353 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Specifies the name of the manufacturer.</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page ADM Manufacturer List - Control Name - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="Page 2886514519 - Action 3168142349 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Retrieves all available manufacturers from AuditData Manage and updates this list.</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page ADM Manufacturer List - Action SyncManufacturers - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="Page 2886514519 - Action 3168142349 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Sync Manufacturers from Manage</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page ADM Manufacturer List - Action SyncManufacturers - Property Caption</note>
         </trans-unit>
         <trans-unit id="Page 977775818 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Master Order</source>
@@ -2808,6 +2978,36 @@
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Page ADM Order Split Subpage - Action OpenSalesOrder - Property Caption</note>
         </trans-unit>
+        <trans-unit id="Page 134164675 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>AuditData Manage Product Categories</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page ADM Product Category List - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Page 134164675 - Control 3004954119 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Specifies the category code as defined in AuditData Manage (e.g. HearingAids, Batteries).</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page ADM Product Category List - Control Code - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="Page 134164675 - Control 548416880 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Specifies the unique identifier of this product category in AuditData Manage.</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page ADM Product Category List - Control Manage Category ID - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="Page 134164675 - Control 2961552353 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Specifies the display name of this product category.</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page ADM Product Category List - Control Name - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="Page 134164675 - Action 738427414 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Retrieves all available product categories from AuditData Manage and updates this list.</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page ADM Product Category List - Action SyncProductCategories - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="Page 134164675 - Action 738427414 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Sync Categories from Manage</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page ADM Product Category List - Action SyncProductCategories - Property Caption</note>
+        </trans-unit>
         <trans-unit id="Page 2925031089 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>AuditData Manage Integration</source>
           <note from="Developer" annotates="general" priority="2"></note>
@@ -2932,6 +3132,36 @@
           <source>Colors</source>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Page ADM Role Center - Action Colors - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Page 2925031089 - Action 2011898816 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>View and sync available manufacturers from AuditData Manage.</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page ADM Role Center - Action Manufacturers - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="Page 2925031089 - Action 2011898816 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Manufacturers</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page ADM Role Center - Action Manufacturers - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Page 2925031089 - Action 2536973607 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>View and sync available product categories from AuditData Manage. A category must be set on each item mapping before the item can be synced.</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page ADM Role Center - Action ProductCategories - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="Page 2925031089 - Action 2536973607 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Product Categories</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page ADM Role Center - Action ProductCategories - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Page 2925031089 - Action 2480742273 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>View and sync available suppliers from AuditData Manage.</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page ADM Role Center - Action Suppliers - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="Page 2925031089 - Action 2480742273 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Suppliers</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page ADM Role Center - Action Suppliers - Property Caption</note>
         </trans-unit>
         <trans-unit id="Page 2925031089 - Action 1514883969 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Setup</source>
@@ -3302,6 +3532,36 @@
           <source>Sync from AuditData Manage</source>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Page ADM Sale Buffer List - Action SyncFromManage - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Page 3482888202 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>AuditData Manage Suppliers</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page ADM Supplier List - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Page 3482888202 - Control 986743050 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Specifies whether this supplier is active in AuditData Manage.</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page ADM Supplier List - Control Is Active - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="Page 3482888202 - Control 2159761444 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Specifies the unique identifier of this supplier in AuditData Manage.</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page ADM Supplier List - Control Manage Supplier ID - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="Page 3482888202 - Control 2961552353 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Specifies the name of the supplier.</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page ADM Supplier List - Control Name - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="Page 3482888202 - Action 4132975420 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Retrieves all available suppliers from AuditData Manage and updates this list.</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page ADM Supplier List - Action SyncSuppliers - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="Page 3482888202 - Action 4132975420 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Sync Suppliers from Manage</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page ADM Supplier List - Action SyncSuppliers - Property Caption</note>
         </trans-unit>
         <trans-unit id="Page 4190030683 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>AuditData Manage Sync Log</source>
