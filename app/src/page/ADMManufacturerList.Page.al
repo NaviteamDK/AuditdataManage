@@ -18,6 +18,7 @@ page 80331 "ADM Manufacturer List"
                 field("Manage Manufacturer ID"; Rec."Manage Manufacturer ID")
                 {
                     ApplicationArea = All;
+                    Visible = false;
                     ToolTip = 'Specifies the unique identifier of this manufacturer in AuditData Manage.';
                 }
                 field(Name; Rec.Name)

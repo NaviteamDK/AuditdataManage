@@ -18,6 +18,7 @@ page 80333 "ADM Hearing Aid Type List"
                 field("Manage Hearing Aid Type ID"; Rec."Manage Hearing Aid Type ID")
                 {
                     ApplicationArea = All;
+                    Visible = false;
                     ToolTip = 'Specifies the unique identifier of this hearing aid type in AuditData Manage.';
                 }
                 field(Name; Rec.Name)

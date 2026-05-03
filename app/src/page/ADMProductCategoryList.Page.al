@@ -18,6 +18,7 @@ page 80330 "ADM Product Category List"
                 field("Manage Category ID"; Rec."Manage Category ID")
                 {
                     ApplicationArea = All;
+                    Visible = false;
                     ToolTip = 'Specifies the unique identifier of this product category in AuditData Manage.';
                 }
                 field(Name; Rec.Name)

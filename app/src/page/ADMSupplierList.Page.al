@@ -18,6 +18,7 @@ page 80332 "ADM Supplier List"
                 field("Manage Supplier ID"; Rec."Manage Supplier ID")
                 {
                     ApplicationArea = All;
+                    Visible = false;
                     ToolTip = 'Specifies the unique identifier of this supplier in AuditData Manage.';
                 }
                 field(Name; Rec.Name)

@@ -43,6 +43,7 @@ page 80303 "ADM Item Mapping List"
                 field("Manage Product ID"; Rec."Manage Product ID")
                 {
                     ApplicationArea = All;
+                    Visible = false;
                     ToolTip = 'Specifies the product ID in AuditData Manage linked to this item.';
                 }
                 field("Manage SKU"; Rec."Manage SKU")
