@@ -18,6 +18,14 @@ page 80303 "ADM Item Mapping List"
                 {
                     ApplicationArea = All;
                     ToolTip = 'Specifies the Business Central item number.';
+
+                    trigger OnDrillDown()
+                    var
+                        Item: Record Item;
+                    begin
+                        if Item.Get(Rec."Item No.") then
+                            Page.Run(Page::"Item Card", Item);
+                    end;
                 }
                 field("Item Description"; Rec."Item Description")
                 {
