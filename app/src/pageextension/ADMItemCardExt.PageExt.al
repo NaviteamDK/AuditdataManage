@@ -19,9 +19,8 @@ pageextension 80302 "ADM Item Card Ext" extends "Item Card"
                         ProdCat: Record "ADM Product Category";
                     begin
                         if Page.RunModal(Page::"ADM Product Category List", ProdCat) = Action::LookupOK then begin
-                            EnsureItemMapping();
-                            ItemMappingRec."Manage Category ID" := ProdCat."Manage Category ID";
-                            ItemMappingRec.Modify();
+                            Rec."ADM Manage Category ID" := ProdCat."Manage Category ID";
+                            Rec.Modify();
                             ADMCategoryName := CopyStr(ProdCat.Name + ' (' + ProdCat.Code + ')', 1, 150);
                             Text := ADMCategoryName;
                             exit(true);
@@ -31,9 +30,8 @@ pageextension 80302 "ADM Item Card Ext" extends "Item Card"
                     trigger OnValidate()
                     begin
                         if ADMCategoryName = '' then begin
-                            EnsureItemMapping();
-                            Clear(ItemMappingRec."Manage Category ID");
-                            ItemMappingRec.Modify();
+                            Clear(Rec."ADM Manage Category ID");
+                            Rec.Modify();
                         end;
                     end;
                 }
@@ -48,9 +46,8 @@ pageextension 80302 "ADM Item Card Ext" extends "Item Card"
                         ManufacturerRec: Record "ADM Manufacturer";
                     begin
                         if Page.RunModal(Page::"ADM Manufacturer List", ManufacturerRec) = Action::LookupOK then begin
-                            EnsureItemMapping();
-                            ItemMappingRec."Manage Manufacturer ID" := ManufacturerRec."Manage Manufacturer ID";
-                            ItemMappingRec.Modify();
+                            Rec."ADM Manage Manufacturer ID" := ManufacturerRec."Manage Manufacturer ID";
+                            Rec.Modify();
                             ADMManufacturerName := ManufacturerRec.Name;
                             Text := ManufacturerRec.Name;
                             exit(true);
@@ -60,9 +57,8 @@ pageextension 80302 "ADM Item Card Ext" extends "Item Card"
                     trigger OnValidate()
                     begin
                         if ADMManufacturerName = '' then begin
-                            EnsureItemMapping();
-                            Clear(ItemMappingRec."Manage Manufacturer ID");
-                            ItemMappingRec.Modify();
+                            Clear(Rec."ADM Manage Manufacturer ID");
+                            Rec.Modify();
                         end;
                     end;
                 }
@@ -77,9 +73,8 @@ pageextension 80302 "ADM Item Card Ext" extends "Item Card"
                         SupplierRec: Record "ADM Supplier";
                     begin
                         if Page.RunModal(Page::"ADM Supplier List", SupplierRec) = Action::LookupOK then begin
-                            EnsureItemMapping();
-                            ItemMappingRec."Manage Supplier ID" := SupplierRec."Manage Supplier ID";
-                            ItemMappingRec.Modify();
+                            Rec."ADM Manage Supplier ID" := SupplierRec."Manage Supplier ID";
+                            Rec.Modify();
                             ADMSupplierName := SupplierRec.Name;
                             Text := SupplierRec.Name;
                             exit(true);
@@ -89,9 +84,8 @@ pageextension 80302 "ADM Item Card Ext" extends "Item Card"
                     trigger OnValidate()
                     begin
                         if ADMSupplierName = '' then begin
-                            EnsureItemMapping();
-                            Clear(ItemMappingRec."Manage Supplier ID");
-                            ItemMappingRec.Modify();
+                            Clear(Rec."ADM Manage Supplier ID");
+                            Rec.Modify();
                         end;
                     end;
                 }
@@ -106,9 +100,8 @@ pageextension 80302 "ADM Item Card Ext" extends "Item Card"
                         HearingAidTypeRec: Record "ADM Hearing Aid Type";
                     begin
                         if Page.RunModal(Page::"ADM Hearing Aid Type List", HearingAidTypeRec) = Action::LookupOK then begin
-                            EnsureItemMapping();
-                            ItemMappingRec."Manage Hearing Aid Type ID" := HearingAidTypeRec."Manage Hearing Aid Type ID";
-                            ItemMappingRec.Modify();
+                            Rec."ADM Manage Hearing Aid Type ID" := HearingAidTypeRec."Manage Hearing Aid Type ID";
+                            Rec.Modify();
                             ADMHearingAidTypeName := HearingAidTypeRec.Name;
                             Text := HearingAidTypeRec.Name;
                             exit(true);
@@ -118,9 +111,8 @@ pageextension 80302 "ADM Item Card Ext" extends "Item Card"
                     trigger OnValidate()
                     begin
                         if ADMHearingAidTypeName = '' then begin
-                            EnsureItemMapping();
-                            Clear(ItemMappingRec."Manage Hearing Aid Type ID");
-                            ItemMappingRec.Modify();
+                            Clear(Rec."ADM Manage Hearing Aid Type ID");
+                            Rec.Modify();
                         end;
                     end;
                 }
@@ -172,40 +164,24 @@ pageextension 80302 "ADM Item Card Ext" extends "Item Card"
         Clear(ADMSupplierName);
         Clear(ADMHearingAidTypeName);
 
-        if ItemMappingRec.Get(Rec."No.") then begin
-            if not IsNullGuid(ItemMappingRec."Manage Category ID") then
-                if ProdCat.Get(ItemMappingRec."Manage Category ID") then
-                    ADMCategoryName := CopyStr(ProdCat.Name + ' (' + ProdCat.Code + ')', 1, 150);
+        if not IsNullGuid(Rec."ADM Manage Category ID") then
+            if ProdCat.Get(Rec."ADM Manage Category ID") then
+                ADMCategoryName := CopyStr(ProdCat.Name + ' (' + ProdCat.Code + ')', 1, 150);
 
-            if not IsNullGuid(ItemMappingRec."Manage Manufacturer ID") then
-                if ManufacturerRec.Get(ItemMappingRec."Manage Manufacturer ID") then
-                    ADMManufacturerName := ManufacturerRec.Name;
+        if not IsNullGuid(Rec."ADM Manage Manufacturer ID") then
+            if ManufacturerRec.Get(Rec."ADM Manage Manufacturer ID") then
+                ADMManufacturerName := ManufacturerRec.Name;
 
-            if not IsNullGuid(ItemMappingRec."Manage Supplier ID") then
-                if SupplierRec.Get(ItemMappingRec."Manage Supplier ID") then
-                    ADMSupplierName := SupplierRec.Name;
+        if not IsNullGuid(Rec."ADM Manage Supplier ID") then
+            if SupplierRec.Get(Rec."ADM Manage Supplier ID") then
+                ADMSupplierName := SupplierRec.Name;
 
-            if not IsNullGuid(ItemMappingRec."Manage Hearing Aid Type ID") then
-                if HearingAidTypeRec.Get(ItemMappingRec."Manage Hearing Aid Type ID") then
-                    ADMHearingAidTypeName := HearingAidTypeRec.Name;
-        end else
-            Clear(ItemMappingRec);
-    end;
-
-    local procedure EnsureItemMapping()
-    begin
-        if ItemMappingRec."Item No." = '' then
-            ItemMappingRec."Item No." := Rec."No.";
-
-        if not ItemMappingRec.Find('=') then begin
-            ItemMappingRec.Init();
-            ItemMappingRec."Item No." := Rec."No.";
-            ItemMappingRec.Insert();
-        end;
+        if not IsNullGuid(Rec."ADM Manage Hearing Aid Type ID") then
+            if HearingAidTypeRec.Get(Rec."ADM Manage Hearing Aid Type ID") then
+                ADMHearingAidTypeName := HearingAidTypeRec.Name;
     end;
 
     var
-        ItemMappingRec: Record "ADM Item Mapping";
         ADMCategoryName: Text[150];
         ADMManufacturerName: Text[200];
         ADMSupplierName: Text[200];

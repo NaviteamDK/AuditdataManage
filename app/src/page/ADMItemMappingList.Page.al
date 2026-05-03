@@ -71,26 +71,6 @@ page 80303 "ADM Item Mapping List"
                     ApplicationArea = All;
                     ToolTip = 'Specifies the error message from the last failed push attempt.';
                 }
-                field("Manage Category ID"; Rec."Manage Category ID")
-                {
-                    ApplicationArea = All;
-                    ToolTip = 'Specifies the AuditData Manage product category for this item. Must be set before the item can be synced.';
-                }
-                field("Manage Manufacturer ID"; Rec."Manage Manufacturer ID")
-                {
-                    ApplicationArea = All;
-                    ToolTip = 'Specifies the AuditData Manage manufacturer for this item.';
-                }
-                field("Manage Supplier ID"; Rec."Manage Supplier ID")
-                {
-                    ApplicationArea = All;
-                    ToolTip = 'Specifies the AuditData Manage supplier for this item.';
-                }
-                field("Manage Hearing Aid Type ID"; Rec."Manage Hearing Aid Type ID")
-                {
-                    ApplicationArea = All;
-                    ToolTip = 'Specifies the AuditData Manage hearing aid type for this item. Required when the category is Hearing Aids.';
-                }
                 field("First VAT"; Rec."First VAT")
                 {
                     ApplicationArea = All;

@@ -70,13 +70,13 @@ codeunit 80308 "ADM Product Sync"
     begin
         IsNew := IsNullGuid(lItemMapping."Manage Product ID");
 
-        if IsNullGuid(lItemMapping."Manage Category ID") then begin
-            lItemMapping.MarkSyncError(lItem."No.", 'Manage Category ID is not set on the item mapping. Open Item Mappings, set the category, then re-sync.');
+        if IsNullGuid(lItem."ADM Manage Category ID") then begin
+            lItemMapping.MarkSyncError(lItem."No.", 'Manage Category ID is not set on the item. Open the Item Card, set the category, then re-sync.');
             exit(false);
         end;
 
-        if IsHearingAidsCategory(lItemMapping."Manage Category ID") and IsNullGuid(lItemMapping."Manage Hearing Aid Type ID") then begin
-            lItemMapping.MarkSyncError(lItem."No.", 'Manage Hearing Aid Type ID is required for items in the Hearing Aids category. Open Item Mappings or the Item Card, set the hearing aid type, then re-sync.');
+        if IsHearingAidsCategory(lItem."ADM Manage Category ID") and IsNullGuid(lItem."ADM Manage Hearing Aid Type ID") then begin
+            lItemMapping.MarkSyncError(lItem."No.", 'Manage Hearing Aid Type ID is required for items in the Hearing Aids category. Open the Item Card, set the hearing aid type, then re-sync.');
             exit(false);
         end;
 
@@ -137,7 +137,7 @@ codeunit 80308 "ADM Product Sync"
         JsonObj.Add('name', Item.Description);
         JsonObj.Add('sku', Item."No.");
         JsonObj.Add('isActive', not Item.Blocked);
-        JsonObj.Add('categoryId', LowerCase(Format(ItemMapping."Manage Category ID", 0, 4)));
+        JsonObj.Add('categoryId', LowerCase(Format(Item."ADM Manage Category ID", 0, 4)));
 
         if Item."Unit Price" <> 0 then
             JsonObj.Add('price', Item."Unit Price");
@@ -151,14 +151,14 @@ codeunit 80308 "ADM Product Sync"
         JsonObj.Add('isSerialized', Item."Item Tracking Code" <> '');
         JsonObj.Add('isSellable', true);
 
-        if not IsNullGuid(ItemMapping."Manage Manufacturer ID") then
-            JsonObj.Add('manufacturerId', LowerCase(Format(ItemMapping."Manage Manufacturer ID", 0, 4)));
+        if not IsNullGuid(Item."ADM Manage Manufacturer ID") then
+            JsonObj.Add('manufacturerId', LowerCase(Format(Item."ADM Manage Manufacturer ID", 0, 4)));
 
-        if not IsNullGuid(ItemMapping."Manage Supplier ID") then
-            JsonObj.Add('supplierId', LowerCase(Format(ItemMapping."Manage Supplier ID", 0, 4)));
+        if not IsNullGuid(Item."ADM Manage Supplier ID") then
+            JsonObj.Add('supplierId', LowerCase(Format(Item."ADM Manage Supplier ID", 0, 4)));
 
-        if not IsNullGuid(ItemMapping."Manage Hearing Aid Type ID") then
-            JsonObj.Add('hearingAidTypeId', LowerCase(Format(ItemMapping."Manage Hearing Aid Type ID", 0, 4)));
+        if not IsNullGuid(Item."ADM Manage Hearing Aid Type ID") then
+            JsonObj.Add('hearingAidTypeId', LowerCase(Format(Item."ADM Manage Hearing Aid Type ID", 0, 4)));
 
         JsonObj.Add('firstVAT', ItemMapping."First VAT");
         JsonObj.Add('secondVAT', ItemMapping."Second VAT");
@@ -279,7 +279,7 @@ codeunit 80308 "ADM Product Sync"
             exit(false);
         if not ProdCat.Get(CategoryID) then
             exit(false);
-        exit(ProdCat.Code = 'HearingAids');
+        exit(UpperCase(ProdCat.Code) = 'HEARINGAIDS');
     end;
 
     procedure AddAllBCItemsToMapping(var Added: Integer; var Skipped: Integer)
