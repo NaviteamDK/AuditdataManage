@@ -373,6 +373,21 @@
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Table ADM Funder Terms - Field Split Type - Property Caption</note>
         </trans-unit>
+        <trans-unit id="Table 333025606 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>AuditData Manage Hearing Aid Type</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table ADM Hearing Aid Type - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 333025606 - Field 1549539818 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Manage Hearing Aid Type ID</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table ADM Hearing Aid Type - Field Manage Hearing Aid Type ID - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 333025606 - Field 2961552353 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Name</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table ADM Hearing Aid Type - Field Name - Property Caption</note>
+        </trans-unit>
         <trans-unit id="Table 3414399283 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>AuditData Manage Integration Setup</source>
           <note from="Developer" annotates="general" priority="2"></note>
@@ -603,16 +618,6 @@
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Table ADM Item Mapping - Field Last Pushed At - Property Caption</note>
         </trans-unit>
-        <trans-unit id="Table 1114094915 - Field 548416880 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Manage Category ID</source>
-          <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">Table ADM Item Mapping - Field Manage Category ID - Property Caption</note>
-        </trans-unit>
-        <trans-unit id="Table 1114094915 - Field 2913944437 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Manage Manufacturer ID</source>
-          <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">Table ADM Item Mapping - Field Manage Manufacturer ID - Property Caption</note>
-        </trans-unit>
         <trans-unit id="Table 1114094915 - Field 1716468865 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Manage Product ID</source>
           <note from="Developer" annotates="general" priority="2"></note>
@@ -622,11 +627,6 @@
           <source>Manage SKU</source>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Table ADM Item Mapping - Field Manage SKU - Property Caption</note>
-        </trans-unit>
-        <trans-unit id="Table 1114094915 - Field 2159761444 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Manage Supplier ID</source>
-          <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">Table ADM Item Mapping - Field Manage Supplier ID - Property Caption</note>
         </trans-unit>
         <trans-unit id="Table 1114094915 - Field 856855346 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Needs Sync</source>
@@ -1263,6 +1263,11 @@
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Codeunit ADM Inventory Reference Sync - NamedType SyncColorsLbl</note>
         </trans-unit>
+        <trans-unit id="Codeunit 408026690 - NamedType 3700001032" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Hearing Aid Types Sync</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Codeunit ADM Inventory Reference Sync - NamedType SyncHearingAidTypesLbl</note>
+        </trans-unit>
         <trans-unit id="Codeunit 408026690 - NamedType 2208223227" size-unit="char" translate="yes" xml:space="preserve">
           <source>Manufacturers Sync</source>
           <note from="Developer" annotates="general" priority="2"></note>
@@ -1302,6 +1307,11 @@
           <source>Colors sync complete. %1 record(s) upserted.</source>
           <note from="Developer" annotates="general" priority="2">%1 = count</note>
           <note from="Xliff Generator" annotates="general" priority="3">Codeunit ADM Inventory Reference Sync - Method SyncColors - NamedType SyncCompleteMsg</note>
+        </trans-unit>
+        <trans-unit id="Codeunit 408026690 - Method 2895627202 - NamedType 1475435937" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Hearing aid types sync complete. %1 record(s) upserted.</source>
+          <note from="Developer" annotates="general" priority="2">%1 = count</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Codeunit ADM Inventory Reference Sync - Method SyncHearingAidTypes - NamedType SyncCompleteMsg</note>
         </trans-unit>
         <trans-unit id="Codeunit 408026690 - Method 3168142349 - NamedType 1475435937" size-unit="char" translate="yes" xml:space="preserve">
           <source>Manufacturers sync complete. %1 record(s) upserted.</source>
@@ -2058,6 +2068,31 @@
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Page ADM Headline Part - Method CalculateHeadlines - NamedType AllClearLbl</note>
         </trans-unit>
+        <trans-unit id="Page 3350500740 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>AuditData Manage Hearing Aid Types</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page ADM Hearing Aid Type List - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Page 3350500740 - Control 1549539818 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Specifies the unique identifier of this hearing aid type in AuditData Manage.</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page ADM Hearing Aid Type List - Control Manage Hearing Aid Type ID - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="Page 3350500740 - Control 2961552353 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Specifies the name of the hearing aid type as defined in AuditData Manage.</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page ADM Hearing Aid Type List - Control Name - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="Page 3350500740 - Action 2895627202 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Retrieves all available hearing aid types from AuditData Manage and updates this list.</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page ADM Hearing Aid Type List - Action SyncHearingAidTypes - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="Page 3350500740 - Action 2895627202 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Sync Hearing Aid Types from Manage</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page ADM Hearing Aid Type List - Action SyncHearingAidTypes - Property Caption</note>
+        </trans-unit>
         <trans-unit id="Page 3414399283 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>AuditData Manage Integration Setup</source>
           <note from="Developer" annotates="general" priority="2"></note>
@@ -2448,16 +2483,6 @@
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Page ADM Item Mapping List - Control Last Pushed At - Property ToolTip</note>
         </trans-unit>
-        <trans-unit id="Page 3571162605 - Control 548416880 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Specifies the AuditData Manage product category for this item. Must be set before the item can be synced.</source>
-          <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">Page ADM Item Mapping List - Control Manage Category ID - Property ToolTip</note>
-        </trans-unit>
-        <trans-unit id="Page 3571162605 - Control 2913944437 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Specifies the AuditData Manage manufacturer for this item.</source>
-          <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">Page ADM Item Mapping List - Control Manage Manufacturer ID - Property ToolTip</note>
-        </trans-unit>
         <trans-unit id="Page 3571162605 - Control 1716468865 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
           <source>Specifies the product ID in AuditData Manage linked to this item.</source>
           <note from="Developer" annotates="general" priority="2"></note>
@@ -2467,11 +2492,6 @@
           <source>Specifies the SKU code in AuditData Manage for this item.</source>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Page ADM Item Mapping List - Control Manage SKU - Property ToolTip</note>
-        </trans-unit>
-        <trans-unit id="Page 3571162605 - Control 2159761444 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Specifies the AuditData Manage supplier for this item.</source>
-          <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">Page ADM Item Mapping List - Control Manage Supplier ID - Property ToolTip</note>
         </trans-unit>
         <trans-unit id="Page 3571162605 - Control 856855346 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
           <source>Specifies whether this item is pending synchronisation to AuditData Manage.</source>
@@ -3153,6 +3173,16 @@
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Page ADM Role Center - Action Colors - Property Caption</note>
         </trans-unit>
+        <trans-unit id="Page 2925031089 - Action 1985774091 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>View and sync available hearing aid types from AuditData Manage. Required for items in the Hearing Aids category.</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page ADM Role Center - Action HearingAidTypes - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="Page 2925031089 - Action 1985774091 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Hearing Aid Types</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page ADM Role Center - Action HearingAidTypes - Property Caption</note>
+        </trans-unit>
         <trans-unit id="Page 2925031089 - Action 2011898816 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
           <source>View and sync available manufacturers from AuditData Manage.</source>
           <note from="Developer" annotates="general" priority="2"></note>
@@ -3693,6 +3723,16 @@
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">PageExtension ADM Item Card Ext - Control ADM ADMCategoryName - Property Caption</note>
         </trans-unit>
+        <trans-unit id="PageExtension 2493886716 - Control 3714844351 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Page 1434786627">
+          <source>Specifies the AuditData Manage hearing aid type for this item. Required when the category is Hearing Aids.</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">PageExtension ADM Item Card Ext - Control ADM ADMHearingAidTypeName - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="PageExtension 2493886716 - Control 3714844351 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Page 1434786627">
+          <source>Manage Hearing Aid Type</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">PageExtension ADM Item Card Ext - Control ADM ADMHearingAidTypeName - Property Caption</note>
+        </trans-unit>
         <trans-unit id="PageExtension 2493886716 - Control 143696228 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Page 1434786627">
           <source>Specifies the AuditData Manage manufacturer for this item.</source>
           <note from="Developer" annotates="general" priority="2"></note>
@@ -3852,6 +3892,26 @@
           <source>Manage Supplier</source>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">PageExtension ADM Vendor Card Ext - Control ADMSupplierName - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="TableExtension 3426536144 - Field 3558776824 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Table 3276313895">
+          <source>Manage Category ID</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">TableExtension ADM Item Ext - Field ADM Manage Category ID - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="TableExtension 3426536144 - Field 3325033730 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Table 3276313895">
+          <source>Manage Hearing Aid Type ID</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">TableExtension ADM Item Ext - Field ADM Manage Hearing Aid Type ID - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="TableExtension 3426536144 - Field 2810698237 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Table 3276313895">
+          <source>Manage Manufacturer ID</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">TableExtension ADM Item Ext - Field ADM Manage Manufacturer ID - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="TableExtension 3426536144 - Field 1777849100 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Table 3276313895">
+          <source>Manage Supplier ID</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">TableExtension ADM Item Ext - Field ADM Manage Supplier ID - Property Caption</note>
         </trans-unit>
         <trans-unit id="Profile 1956655082 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>AuditData Manage Integration</source>
