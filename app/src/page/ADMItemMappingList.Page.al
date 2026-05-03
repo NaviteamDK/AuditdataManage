@@ -31,6 +31,14 @@ page 80303 "ADM Item Mapping List"
                 {
                     ApplicationArea = All;
                     ToolTip = 'Specifies the description of the Business Central item.';
+
+                    trigger OnDrillDown()
+                    var
+                        Item: Record Item;
+                    begin
+                        if Item.Get(Rec."Item No.") then
+                            Page.Run(Page::"Item Card", Item);
+                    end;
                 }
                 field("Manage Product ID"; Rec."Manage Product ID")
                 {
