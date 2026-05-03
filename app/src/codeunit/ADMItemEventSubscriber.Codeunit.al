@@ -34,4 +34,26 @@ codeunit 80309 "ADM Item Event Subscriber"
 
         ItemMapping.MarkNeedsSync(Rec."No.");
     end;
+
+    [EventSubscriber(ObjectType::Table, Database::Item, 'OnAfterRenameEvent', '', false, false)]
+    local procedure OnAfterItemRename(var Rec: Record Item; var xRec: Record Item; RunTrigger: Boolean)
+    var
+        ItemMapping: Record "ADM Item Mapping";
+        IntegrationSetup: Record "ADM Integration Setup";
+    begin
+        if Rec.IsTemporary() then
+            exit;
+
+        if not IntegrationSetup.Get() then
+            exit;
+        if not IntegrationSetup."Item Sync Enabled" then
+            exit;
+
+        // Rename the mapping record's primary key to match the new item number
+        if ItemMapping.Get(xRec."No.") then begin
+            ItemMapping.Rename(Rec."No.");
+            ItemMapping.MarkNeedsSync(Rec."No.");
+        end else
+            ItemMapping.MarkNeedsSync(Rec."No.");
+    end;
 }
