@@ -28,4 +28,28 @@ page 80333 "ADM Hearing Aid Type List"
             }
         }
     }
+
+    actions
+    {
+        area(Processing)
+        {
+            action(SyncHearingAidTypes)
+            {
+                ApplicationArea = All;
+                Caption = 'Sync Hearing Aid Types from Manage';
+                Image = Refresh;
+                ToolTip = 'Retrieves all available hearing aid types from AuditData Manage and updates this list.';
+
+                trigger OnAction()
+                var
+                    InvRefSync: Codeunit "ADM Inventory Reference Sync";
+                    ErrorText: Text;
+                begin
+                    if not InvRefSync.SyncHearingAidTypes(ErrorText) then
+                        Error(ErrorText);
+                    CurrPage.Update(false);
+                end;
+            }
+        }
+    }
 }
