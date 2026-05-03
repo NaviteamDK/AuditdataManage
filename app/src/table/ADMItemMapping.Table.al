@@ -3,7 +3,7 @@ table 80302 "ADM Item Mapping"
     Caption = 'AuditData Manage Item Mapping';
     DataClassification = CustomerContent;
     LookupPageId = "ADM Item Mapping List";
-    DrillDownPageId = "ADM Item Mapping List";
+    DrillDownPageId = "Item Card";
 
     fields
     {
