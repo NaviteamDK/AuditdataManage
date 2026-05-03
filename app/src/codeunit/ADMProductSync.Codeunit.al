@@ -149,6 +149,7 @@ codeunit 80308 "ADM Product Sync"
             JsonObj.Add('description', Item."Description 2");
 
         JsonObj.Add('isSerialized', Item."Item Tracking Code" <> '');
+        JsonObj.Add('isSellable', true);
 
         if not IsNullGuid(ItemMapping."Manage Manufacturer ID") then
             JsonObj.Add('manufacturerId', LowerCase(Format(ItemMapping."Manage Manufacturer ID", 0, 4)));
