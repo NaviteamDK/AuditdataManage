@@ -121,6 +121,7 @@ codeunit 80308 "ADM Product Sync"
         ColorsArr: JsonArray;
         BatteryTypesArr: JsonArray;
         AttributesArr: JsonArray;
+        SuggestedProductsArr: JsonArray;
         PayloadText: Text;
     begin
         JsonObj.Add('name', Item.Description);
@@ -149,6 +150,8 @@ codeunit 80308 "ADM Product Sync"
 
         AttributesArr := ItemAttribute.GetAttributesAsJsonArray(Item."No.");
         JsonObj.Add('attributes', AttributesArr);
+
+        JsonObj.Add('suggestedProductIds', SuggestedProductsArr);
 
         JsonObj.WriteTo(PayloadText);
         exit(PayloadText);

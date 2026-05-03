@@ -2118,6 +2118,36 @@
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Page ADM Integration Setup - Action TestConnection - Property Caption</note>
         </trans-unit>
+        <trans-unit id="Page 3654322822 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Item Attribute Links</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page ADM Item Attribute Links - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Page 3654322822 - Control 2006108605 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>The attribute name as defined in AuditData Manage.</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page ADM Item Attribute Links - Control Attribute Name - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="Page 3654322822 - Control 2614226931 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Select to include this attribute value when syncing the item to AuditData Manage.</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page ADM Item Attribute Links - Control Linked - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="Page 3654322822 - Control 3249286792 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>The attribute value as defined in AuditData Manage.</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page ADM Item Attribute Links - Control Value Name - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="Page 3654322822 - Action 142550437 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Retrieves the attribute assignments for this item from AuditData Manage and updates the Linked checkboxes accordingly.</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page ADM Item Attribute Links - Action FetchFromManage - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="Page 3654322822 - Action 142550437 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Fetch from Manage</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page ADM Item Attribute Links - Action FetchFromManage - Property Caption</note>
+        </trans-unit>
         <trans-unit id="Page 2306711026 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Manage Attributes</source>
           <note from="Developer" annotates="general" priority="2"></note>
@@ -2138,15 +2168,40 @@
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Page ADM Item Attribute Subpage - Control Value Name - Property ToolTip</note>
         </trans-unit>
-        <trans-unit id="Page 2306711026 - Action 142550437 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Retrieves the attribute assignments for this item from AuditData Manage and updates the Linked checkboxes accordingly.</source>
+        <trans-unit id="Page 2306711026 - Action 1771075019 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Open the attribute link maintenance page for this item.</source>
           <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">Page ADM Item Attribute Subpage - Action FetchFromManage - Property ToolTip</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page ADM Item Attribute Subpage - Action Maintain - Property ToolTip</note>
         </trans-unit>
-        <trans-unit id="Page 2306711026 - Action 142550437 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+        <trans-unit id="Page 2306711026 - Action 1771075019 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Maintain</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page ADM Item Attribute Subpage - Action Maintain - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Page 3334267717 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Item Battery Type Links</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page ADM Item Battery Type Links - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Page 3334267717 - Control 2656725070 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>The battery type name as defined in AuditData Manage.</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page ADM Item Battery Type Links - Control Battery Type Name - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="Page 3334267717 - Control 2614226931 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Select to include this battery type when syncing the item to AuditData Manage.</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page ADM Item Battery Type Links - Control Linked - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="Page 3334267717 - Action 142550437 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Retrieves the battery type assignments for this item from AuditData Manage and updates the Linked checkboxes accordingly.</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page ADM Item Battery Type Links - Action FetchFromManage - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="Page 3334267717 - Action 142550437 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Fetch from Manage</source>
           <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">Page ADM Item Attribute Subpage - Action FetchFromManage - Property Caption</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page ADM Item Battery Type Links - Action FetchFromManage - Property Caption</note>
         </trans-unit>
         <trans-unit id="Page 1778192097 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Manage Battery Types</source>
@@ -2163,15 +2218,40 @@
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Page ADM Item Battery Type Subpage - Control Linked - Property ToolTip</note>
         </trans-unit>
-        <trans-unit id="Page 1778192097 - Action 142550437 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Retrieves the battery type assignments for this item from AuditData Manage and updates the Linked checkboxes accordingly.</source>
+        <trans-unit id="Page 1778192097 - Action 1771075019 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Open the battery type link maintenance page for this item.</source>
           <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">Page ADM Item Battery Type Subpage - Action FetchFromManage - Property ToolTip</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page ADM Item Battery Type Subpage - Action Maintain - Property ToolTip</note>
         </trans-unit>
-        <trans-unit id="Page 1778192097 - Action 142550437 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+        <trans-unit id="Page 1778192097 - Action 1771075019 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Maintain</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page ADM Item Battery Type Subpage - Action Maintain - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Page 1534671549 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Item Color Links</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page ADM Item Color Links - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Page 1534671549 - Control 173030910 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>The color name as defined in AuditData Manage.</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page ADM Item Color Links - Control Color Name - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="Page 1534671549 - Control 2614226931 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Select to include this color when syncing the item to AuditData Manage.</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page ADM Item Color Links - Control Linked - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="Page 1534671549 - Action 142550437 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Retrieves the color assignments for this item from AuditData Manage and updates the Linked checkboxes accordingly.</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page ADM Item Color Links - Action FetchFromManage - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="Page 1534671549 - Action 142550437 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Fetch from Manage</source>
           <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">Page ADM Item Battery Type Subpage - Action FetchFromManage - Property Caption</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page ADM Item Color Links - Action FetchFromManage - Property Caption</note>
         </trans-unit>
         <trans-unit id="Page 4146156345 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Manage Colors</source>
@@ -2188,15 +2268,15 @@
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Page ADM Item Color Subpage - Control Linked - Property ToolTip</note>
         </trans-unit>
-        <trans-unit id="Page 4146156345 - Action 142550437 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Retrieves the color assignments for this item from AuditData Manage and updates the Linked checkboxes accordingly.</source>
+        <trans-unit id="Page 4146156345 - Action 1771075019 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Open the color link maintenance page for this item.</source>
           <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">Page ADM Item Color Subpage - Action FetchFromManage - Property ToolTip</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page ADM Item Color Subpage - Action Maintain - Property ToolTip</note>
         </trans-unit>
-        <trans-unit id="Page 4146156345 - Action 142550437 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Fetch from Manage</source>
+        <trans-unit id="Page 4146156345 - Action 1771075019 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Maintain</source>
           <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">Page ADM Item Color Subpage - Action FetchFromManage - Property Caption</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page ADM Item Color Subpage - Action Maintain - Property Caption</note>
         </trans-unit>
         <trans-unit id="Page 3571162605 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>AuditData Manage Item Mappings</source>
