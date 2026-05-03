@@ -1198,6 +1198,26 @@
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Table ADM Sync Log - Field Sync Type - Property Caption</note>
         </trans-unit>
+        <trans-unit id="Table 2273551156 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>AuditData Manage Vendor Mapping</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table ADM Vendor Mapping - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 2273551156 - Field 2913944437 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Manage Manufacturer ID</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table ADM Vendor Mapping - Field Manage Manufacturer ID - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 2273551156 - Field 2159761444 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Manage Supplier ID</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table ADM Vendor Mapping - Field Manage Supplier ID - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 2273551156 - Field 1527594213 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Vendor No.</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table ADM Vendor Mapping - Field Vendor No. - Property Caption</note>
+        </trans-unit>
         <trans-unit id="Codeunit 3890226179 - NamedType 1398629640" size-unit="char" translate="yes" xml:space="preserve">
           <source>AuditData Manage API is not configured. Please open the Integration Setup page.</source>
           <note from="Developer" annotates="general" priority="2"></note>
@@ -3658,6 +3678,41 @@
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">PageExtension ADM Customer Card Ext - Control ADM Customer Type - Property Caption</note>
         </trans-unit>
+        <trans-unit id="PageExtension 2493886716 - Control 4006915837 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Page 1434786627">
+          <source>AuditData Manage</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">PageExtension ADM Item Card Ext - Control ADM ADMManageItemGroup - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="PageExtension 2493886716 - Control 4185436505 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Page 1434786627">
+          <source>Specifies the AuditData Manage product category for this item. Required before the item can be synced to Manage.</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">PageExtension ADM Item Card Ext - Control ADM ADMCategoryName - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="PageExtension 2493886716 - Control 4185436505 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Page 1434786627">
+          <source>Manage Category</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">PageExtension ADM Item Card Ext - Control ADM ADMCategoryName - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="PageExtension 2493886716 - Control 143696228 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Page 1434786627">
+          <source>Specifies the AuditData Manage manufacturer for this item.</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">PageExtension ADM Item Card Ext - Control ADM ADMManufacturerName - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="PageExtension 2493886716 - Control 143696228 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Page 1434786627">
+          <source>Manage Manufacturer</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">PageExtension ADM Item Card Ext - Control ADM ADMManufacturerName - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="PageExtension 2493886716 - Control 2159639997 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Page 1434786627">
+          <source>Specifies the AuditData Manage supplier for this item.</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">PageExtension ADM Item Card Ext - Control ADM ADMSupplierName - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="PageExtension 2493886716 - Control 2159639997 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Page 1434786627">
+          <source>Manage Supplier</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">PageExtension ADM Item Card Ext - Control ADM ADMSupplierName - Property Caption</note>
+        </trans-unit>
         <trans-unit id="PageExtension 2493886716 - Control 3328449726 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Page 1434786627">
           <source>Manage Attributes</source>
           <note from="Developer" annotates="general" priority="2"></note>
@@ -3772,6 +3827,31 @@
           <source>Sync Log</source>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">PageExtension ADM Navigation Menu Ext - Action ADM NavSyncLog - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="PageExtension 487879155 - Control 1552628318 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Page 4055858012">
+          <source>AuditData Manage</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">PageExtension ADM Vendor Card Ext - Control ADMManageVendorGroup - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="PageExtension 487879155 - Control 4121198012 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Page 4055858012">
+          <source>Specifies the AuditData Manage manufacturer linked to this vendor. Used to pre-populate item mappings.</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">PageExtension ADM Vendor Card Ext - Control ADMManufacturerName - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="PageExtension 487879155 - Control 4121198012 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Page 4055858012">
+          <source>Manage Manufacturer</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">PageExtension ADM Vendor Card Ext - Control ADMManufacturerName - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="PageExtension 487879155 - Control 369499765 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Page 4055858012">
+          <source>Specifies the AuditData Manage supplier linked to this vendor. Used to pre-populate item mappings.</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">PageExtension ADM Vendor Card Ext - Control ADMSupplierName - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="PageExtension 487879155 - Control 369499765 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Page 4055858012">
+          <source>Manage Supplier</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">PageExtension ADM Vendor Card Ext - Control ADMSupplierName - Property Caption</note>
         </trans-unit>
         <trans-unit id="Profile 1956655082 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>AuditData Manage Integration</source>

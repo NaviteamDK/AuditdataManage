@@ -75,6 +75,11 @@ codeunit 80308 "ADM Product Sync"
             exit(false);
         end;
 
+        if IsHearingAidsCategory(lItemMapping."Manage Category ID") and IsNullGuid(lItemMapping."Manage Hearing Aid Type ID") then begin
+            lItemMapping.MarkSyncError(lItem."No.", 'Manage Hearing Aid Type ID is required for items in the Hearing Aids category. Open Item Mappings or the Item Card, set the hearing aid type, then re-sync.');
+            exit(false);
+        end;
+
         RequestBody := BuildProductPayload(lItem, lItemMapping);
 
         if IsNew then begin
@@ -150,6 +155,9 @@ codeunit 80308 "ADM Product Sync"
 
         if not IsNullGuid(ItemMapping."Manage Supplier ID") then
             JsonObj.Add('supplierId', LowerCase(Format(ItemMapping."Manage Supplier ID", 0, 4)));
+
+        if not IsNullGuid(ItemMapping."Manage Hearing Aid Type ID") then
+            JsonObj.Add('hearingAidTypeId', LowerCase(Format(ItemMapping."Manage Hearing Aid Type ID", 0, 4)));
 
         JsonObj.Add('firstVAT', ItemMapping."First VAT");
         JsonObj.Add('secondVAT', ItemMapping."Second VAT");
@@ -260,6 +268,17 @@ codeunit 80308 "ADM Product Sync"
         Item: Record Item;
     begin
         exit(Item.Get(ItemNo));
+    end;
+
+    local procedure IsHearingAidsCategory(CategoryID: Guid): Boolean
+    var
+        ProdCat: Record "ADM Product Category";
+    begin
+        if IsNullGuid(CategoryID) then
+            exit(false);
+        if not ProdCat.Get(CategoryID) then
+            exit(false);
+        exit(ProdCat.Code = 'HearingAids');
     end;
 
     procedure AddAllBCItemsToMapping(var Added: Integer; var Skipped: Integer)

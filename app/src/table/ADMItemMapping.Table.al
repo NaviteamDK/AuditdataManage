@@ -86,6 +86,12 @@ table 80302 "ADM Item Mapping"
             MaxValue = 1;
             DecimalPlaces = 0 : 4;
         }
+        field(31; "Manage Hearing Aid Type ID"; Guid)
+        {
+            Caption = 'Manage Hearing Aid Type ID';
+            DataClassification = CustomerContent;
+            TableRelation = "ADM Hearing Aid Type";
+        }
     }
 
     keys

@@ -94,6 +94,13 @@ page 80315 "ADM Role Center"
                     RunObject = page "ADM Supplier List";
                     ToolTip = 'View and sync available suppliers from AuditData Manage.';
                 }
+                action(HearingAidTypes)
+                {
+                    ApplicationArea = All;
+                    Caption = 'Hearing Aid Types';
+                    RunObject = page "ADM Hearing Aid Type List";
+                    ToolTip = 'View and sync available hearing aid types from AuditData Manage. Required for items in the Hearing Aids category.';
+                }
                 action(Colors)
                 {
                     ApplicationArea = All;

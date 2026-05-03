@@ -8,6 +8,7 @@ codeunit 80311 "ADM Inventory Reference Sync"
         SyncProductCategoriesLbl: Label 'Product Categories Sync';
         SyncManufacturersLbl: Label 'Manufacturers Sync';
         SyncSuppliersLbl: Label 'Suppliers Sync';
+        SyncHearingAidTypesLbl: Label 'Hearing Aid Types Sync';
 
     /// <summary>
     /// Syncs colors, battery types and attributes from AuditData Manage.
@@ -22,12 +23,61 @@ codeunit 80311 "ADM Inventory Reference Sync"
             Error(ErrorText);
         if not SyncSuppliers(ErrorText) then
             Error(ErrorText);
+        if not SyncHearingAidTypes(ErrorText) then
+            Error(ErrorText);
         if not SyncColors(ErrorText) then
             Error(ErrorText);
         if not SyncBatteryTypes(ErrorText) then
             Error(ErrorText);
         if not SyncAttributes(ErrorText) then
             Error(ErrorText);
+    end;
+
+    /// <summary>
+    /// Retrieves all hearing aid types from GET /api/v2/inventory/hearing-aid-types and upserts ADM Hearing Aid Type records.
+    /// </summary>
+    procedure SyncHearingAidTypes(var ErrorText: Text): Boolean
+    var
+        HearingAidType: Record "ADM Hearing Aid Type";
+        AllItems: JsonArray;
+        ItemToken: JsonToken;
+        ItemObj: JsonObject;
+        ManageID: Guid;
+        ItemName: Text;
+        Upserted: Integer;
+        SyncLogManager: Codeunit "ADM Sync Log Manager";
+        LogEntryNo: Integer;
+        SyncCompleteMsg: Label 'Hearing aid types sync complete. %1 record(s) upserted.', Comment = '%1 = count';
+    begin
+        LogEntryNo := SyncLogManager.StartLog("ADM Sync Direction"::Inbound, SyncHearingAidTypesLbl);
+
+        ADMAPIClient.GetPaged('api/v2/inventory/hearing-aid-types', AllItems);
+
+        foreach ItemToken in AllItems do begin
+            if not ItemToken.IsObject() then
+                continue;
+            ItemObj := ItemToken.AsObject();
+            ManageID := ADMAPIClient.GetJsonGuid(ItemObj, 'id');
+            ItemName := ADMAPIClient.GetJsonText(ItemObj, 'name');
+
+            if IsNullGuid(ManageID) then
+                continue;
+
+            if not HearingAidType.Get(ManageID) then begin
+                HearingAidType.Init();
+                HearingAidType."Manage Hearing Aid Type ID" := ManageID;
+                HearingAidType.Name := CopyStr(ItemName, 1, 200);
+                HearingAidType.Insert();
+            end else begin
+                HearingAidType.Name := CopyStr(ItemName, 1, 200);
+                HearingAidType.Modify();
+            end;
+            Upserted += 1;
+        end;
+
+        SyncLogManager.FinishLog(LogEntryNo, Upserted, 0);
+        Message(SyncCompleteMsg, Upserted);
+        exit(true);
     end;
 
     /// <summary>

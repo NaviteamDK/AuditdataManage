@@ -70,6 +70,11 @@ page 80303 "ADM Item Mapping List"
                     ApplicationArea = All;
                     ToolTip = 'Specifies the AuditData Manage supplier for this item.';
                 }
+                field("Manage Hearing Aid Type ID"; Rec."Manage Hearing Aid Type ID")
+                {
+                    ApplicationArea = All;
+                    ToolTip = 'Specifies the AuditData Manage hearing aid type for this item. Required when the category is Hearing Aids.';
+                }
                 field("First VAT"; Rec."First VAT")
                 {
                     ApplicationArea = All;

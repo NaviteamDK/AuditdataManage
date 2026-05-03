@@ -2,7 +2,7 @@ pageextension 80302 "ADM Item Card Ext" extends "Item Card"
 {
     layout
     {
-        addlast(General)
+        addlast(Item)
         {
             group("ADM ADMManageItemGroup")
             {
@@ -95,6 +95,35 @@ pageextension 80302 "ADM Item Card Ext" extends "Item Card"
                         end;
                     end;
                 }
+                field("ADM ADMHearingAidTypeName"; ADMHearingAidTypeName)
+                {
+                    Caption = 'Manage Hearing Aid Type';
+                    ApplicationArea = All;
+                    ToolTip = 'Specifies the AuditData Manage hearing aid type for this item. Required when the category is Hearing Aids.';
+
+                    trigger OnLookup(var Text: Text): Boolean
+                    var
+                        HearingAidTypeRec: Record "ADM Hearing Aid Type";
+                    begin
+                        if Page.RunModal(Page::"ADM Hearing Aid Type List", HearingAidTypeRec) = Action::LookupOK then begin
+                            EnsureItemMapping();
+                            ItemMappingRec."Manage Hearing Aid Type ID" := HearingAidTypeRec."Manage Hearing Aid Type ID";
+                            ItemMappingRec.Modify();
+                            ADMHearingAidTypeName := HearingAidTypeRec.Name;
+                            Text := HearingAidTypeRec.Name;
+                            exit(true);
+                        end;
+                    end;
+
+                    trigger OnValidate()
+                    begin
+                        if ADMHearingAidTypeName = '' then begin
+                            EnsureItemMapping();
+                            Clear(ItemMappingRec."Manage Hearing Aid Type ID");
+                            ItemMappingRec.Modify();
+                        end;
+                    end;
+                }
             }
         }
         addlast(factboxes)
@@ -127,6 +156,7 @@ pageextension 80302 "ADM Item Card Ext" extends "Item Card"
         ProdCat: Record "ADM Product Category";
         ManufacturerRec: Record "ADM Manufacturer";
         SupplierRec: Record "ADM Supplier";
+        HearingAidTypeRec: Record "ADM Hearing Aid Type";
     begin
         if Rec."No." = '' then
             exit;
@@ -140,6 +170,7 @@ pageextension 80302 "ADM Item Card Ext" extends "Item Card"
         Clear(ADMCategoryName);
         Clear(ADMManufacturerName);
         Clear(ADMSupplierName);
+        Clear(ADMHearingAidTypeName);
 
         if ItemMappingRec.Get(Rec."No.") then begin
             if not IsNullGuid(ItemMappingRec."Manage Category ID") then
@@ -153,6 +184,10 @@ pageextension 80302 "ADM Item Card Ext" extends "Item Card"
             if not IsNullGuid(ItemMappingRec."Manage Supplier ID") then
                 if SupplierRec.Get(ItemMappingRec."Manage Supplier ID") then
                     ADMSupplierName := SupplierRec.Name;
+
+            if not IsNullGuid(ItemMappingRec."Manage Hearing Aid Type ID") then
+                if HearingAidTypeRec.Get(ItemMappingRec."Manage Hearing Aid Type ID") then
+                    ADMHearingAidTypeName := HearingAidTypeRec.Name;
         end else
             Clear(ItemMappingRec);
     end;
@@ -174,5 +209,6 @@ pageextension 80302 "ADM Item Card Ext" extends "Item Card"
         ADMCategoryName: Text[150];
         ADMManufacturerName: Text[200];
         ADMSupplierName: Text[200];
+        ADMHearingAidTypeName: Text[200];
 }
 
