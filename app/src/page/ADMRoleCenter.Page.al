@@ -69,6 +69,32 @@ page 80315 "ADM Role Center"
                     ToolTip = 'View all Business Central sales orders including those generated from AuditData Manage.';
                 }
             }
+            group(ReferenceData)
+            {
+                Caption = 'Reference Data';
+
+                action(Colors)
+                {
+                    ApplicationArea = All;
+                    Caption = 'Colors';
+                    RunObject = page "ADM Color List";
+                    ToolTip = 'View and sync available product colors from AuditData Manage.';
+                }
+                action(BatteryTypes)
+                {
+                    ApplicationArea = All;
+                    Caption = 'Battery Types';
+                    RunObject = page "ADM Battery Type List";
+                    ToolTip = 'View and sync available battery types from AuditData Manage.';
+                }
+                action(Attributes)
+                {
+                    ApplicationArea = All;
+                    Caption = 'Attributes';
+                    RunObject = page "ADM Attribute List";
+                    ToolTip = 'View and sync available product attributes and their values from AuditData Manage.';
+                }
+            }
             group(Setup)
             {
                 Caption = 'Setup';

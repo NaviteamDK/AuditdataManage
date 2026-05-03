@@ -121,6 +121,40 @@ page 80303 "ADM Item Mapping List"
                     Message(ResultMsg, Linked, AlreadyMapped, Unmatched);
                 end;
             }
+            action(FetchItemAssignments)
+            {
+                ApplicationArea = All;
+                Caption = 'Fetch Color/Battery/Attribute Assignments';
+                Image = Import;
+                ToolTip = 'Retrieves the color, battery type and attribute assignments for the selected item from AuditData Manage.';
+
+                trigger OnAction()
+                var
+                    InvRefSync: Codeunit "ADM Inventory Reference Sync";
+                    FetchCompleteMsg: Label 'Color, battery type and attribute assignments fetched for item %1.', Comment = '%1 = item no.';
+                begin
+                    if Rec."Item No." = '' then
+                        exit;
+                    InvRefSync.FetchItemAssignments(Rec."Item No.");
+                    CurrPage.Update(false);
+                    Message(FetchCompleteMsg, Rec."Item No.");
+                end;
+            }
+            action(SyncAllReferenceData)
+            {
+                ApplicationArea = All;
+                Caption = 'Sync Reference Data from Manage';
+                Image = Refresh;
+                ToolTip = 'Downloads all available colors, battery types and attributes from AuditData Manage into BC for use when assigning products.';
+
+                trigger OnAction()
+                var
+                    InvRefSync: Codeunit "ADM Inventory Reference Sync";
+                begin
+                    InvRefSync.SyncAll();
+                    CurrPage.Update(false);
+                end;
+            }
         }
         area(Navigation)
         {

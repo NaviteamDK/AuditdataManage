@@ -114,7 +114,13 @@ codeunit 80308 "ADM Product Sync"
 
     local procedure BuildProductPayload(Item: Record Item): Text
     var
+        ItemColor: Record "ADM Item Color";
+        ItemBatteryType: Record "ADM Item Battery Type";
+        ItemAttribute: Record "ADM Item Attribute";
         JsonObj: JsonObject;
+        ColorsArr: JsonArray;
+        BatteryTypesArr: JsonArray;
+        AttributesArr: JsonArray;
         PayloadText: Text;
     begin
         JsonObj.Add('name', Item.Description);
@@ -134,6 +140,15 @@ codeunit 80308 "ADM Product Sync"
             JsonObj.Add('description', Item."Description 2");
 
         JsonObj.Add('isSerialized', Item."Item Tracking Code" <> '');
+
+        ColorsArr := ItemColor.GetColorIDsAsJsonArray(Item."No.");
+        JsonObj.Add('colors', ColorsArr);
+
+        BatteryTypesArr := ItemBatteryType.GetBatteryTypeIDsAsJsonArray(Item."No.");
+        JsonObj.Add('batteryTypes', BatteryTypesArr);
+
+        AttributesArr := ItemAttribute.GetAttributesAsJsonArray(Item."No.");
+        JsonObj.Add('attributes', AttributesArr);
 
         JsonObj.WriteTo(PayloadText);
         exit(PayloadText);

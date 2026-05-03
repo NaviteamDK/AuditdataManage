@@ -3,6 +3,71 @@
   <file datatype="xml" source-language="en-US" target-language="en-US" original="AuditdataManage">
     <body>
       <group id="body">
+        <trans-unit id="Table 1789361240 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>AuditData Manage Attribute</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table ADM Attribute - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 1789361240 - Field 986743050 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Is Active</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table ADM Attribute - Field Is Active - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 1789361240 - Field 2932468636 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Manage Attribute ID</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table ADM Attribute - Field Manage Attribute ID - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 1789361240 - Field 2961552353 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Name</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table ADM Attribute - Field Name - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 4174578873 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>AuditData Manage Attribute Value</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table ADM Attribute Value - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 4174578873 - Field 883711285 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Entry No.</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table ADM Attribute Value - Field Entry No. - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 4174578873 - Field 986743050 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Is Active</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table ADM Attribute Value - Field Is Active - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 4174578873 - Field 2932468636 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Manage Attribute ID</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table ADM Attribute Value - Field Manage Attribute ID - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 4174578873 - Field 2961552353 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Name</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table ADM Attribute Value - Field Name - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 4010391103 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>AuditData Manage Battery Type</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table ADM Battery Type - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 4010391103 - Field 986743050 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Is Active</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table ADM Battery Type - Field Is Active - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 4010391103 - Field 2376874419 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Manage Battery Type ID</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table ADM Battery Type - Field Manage Battery Type ID - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 4010391103 - Field 2961552353 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Name</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table ADM Battery Type - Field Name - Property Caption</note>
+        </trans-unit>
         <trans-unit id="Table 3798035091 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>AuditData Manage Client Buffer</source>
           <note from="Developer" annotates="general" priority="2"></note>
@@ -107,6 +172,21 @@
           <source>Status</source>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Table ADM Client Buffer - Field Status - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 1005097631 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>AuditData Manage Color</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table ADM Color - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 1005097631 - Field 4266260619 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Manage Color ID</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table ADM Color - Field Manage Color ID - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 1005097631 - Field 2961552353 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Name</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table ADM Color - Field Name - Property Caption</note>
         </trans-unit>
         <trans-unit id="Table 2350888508 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>AuditData Manage Customer Mapping</source>
@@ -402,6 +482,91 @@
           <source>Sale Sync Interval (Min)</source>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Table ADM Integration Setup - Field Sale Sync Interval (Min) - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 3997100171 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>AuditData Manage Item Attribute</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table ADM Item Attribute - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 3997100171 - Field 2006108605 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Attribute Name</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table ADM Item Attribute - Field Attribute Name - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 3997100171 - Field 568743302 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Item No.</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table ADM Item Attribute - Field Item No. - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 3997100171 - Field 2614226931 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Linked</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table ADM Item Attribute - Field Linked - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 3997100171 - Field 2932468636 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Manage Attribute ID</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table ADM Item Attribute - Field Manage Attribute ID - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 3997100171 - Field 3249286792 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Value Name</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table ADM Item Attribute - Field Value Name - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 328366444 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>AuditData Manage Item Battery Type</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table ADM Item Battery Type - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 328366444 - Field 2656725070 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Battery Type Name</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table ADM Item Battery Type - Field Battery Type Name - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 328366444 - Field 986743050 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Is Active</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table ADM Item Battery Type - Field Is Active - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 328366444 - Field 568743302 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Item No.</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table ADM Item Battery Type - Field Item No. - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 328366444 - Field 2614226931 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Linked</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table ADM Item Battery Type - Field Linked - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 328366444 - Field 2376874419 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Manage Battery Type ID</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table ADM Item Battery Type - Field Manage Battery Type ID - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 1245917924 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>AuditData Manage Item Color</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table ADM Item Color - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 1245917924 - Field 173030910 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Color Name</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table ADM Item Color - Field Color Name - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 1245917924 - Field 568743302 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Item No.</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table ADM Item Color - Field Item No. - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 1245917924 - Field 2614226931 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Linked</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table ADM Item Color - Field Linked - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 1245917924 - Field 4266260619 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Manage Color ID</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table ADM Item Color - Field Manage Color ID - Property Caption</note>
         </trans-unit>
         <trans-unit id="Table 1114094915 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>AuditData Manage Item Mapping</source>
@@ -978,6 +1143,46 @@
           <note from="Developer" annotates="general" priority="2">%1 = page number, %2 = page size</note>
           <note from="Xliff Generator" annotates="general" priority="3">Codeunit ADM API Client - Method GetPaged - NamedType PageSuffixQuestLbl</note>
         </trans-unit>
+        <trans-unit id="Codeunit 408026690 - NamedType 3391044478" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Attributes Sync</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Codeunit ADM Inventory Reference Sync - NamedType SyncAttributesLbl</note>
+        </trans-unit>
+        <trans-unit id="Codeunit 408026690 - NamedType 1876596997" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Battery Types Sync</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Codeunit ADM Inventory Reference Sync - NamedType SyncBatteryTypesLbl</note>
+        </trans-unit>
+        <trans-unit id="Codeunit 408026690 - NamedType 865113365" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Colors Sync</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Codeunit ADM Inventory Reference Sync - NamedType SyncColorsLbl</note>
+        </trans-unit>
+        <trans-unit id="Codeunit 408026690 - Method 481198499 - NamedType 2863856190" size-unit="char" translate="yes" xml:space="preserve">
+          <source>api/v2/inventory/products/%1</source>
+          <note from="Developer" annotates="general" priority="2">%1 = product GUID</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Codeunit ADM Inventory Reference Sync - Method FetchItemAssignments - NamedType ProductUrlLbl</note>
+        </trans-unit>
+        <trans-unit id="Codeunit 408026690 - Method 481198499 - NamedType 1098178484" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Item %1 has no AuditData Manage product mapping. Use 'Fetch Products from Manage' first.</source>
+          <note from="Developer" annotates="general" priority="2">%1 = item no.</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Codeunit ADM Inventory Reference Sync - Method FetchItemAssignments - NamedType ItemNotMappedErr</note>
+        </trans-unit>
+        <trans-unit id="Codeunit 408026690 - Method 2424383620 - NamedType 1475435937" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Attributes sync complete. %1 attribute(s) upserted.</source>
+          <note from="Developer" annotates="general" priority="2">%1 = count</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Codeunit ADM Inventory Reference Sync - Method SyncAttributes - NamedType SyncCompleteMsg</note>
+        </trans-unit>
+        <trans-unit id="Codeunit 408026690 - Method 230531971 - NamedType 1475435937" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Battery types sync complete. %1 record(s) upserted.</source>
+          <note from="Developer" annotates="general" priority="2">%1 = count</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Codeunit ADM Inventory Reference Sync - Method SyncBatteryTypes - NamedType SyncCompleteMsg</note>
+        </trans-unit>
+        <trans-unit id="Codeunit 408026690 - Method 2160235731 - NamedType 1475435937" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Colors sync complete. %1 record(s) upserted.</source>
+          <note from="Developer" annotates="general" priority="2">%1 = count</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Codeunit ADM Inventory Reference Sync - Method SyncColors - NamedType SyncCompleteMsg</note>
+        </trans-unit>
         <trans-unit id="Codeunit 442505201 - Method 120160283 - NamedType 3746834869" size-unit="char" translate="yes" xml:space="preserve">
           <source>Master Order %1 is not confirmed for splitting. Please confirm the split before creating sales orders.</source>
           <note from="Developer" annotates="general" priority="2">%1 = Master Order No.</note>
@@ -1022,6 +1227,86 @@
           <source>&lt;-%1D&gt;</source>
           <note from="Developer" annotates="general" priority="2">%1 = number of days</note>
           <note from="Xliff Generator" annotates="general" priority="3">Codeunit ADM Sync Log Manager - Method CleanupOldLogs - NamedType CutoffDateFormulaLbl</note>
+        </trans-unit>
+        <trans-unit id="Page 1112273738 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>AuditData Manage Attributes</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page ADM Attribute List - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Page 1112273738 - Control 986743050 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Specifies whether this attribute is currently active in AuditData Manage.</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page ADM Attribute List - Control Is Active - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="Page 1112273738 - Control 2932468636 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Specifies the unique identifier of this attribute in AuditData Manage.</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page ADM Attribute List - Control Manage Attribute ID - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="Page 1112273738 - Control 2961552353 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Specifies the name of the attribute as defined in AuditData Manage.</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page ADM Attribute List - Control Name - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="Page 1112273738 - Control 5382624 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Attribute Values</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page ADM Attribute List - Control AttributeValues - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Page 1112273738 - Action 2424383620 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Retrieves all available attributes and their values from AuditData Manage and updates this list.</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page ADM Attribute List - Action SyncAttributes - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="Page 1112273738 - Action 2424383620 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Sync Attributes from Manage</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page ADM Attribute List - Action SyncAttributes - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Page 746079844 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Attribute Values</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page ADM Attribute Value Subpage - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Page 746079844 - Control 986743050 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Specifies whether this value is active in AuditData Manage.</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page ADM Attribute Value Subpage - Control Is Active - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="Page 746079844 - Control 2961552353 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Specifies the attribute value name.</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page ADM Attribute Value Subpage - Control Name - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="Page 1517336009 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>AuditData Manage Battery Types</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page ADM Battery Type List - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Page 1517336009 - Control 986743050 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Specifies whether this battery type is currently active in AuditData Manage.</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page ADM Battery Type List - Control Is Active - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="Page 1517336009 - Control 2376874419 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Specifies the unique identifier of this battery type in AuditData Manage.</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page ADM Battery Type List - Control Manage Battery Type ID - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="Page 1517336009 - Control 2961552353 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Specifies the name of the battery type as defined in AuditData Manage.</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page ADM Battery Type List - Control Name - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="Page 1517336009 - Action 230531971 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Retrieves all available battery types from AuditData Manage and updates this list.</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page ADM Battery Type List - Action SyncBatteryTypes - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="Page 1517336009 - Action 230531971 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Sync Battery Types from Manage</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page ADM Battery Type List - Action SyncBatteryTypes - Property Caption</note>
         </trans-unit>
         <trans-unit id="Page 741301685 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Integration Status</source>
@@ -1272,6 +1557,31 @@
           <source>Sync from AuditData Manage</source>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Page ADM Client Buffer List - Action SyncFromManage - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Page 529989417 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>AuditData Manage Colors</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page ADM Color List - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Page 529989417 - Control 4266260619 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Specifies the unique identifier of this color in AuditData Manage.</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page ADM Color List - Control Manage Color ID - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="Page 529989417 - Control 2961552353 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Specifies the name of the color as defined in AuditData Manage.</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page ADM Color List - Control Name - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="Page 529989417 - Action 2160235731 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Retrieves all available colors from AuditData Manage and updates this list.</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page ADM Color List - Action SyncColors - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="Page 529989417 - Action 2160235731 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Sync Colors from Manage</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page ADM Color List - Action SyncColors - Property Caption</note>
         </trans-unit>
         <trans-unit id="Page 377361870 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>AuditData Manage Customer Mappings</source>
@@ -1808,6 +2118,86 @@
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Page ADM Integration Setup - Action TestConnection - Property Caption</note>
         </trans-unit>
+        <trans-unit id="Page 2306711026 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Manage Attributes</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page ADM Item Attribute Subpage - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Page 2306711026 - Control 2006108605 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>The attribute name as defined in AuditData Manage.</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page ADM Item Attribute Subpage - Control Attribute Name - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="Page 2306711026 - Control 2614226931 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Select to mark this attribute value as linked to the item. Only linked values will be included when syncing to AuditData Manage.</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page ADM Item Attribute Subpage - Control Linked - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="Page 2306711026 - Control 3249286792 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>The attribute value as defined in AuditData Manage.</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page ADM Item Attribute Subpage - Control Value Name - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="Page 2306711026 - Action 142550437 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Retrieves the attribute assignments for this item from AuditData Manage and updates the Linked checkboxes accordingly.</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page ADM Item Attribute Subpage - Action FetchFromManage - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="Page 2306711026 - Action 142550437 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Fetch from Manage</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page ADM Item Attribute Subpage - Action FetchFromManage - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Page 1778192097 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Manage Battery Types</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page ADM Item Battery Type Subpage - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Page 1778192097 - Control 2656725070 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>The battery type name as defined in AuditData Manage.</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page ADM Item Battery Type Subpage - Control Battery Type Name - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="Page 1778192097 - Control 2614226931 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Select to mark this battery type as linked to the item. Only linked battery types will be included when syncing to AuditData Manage.</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page ADM Item Battery Type Subpage - Control Linked - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="Page 1778192097 - Action 142550437 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Retrieves the battery type assignments for this item from AuditData Manage and updates the Linked checkboxes accordingly.</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page ADM Item Battery Type Subpage - Action FetchFromManage - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="Page 1778192097 - Action 142550437 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Fetch from Manage</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page ADM Item Battery Type Subpage - Action FetchFromManage - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Page 4146156345 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Manage Colors</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page ADM Item Color Subpage - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Page 4146156345 - Control 173030910 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>The color name as defined in AuditData Manage.</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page ADM Item Color Subpage - Control Color Name - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="Page 4146156345 - Control 2614226931 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Select to mark this color as linked to the item. Only linked colors will be included when syncing to AuditData Manage.</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page ADM Item Color Subpage - Control Linked - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="Page 4146156345 - Action 142550437 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Retrieves the color assignments for this item from AuditData Manage and updates the Linked checkboxes accordingly.</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page ADM Item Color Subpage - Action FetchFromManage - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="Page 4146156345 - Action 142550437 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Fetch from Manage</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page ADM Item Color Subpage - Action FetchFromManage - Property Caption</note>
+        </trans-unit>
         <trans-unit id="Page 3571162605 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>AuditData Manage Item Mappings</source>
           <note from="Developer" annotates="general" priority="2"></note>
@@ -1888,6 +2278,21 @@
           <note from="Developer" annotates="general" priority="2">%1 = added count, %2 = skipped count</note>
           <note from="Xliff Generator" annotates="general" priority="3">Page ADM Item Mapping List - Action AddAllBCItems - Method OnAction - NamedType ResultMsg</note>
         </trans-unit>
+        <trans-unit id="Page 3571162605 - Action 481198499 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Retrieves the color, battery type and attribute assignments for the selected item from AuditData Manage.</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page ADM Item Mapping List - Action FetchItemAssignments - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="Page 3571162605 - Action 481198499 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Fetch Color/Battery/Attribute Assignments</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page ADM Item Mapping List - Action FetchItemAssignments - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Page 3571162605 - Action 481198499 - Method 1377591017 - NamedType 1720630440" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Color, battery type and attribute assignments fetched for item %1.</source>
+          <note from="Developer" annotates="general" priority="2">%1 = item no.</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page ADM Item Mapping List - Action FetchItemAssignments - Method OnAction - NamedType FetchCompleteMsg</note>
+        </trans-unit>
         <trans-unit id="Page 3571162605 - Action 2043995615 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
           <source>Retrieves all products from AuditData Manage and creates item mappings for any product whose SKU matches an existing BC item number.</source>
           <note from="Developer" annotates="general" priority="2"></note>
@@ -1912,6 +2317,16 @@
           <source>Mark All for Sync</source>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Page ADM Item Mapping List - Action MarkAllNeedsSync - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Page 3571162605 - Action 366990303 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Downloads all available colors, battery types and attributes from AuditData Manage into BC for use when assigning products.</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page ADM Item Mapping List - Action SyncAllReferenceData - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="Page 3571162605 - Action 366990303 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Sync Reference Data from Manage</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page ADM Item Mapping List - Action SyncAllReferenceData - Property Caption</note>
         </trans-unit>
         <trans-unit id="Page 977775818 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Master Order</source>
@@ -2403,6 +2818,41 @@
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Page ADM Role Center - Action SalesOrders - Property Caption</note>
         </trans-unit>
+        <trans-unit id="Page 2925031089 - Action 1453447389 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Reference Data</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page ADM Role Center - Action ReferenceData - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Page 2925031089 - Action 2033009233 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>View and sync available product attributes and their values from AuditData Manage.</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page ADM Role Center - Action Attributes - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="Page 2925031089 - Action 2033009233 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Attributes</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page ADM Role Center - Action Attributes - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Page 2925031089 - Action 2571322866 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>View and sync available battery types from AuditData Manage.</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page ADM Role Center - Action BatteryTypes - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="Page 2925031089 - Action 2571322866 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Battery Types</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page ADM Role Center - Action BatteryTypes - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Page 2925031089 - Action 3857907682 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>View and sync available product colors from AuditData Manage.</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page ADM Role Center - Action Colors - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="Page 2925031089 - Action 3857907682 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Colors</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page ADM Role Center - Action Colors - Property Caption</note>
+        </trans-unit>
         <trans-unit id="Page 2925031089 - Action 1514883969 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Setup</source>
           <note from="Developer" annotates="general" priority="2"></note>
@@ -2867,6 +3317,21 @@
           <source>Manage Customer Type</source>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">PageExtension ADM Customer Card Ext - Control ADM Customer Type - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="PageExtension 2493886716 - Control 3328449726 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Page 1434786627">
+          <source>Manage Attributes</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">PageExtension ADM Item Card Ext - Control ADMItemAttributes - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="PageExtension 2493886716 - Control 3801265645 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Page 1434786627">
+          <source>Manage Battery Types</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">PageExtension ADM Item Card Ext - Control ADMItemBatteryTypes - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="PageExtension 2493886716 - Control 27047501 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Page 1434786627">
+          <source>Manage Colors</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">PageExtension ADM Item Card Ext - Control ADMItemColors - Property Caption</note>
         </trans-unit>
         <trans-unit id="PageExtension 1428563356 - Action 1069001736 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Page 4105562392">
           <source>AuditData Manage</source>
