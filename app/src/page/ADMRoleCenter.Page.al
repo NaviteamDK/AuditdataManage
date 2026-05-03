@@ -73,6 +73,27 @@ page 80315 "ADM Role Center"
             {
                 Caption = 'Reference Data';
 
+                action(ProductCategories)
+                {
+                    ApplicationArea = All;
+                    Caption = 'Product Categories';
+                    RunObject = page "ADM Product Category List";
+                    ToolTip = 'View and sync available product categories from AuditData Manage. A category must be set on each item mapping before the item can be synced.';
+                }
+                action(Manufacturers)
+                {
+                    ApplicationArea = All;
+                    Caption = 'Manufacturers';
+                    RunObject = page "ADM Manufacturer List";
+                    ToolTip = 'View and sync available manufacturers from AuditData Manage.';
+                }
+                action(Suppliers)
+                {
+                    ApplicationArea = All;
+                    Caption = 'Suppliers';
+                    RunObject = page "ADM Supplier List";
+                    ToolTip = 'View and sync available suppliers from AuditData Manage.';
+                }
                 action(Colors)
                 {
                     ApplicationArea = All;

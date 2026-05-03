@@ -5,6 +5,9 @@ codeunit 80311 "ADM Inventory Reference Sync"
         SyncColorsLbl: Label 'Colors Sync';
         SyncBatteryTypesLbl: Label 'Battery Types Sync';
         SyncAttributesLbl: Label 'Attributes Sync';
+        SyncProductCategoriesLbl: Label 'Product Categories Sync';
+        SyncManufacturersLbl: Label 'Manufacturers Sync';
+        SyncSuppliersLbl: Label 'Suppliers Sync';
 
     /// <summary>
     /// Syncs colors, battery types and attributes from AuditData Manage.
@@ -13,6 +16,12 @@ codeunit 80311 "ADM Inventory Reference Sync"
     var
         ErrorText: Text;
     begin
+        if not SyncProductCategories(ErrorText) then
+            Error(ErrorText);
+        if not SyncManufacturers(ErrorText) then
+            Error(ErrorText);
+        if not SyncSuppliers(ErrorText) then
+            Error(ErrorText);
         if not SyncColors(ErrorText) then
             Error(ErrorText);
         if not SyncBatteryTypes(ErrorText) then
@@ -411,5 +420,158 @@ codeunit 80311 "ADM Inventory Reference Sync"
                     ItemAttribute.Insert();
                 end;
             until ADMAttrValue.Next() = 0;
+    end;
+
+    /// <summary>
+    /// Retrieves all product categories from GET /api/v2/inventory/product-categories and upserts ADM Product Category records.
+    /// </summary>
+    procedure SyncProductCategories(var ErrorText: Text): Boolean
+    var
+        ADMProductCategory: Record "ADM Product Category";
+        AllItems: JsonArray;
+        ItemToken: JsonToken;
+        ItemObj: JsonObject;
+        ManageID: Guid;
+        ItemName: Text;
+        ItemCode: Text;
+        Upserted: Integer;
+        SyncLogManager: Codeunit "ADM Sync Log Manager";
+        LogEntryNo: Integer;
+        SyncCompleteMsg: Label 'Product categories sync complete. %1 record(s) upserted.', Comment = '%1 = count';
+    begin
+        LogEntryNo := SyncLogManager.StartLog("ADM Sync Direction"::Inbound, SyncProductCategoriesLbl);
+
+        ADMAPIClient.GetPaged('api/v2/inventory/product-categories', AllItems);
+
+        foreach ItemToken in AllItems do begin
+            if not ItemToken.IsObject() then
+                continue;
+            ItemObj := ItemToken.AsObject();
+            ManageID := ADMAPIClient.GetJsonGuid(ItemObj, 'id');
+            ItemName := ADMAPIClient.GetJsonText(ItemObj, 'name');
+            ItemCode := ADMAPIClient.GetJsonText(ItemObj, 'code');
+
+            if IsNullGuid(ManageID) then
+                continue;
+
+            if not ADMProductCategory.Get(ManageID) then begin
+                ADMProductCategory.Init();
+                ADMProductCategory."Manage Category ID" := ManageID;
+                ADMProductCategory.Name := CopyStr(ItemName, 1, 100);
+                ADMProductCategory.Code := CopyStr(ItemCode, 1, 50);
+                ADMProductCategory.Insert();
+            end else begin
+                ADMProductCategory.Name := CopyStr(ItemName, 1, 100);
+                ADMProductCategory.Code := CopyStr(ItemCode, 1, 50);
+                ADMProductCategory.Modify();
+            end;
+            Upserted += 1;
+        end;
+
+        SyncLogManager.FinishLog(LogEntryNo, Upserted, 0);
+        Message(SyncCompleteMsg, Upserted);
+        exit(true);
+    end;
+
+    /// <summary>
+    /// Retrieves all manufacturers from GET /api/v2/inventory/manufacturers and upserts ADM Manufacturer records.
+    /// </summary>
+    procedure SyncManufacturers(var ErrorText: Text): Boolean
+    var
+        ADMManufacturer: Record "ADM Manufacturer";
+        AllItems: JsonArray;
+        ItemToken: JsonToken;
+        ItemObj: JsonObject;
+        ManageID: Guid;
+        ItemName: Text;
+        IsActive: Boolean;
+        Upserted: Integer;
+        SyncLogManager: Codeunit "ADM Sync Log Manager";
+        LogEntryNo: Integer;
+        SyncCompleteMsg: Label 'Manufacturers sync complete. %1 record(s) upserted.', Comment = '%1 = count';
+    begin
+        LogEntryNo := SyncLogManager.StartLog("ADM Sync Direction"::Inbound, SyncManufacturersLbl);
+
+        ADMAPIClient.GetPaged('api/v2/inventory/manufacturers', AllItems);
+
+        foreach ItemToken in AllItems do begin
+            if not ItemToken.IsObject() then
+                continue;
+            ItemObj := ItemToken.AsObject();
+            ManageID := ADMAPIClient.GetJsonGuid(ItemObj, 'id');
+            ItemName := ADMAPIClient.GetJsonText(ItemObj, 'name');
+            IsActive := ADMAPIClient.GetJsonBoolean(ItemObj, 'isActive');
+
+            if IsNullGuid(ManageID) then
+                continue;
+
+            if not ADMManufacturer.Get(ManageID) then begin
+                ADMManufacturer.Init();
+                ADMManufacturer."Manage Manufacturer ID" := ManageID;
+                ADMManufacturer.Name := CopyStr(ItemName, 1, 200);
+                ADMManufacturer."Is Active" := IsActive;
+                ADMManufacturer.Insert();
+            end else begin
+                ADMManufacturer.Name := CopyStr(ItemName, 1, 200);
+                ADMManufacturer."Is Active" := IsActive;
+                ADMManufacturer.Modify();
+            end;
+            Upserted += 1;
+        end;
+
+        SyncLogManager.FinishLog(LogEntryNo, Upserted, 0);
+        Message(SyncCompleteMsg, Upserted);
+        exit(true);
+    end;
+
+    /// <summary>
+    /// Retrieves all suppliers from GET /api/v2/inventory/suppliers and upserts ADM Supplier records.
+    /// </summary>
+    procedure SyncSuppliers(var ErrorText: Text): Boolean
+    var
+        ADMSupplier: Record "ADM Supplier";
+        AllItems: JsonArray;
+        ItemToken: JsonToken;
+        ItemObj: JsonObject;
+        ManageID: Guid;
+        ItemName: Text;
+        IsActive: Boolean;
+        Upserted: Integer;
+        SyncLogManager: Codeunit "ADM Sync Log Manager";
+        LogEntryNo: Integer;
+        SyncCompleteMsg: Label 'Suppliers sync complete. %1 record(s) upserted.', Comment = '%1 = count';
+    begin
+        LogEntryNo := SyncLogManager.StartLog("ADM Sync Direction"::Inbound, SyncSuppliersLbl);
+
+        ADMAPIClient.GetPaged('api/v2/inventory/suppliers', AllItems);
+
+        foreach ItemToken in AllItems do begin
+            if not ItemToken.IsObject() then
+                continue;
+            ItemObj := ItemToken.AsObject();
+            ManageID := ADMAPIClient.GetJsonGuid(ItemObj, 'id');
+            ItemName := ADMAPIClient.GetJsonText(ItemObj, 'name');
+            IsActive := ADMAPIClient.GetJsonBoolean(ItemObj, 'isActive');
+
+            if IsNullGuid(ManageID) then
+                continue;
+
+            if not ADMSupplier.Get(ManageID) then begin
+                ADMSupplier.Init();
+                ADMSupplier."Manage Supplier ID" := ManageID;
+                ADMSupplier.Name := CopyStr(ItemName, 1, 200);
+                ADMSupplier."Is Active" := IsActive;
+                ADMSupplier.Insert();
+            end else begin
+                ADMSupplier.Name := CopyStr(ItemName, 1, 200);
+                ADMSupplier."Is Active" := IsActive;
+                ADMSupplier.Modify();
+            end;
+            Upserted += 1;
+        end;
+
+        SyncLogManager.FinishLog(LogEntryNo, Upserted, 0);
+        Message(SyncCompleteMsg, Upserted);
+        exit(true);
     end;
 }

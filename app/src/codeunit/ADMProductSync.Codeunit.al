@@ -70,7 +70,12 @@ codeunit 80308 "ADM Product Sync"
     begin
         IsNew := IsNullGuid(lItemMapping."Manage Product ID");
 
-        RequestBody := BuildProductPayload(lItem);
+        if IsNullGuid(lItemMapping."Manage Category ID") then begin
+            lItemMapping.MarkSyncError(lItem."No.", 'Manage Category ID is not set on the item mapping. Open Item Mappings, set the category, then re-sync.');
+            exit(false);
+        end;
+
+        RequestBody := BuildProductPayload(lItem, lItemMapping);
 
         if IsNew then begin
             // POST - create new product
@@ -112,7 +117,7 @@ codeunit 80308 "ADM Product Sync"
         exit(true);
     end;
 
-    local procedure BuildProductPayload(Item: Record Item): Text
+    local procedure BuildProductPayload(Item: Record Item; ItemMapping: Record "ADM Item Mapping"): Text
     var
         ItemColor: Record "ADM Item Color";
         ItemBatteryType: Record "ADM Item Battery Type";
@@ -127,6 +132,7 @@ codeunit 80308 "ADM Product Sync"
         JsonObj.Add('name', Item.Description);
         JsonObj.Add('sku', Item."No.");
         JsonObj.Add('isActive', not Item.Blocked);
+        JsonObj.Add('categoryId', LowerCase(Format(ItemMapping."Manage Category ID", 0, 4)));
 
         if Item."Unit Price" <> 0 then
             JsonObj.Add('price', Item."Unit Price");
@@ -134,13 +140,19 @@ codeunit 80308 "ADM Product Sync"
         if Item."Base Unit of Measure" <> '' then
             JsonObj.Add('unitOfMeasure', Item."Base Unit of Measure");
 
-        if Item."Item Category Code" <> '' then
-            JsonObj.Add('categoryCode', Item."Item Category Code");
-
         if Item."Description 2" <> '' then
             JsonObj.Add('description', Item."Description 2");
 
         JsonObj.Add('isSerialized', Item."Item Tracking Code" <> '');
+
+        if not IsNullGuid(ItemMapping."Manage Manufacturer ID") then
+            JsonObj.Add('manufacturerId', LowerCase(Format(ItemMapping."Manage Manufacturer ID", 0, 4)));
+
+        if not IsNullGuid(ItemMapping."Manage Supplier ID") then
+            JsonObj.Add('supplierId', LowerCase(Format(ItemMapping."Manage Supplier ID", 0, 4)));
+
+        JsonObj.Add('firstVAT', ItemMapping."First VAT");
+        JsonObj.Add('secondVAT', ItemMapping."Second VAT");
 
         ColorsArr := ItemColor.GetColorIDsAsJsonArray(Item."No.");
         JsonObj.Add('colors', ColorsArr);

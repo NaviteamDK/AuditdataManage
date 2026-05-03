@@ -50,6 +50,42 @@ table 80302 "ADM Item Mapping"
             CalcFormula = lookup(Item.Description where("No." = field("Item No.")));
             Editable = false;
         }
+        field(26; "Manage Category ID"; Guid)
+        {
+            Caption = 'Manage Category ID';
+            DataClassification = CustomerContent;
+            TableRelation = "ADM Product Category";
+        }
+        field(27; "Manage Manufacturer ID"; Guid)
+        {
+            Caption = 'Manage Manufacturer ID';
+            DataClassification = CustomerContent;
+            TableRelation = "ADM Manufacturer";
+        }
+        field(28; "Manage Supplier ID"; Guid)
+        {
+            Caption = 'Manage Supplier ID';
+            DataClassification = CustomerContent;
+            TableRelation = "ADM Supplier";
+        }
+        field(29; "First VAT"; Decimal)
+        {
+            Caption = 'First VAT';
+            DataClassification = CustomerContent;
+            InitValue = 1;
+            MinValue = 0;
+            MaxValue = 1;
+            DecimalPlaces = 0 : 4;
+        }
+        field(30; "Second VAT"; Decimal)
+        {
+            Caption = 'Second VAT';
+            DataClassification = CustomerContent;
+            InitValue = 0;
+            MinValue = 0;
+            MaxValue = 1;
+            DecimalPlaces = 0 : 4;
+        }
     }
 
     keys
