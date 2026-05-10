@@ -142,6 +142,13 @@ page 80315 "ADM Role Center"
                     RunObject = page "ADM Funder Terms List";
                     ToolTip = 'Manage global funder payment split defaults and priorities.';
                 }
+                action(ItemManageSetup)
+                {
+                    ApplicationArea = All;
+                    Caption = 'Items – Manage Setup';
+                    RunObject = page "ADM Item Manage Setup List";
+                    ToolTip = 'Quickly populate the AuditData Manage fields (category, manufacturer, VAT, etc.) on all BC items in a single list view.';
+                }
                 action(ItemMappings)
                 {
                     ApplicationArea = All;

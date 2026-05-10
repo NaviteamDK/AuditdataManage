@@ -31,7 +31,6 @@ permissionset 80300 "ADM All"
         codeunit "ADM Buffer Processor" = X,
         codeunit "ADM Client Sync" = X,
         codeunit "ADM Funder Sync" = X,
-        codeunit "ADM Item Event Subscriber" = X,
         codeunit "ADM Job Queue Manager" = X,
         codeunit "ADM Order Splitter" = X,
         codeunit "ADM Product Sync" = X,
@@ -94,5 +93,9 @@ permissionset 80300 "ADM All"
         page "ADM Item Color Subpage" = X,
         page "ADM Manufacturer List" = X,
         page "ADM Product Category List" = X,
-        page "ADM Supplier List" = X;
+        page "ADM Supplier List" = X,
+        tabledata "ADM Manage Location" = RIMD,
+        table "ADM Manage Location" = X,
+        codeunit "ADM Stock Sync" = X,
+        page "ADM Manage Location List" = X;
 }

@@ -32,7 +32,7 @@ AuditData Manage API
                                                BC Sales Orders (per payer)
 
 BC Items (Insert/Modify)
-   └─ ADM Item Event Subscriber ──► Needs Sync ──► ADM Product Sync ──► AuditData Manage API
+   └─ ADMItemExt OnInsert/OnModify triggers ──► Needs Sync ──► ADM Product Sync ──► AuditData Manage API
 ```
 
 ### Key codeunits
@@ -47,7 +47,6 @@ BC Items (Insert/Modify)
 | `ADM Funder Sync` (80306) | Inbound: fetches funders from `api/v2/invoicing/funders` |
 | `ADM Sale Sync` (80307) | Inbound: fetches sales from `api/v2/invoicing/sales` |
 | `ADM Product Sync` (80308) | Outbound: pushes BC Items to `api/v2/inventory/products` |
-| `ADM Item Event Subscriber` (80309) | Subscribes to Item insert/modify → marks Needs Sync |
 | `ADM Job Queue Manager` (80310) | Creates/manages BC Job Queue entries for all sync codeunits |
 
 ### Key tables
@@ -55,7 +54,7 @@ BC Items (Insert/Modify)
 |---|---|
 | `ADM Integration Setup` (80300) | Singleton: API URL, key, EDI scheme, sync flags, intervals |
 | `ADM Customer Mapping` (80301) | Manage GUID ↔ BC Customer No. (tagged Client or Funder) |
-| `ADM Item Mapping` (80302) | BC Item No. ↔ Manage Product ID + outbound sync state |
+| `ADM Item Mapping` (80302) | Manage product catalog (PK = Manage Product ID); optional link to BC Item No. |
 | `ADM Sync Log` (80303) | Audit log for every sync run |
 | `ADM Funder Terms` (80304) | Per-funder split rules (priority, Fixed Amount or Percentage) |
 | `ADM Client Buffer` (80305) | Staging for imported patients |
@@ -67,6 +66,8 @@ BC Items (Insert/Modify)
 | `ADM Order Split Line` (80311) | Per-payer split lines on a master order |
 
 ## Coding conventions
+- **Prefer table triggers** (`OnInsert`, `OnModify`, `OnDelete`, `OnValidate`, `OnLookup`) over codeunit event subscribers for logic tied to data changes. Use `[EventSubscriber]` only when the table definition cannot be modified or the logic must be conditionally decoupled.
+- Use `Modify()` (without `RunTrigger`) when updating status/log fields to avoid re-triggering business logic triggers. Use `Modify(true)` only when field `OnValidate` triggers must fire.
 - Always thread `ErrorText` as a `var Text` parameter through `TrySync*` procedures — never use `GetLastErrorText()` for API errors.
 - `GetPaged` handles top-level JSON arrays, `{data:[...]}`, `{data:{items:[...]}}`, and `{items:[...]}` responses automatically.
 - BC object modifications should call `Modify()` not `ModifyAll()` unless intentionally bulk-updating.

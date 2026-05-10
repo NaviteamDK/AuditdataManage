@@ -70,4 +70,28 @@ tableextension 80300 "ADM Item Ext" extends Item
             DecimalPlaces = 0 : 4;
         }
     }
+
+    trigger OnInsert()
+    var
+        IntegrationSetup: Record "ADM Integration Setup";
+    begin
+        if not IntegrationSetup.Get() then
+            exit;
+        if not IntegrationSetup."Item Sync Enabled" then
+            exit;
+        Rec."ADM Needs Sync" := true;
+    end;
+
+    trigger OnModify()
+    var
+        IntegrationSetup: Record "ADM Integration Setup";
+    begin
+        if Rec."ADM Needs Sync" then
+            exit;
+        if not IntegrationSetup.Get() then
+            exit;
+        if not IntegrationSetup."Item Sync Enabled" then
+            exit;
+        Rec."ADM Needs Sync" := true;
+    end;
 }

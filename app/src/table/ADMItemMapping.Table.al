@@ -34,9 +34,15 @@ table 80302 "ADM Item Mapping"
             TableRelation = Item;
 
             trigger OnValidate()
+            var
+                Item: Record Item;
             begin
-                if "Item No." <> '' then
-                    LinkToBCItem("Item No.");
+                if "Item No." = '' then
+                    exit;
+                if Item.Get("Item No.") then begin
+                    Item."ADM Manage Product ID" := Rec."Manage Product ID";
+                    Item.Modify();
+                end;
             end;
         }
     }
@@ -63,19 +69,5 @@ table 80302 "ADM Item Mapping"
         exit('');
     end;
 
-    /// <summary>
-    /// Links this catalog record to a BC item and writes the Manage Product ID
-    /// back onto the BC item record so stock sync can find it.
-    /// </summary>
-    procedure LinkToBCItem(ItemNo: Code[20])
-    var
-        Item: Record Item;
-    begin
-        Rec."Item No." := ItemNo;
-        Rec.Modify();
-        if Item.Get(ItemNo) then begin
-            Item."ADM Manage Product ID" := Rec."Manage Product ID";
-            Item.Modify();
-        end;
-    end;
 }
+

@@ -604,39 +604,19 @@
           <note from="Xliff Generator" annotates="general" priority="3">Table ADM Item Color - Field Manage Color ID - Property Caption</note>
         </trans-unit>
         <trans-unit id="Table 1114094915 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
-          <source>AuditData Manage Item Mapping</source>
+          <source>AuditData Manage Product Catalog</source>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Table ADM Item Mapping - Property Caption</note>
         </trans-unit>
-        <trans-unit id="Table 1114094915 - Field 4040823459 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
-          <source>First VAT</source>
+        <trans-unit id="Table 1114094915 - Field 986743050 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Is Active</source>
           <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">Table ADM Item Mapping - Field First VAT - Property Caption</note>
-        </trans-unit>
-        <trans-unit id="Table 1114094915 - Field 2842094365 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Item Description</source>
-          <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">Table ADM Item Mapping - Field Item Description - Property Caption</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table ADM Item Mapping - Field Is Active - Property Caption</note>
         </trans-unit>
         <trans-unit id="Table 1114094915 - Field 568743302 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Item No.</source>
+          <source>BC Item No.</source>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Table ADM Item Mapping - Field Item No. - Property Caption</note>
-        </trans-unit>
-        <trans-unit id="Table 1114094915 - Field 1517344648 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Last Push Error</source>
-          <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">Table ADM Item Mapping - Field Last Push Error - Property Caption</note>
-        </trans-unit>
-        <trans-unit id="Table 1114094915 - Field 1417874428 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Last Push Status</source>
-          <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">Table ADM Item Mapping - Field Last Push Status - Property Caption</note>
-        </trans-unit>
-        <trans-unit id="Table 1114094915 - Field 2190562108 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Last Pushed At</source>
-          <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">Table ADM Item Mapping - Field Last Pushed At - Property Caption</note>
         </trans-unit>
         <trans-unit id="Table 1114094915 - Field 1716468865 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Manage Product ID</source>
@@ -648,15 +628,10 @@
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Table ADM Item Mapping - Field Manage SKU - Property Caption</note>
         </trans-unit>
-        <trans-unit id="Table 1114094915 - Field 856855346 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Needs Sync</source>
+        <trans-unit id="Table 1114094915 - Field 2961552353 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Name</source>
           <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">Table ADM Item Mapping - Field Needs Sync - Property Caption</note>
-        </trans-unit>
-        <trans-unit id="Table 1114094915 - Field 910119829 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Second VAT</source>
-          <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">Table ADM Item Mapping - Field Second VAT - Property Caption</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table ADM Item Mapping - Field Name - Property Caption</note>
         </trans-unit>
         <trans-unit id="Table 1968591744 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>AuditData Manage Location</source>
@@ -2573,108 +2548,168 @@
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Page ADM Item Color Subpage - Action Maintain - Property Caption</note>
         </trans-unit>
+        <trans-unit id="Page 1199384203 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Items – AuditData Manage Setup</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page ADM Item Manage Setup List - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Page 1199384203 - Control 67549579 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Specifies the first VAT rate (0–1) sent to AuditData Manage. Default is 1.</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page ADM Item Manage Setup List - Control ADM First VAT - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="Page 1199384203 - Control 834527952 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Specifies the error from the last failed push attempt to AuditData Manage.</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page ADM Item Manage Setup List - Control ADM Last Push Error - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="Page 1199384203 - Control 1120749972 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Specifies the result of the last push attempt to AuditData Manage.</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page ADM Item Manage Setup List - Control ADM Last Push Status - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="Page 1199384203 - Control 2371704436 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Specifies when this item was last pushed to AuditData Manage.</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page ADM Item Manage Setup List - Control ADM Last Pushed At - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="Page 1199384203 - Control 1557161977 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Specifies the product ID in AuditData Manage linked to this item.</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page ADM Item Manage Setup List - Control ADM Manage Product ID - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="Page 1199384203 - Control 16659226 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Specifies whether this item has pending changes to be pushed to AuditData Manage.</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page ADM Item Manage Setup List - Control ADM Needs Sync - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="Page 1199384203 - Control 1196542605 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Specifies the second VAT rate (0–1) sent to AuditData Manage. Default is 0.</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page ADM Item Manage Setup List - Control ADM Second VAT - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="Page 1199384203 - Control 1876678673 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Specifies the AuditData Manage product category for this item. Required before the item can be synced to Manage.</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page ADM Item Manage Setup List - Control ADMCategoryName - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="Page 1199384203 - Control 1876678673 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Manage Category</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page ADM Item Manage Setup List - Control ADMCategoryName - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Page 1199384203 - Control 2370766663 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Specifies the AuditData Manage hearing aid type for this item. Required when the category is Hearing Aids.</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page ADM Item Manage Setup List - Control ADMHearingAidTypeName - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="Page 1199384203 - Control 2370766663 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Manage Hearing Aid Type</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page ADM Item Manage Setup List - Control ADMHearingAidTypeName - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Page 1199384203 - Control 4121198012 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Specifies the AuditData Manage manufacturer for this item.</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page ADM Item Manage Setup List - Control ADMManufacturerName - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="Page 1199384203 - Control 4121198012 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Manage Manufacturer</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page ADM Item Manage Setup List - Control ADMManufacturerName - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Page 1199384203 - Control 369499765 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Specifies the AuditData Manage supplier for this item.</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page ADM Item Manage Setup List - Control ADMSupplierName - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="Page 1199384203 - Control 369499765 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Manage Supplier</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page ADM Item Manage Setup List - Control ADMSupplierName - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Page 1199384203 - Control 3461834954 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Specifies the item description.</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page ADM Item Manage Setup List - Control Description - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="Page 1199384203 - Control 4200184881 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Specifies the item number.</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page ADM Item Manage Setup List - Control No. - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="Page 1199384203 - Control 3328449726 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Manage Attributes</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page ADM Item Manage Setup List - Control ADMItemAttributes - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Page 1199384203 - Control 3801265645 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Manage Battery Types</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page ADM Item Manage Setup List - Control ADMItemBatteryTypes - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Page 1199384203 - Control 27047501 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Manage Colors</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page ADM Item Manage Setup List - Control ADMItemColors - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Page 1199384203 - Action 4013336862 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Pushes the selected item to AuditData Manage immediately.</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page ADM Item Manage Setup List - Action SyncItem - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="Page 1199384203 - Action 4013336862 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Sync Item to Manage</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page ADM Item Manage Setup List - Action SyncItem - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Page 1199384203 - Action 4013336862 - Method 1377591017 - NamedType 573349409" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Item %1 has been pushed to AuditData Manage.</source>
+          <note from="Developer" annotates="general" priority="2">%1 = item no.</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page ADM Item Manage Setup List - Action SyncItem - Method OnAction - NamedType SyncedMsg</note>
+        </trans-unit>
         <trans-unit id="Page 3571162605 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
-          <source>AuditData Manage Item Mappings</source>
+          <source>AuditData Manage Product Catalog</source>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Page ADM Item Mapping List - Property Caption</note>
         </trans-unit>
-        <trans-unit id="Page 3571162605 - Control 4040823459 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Specifies the first VAT rate (0–1). First VAT + Second VAT must equal 1. Default is 1.</source>
+        <trans-unit id="Page 3571162605 - Control 986743050 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Specifies whether the product is active in AuditData Manage.</source>
           <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">Page ADM Item Mapping List - Control First VAT - Property ToolTip</note>
-        </trans-unit>
-        <trans-unit id="Page 3571162605 - Control 2842094365 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Specifies the description of the Business Central item.</source>
-          <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">Page ADM Item Mapping List - Control Item Description - Property ToolTip</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page ADM Item Mapping List - Control Is Active - Property ToolTip</note>
         </trans-unit>
         <trans-unit id="Page 3571162605 - Control 568743302 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Specifies the Business Central item number.</source>
+          <source>Specifies the BC item number linked to this Manage product. Empty if not yet matched.</source>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Page ADM Item Mapping List - Control Item No. - Property ToolTip</note>
         </trans-unit>
-        <trans-unit id="Page 3571162605 - Control 1517344648 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Specifies the error message from the last failed push attempt.</source>
-          <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">Page ADM Item Mapping List - Control Last Push Error - Property ToolTip</note>
-        </trans-unit>
-        <trans-unit id="Page 3571162605 - Control 1417874428 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Specifies the result of the last push attempt to AuditData Manage.</source>
-          <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">Page ADM Item Mapping List - Control Last Push Status - Property ToolTip</note>
-        </trans-unit>
-        <trans-unit id="Page 3571162605 - Control 2190562108 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Specifies when this item was last pushed to AuditData Manage.</source>
-          <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">Page ADM Item Mapping List - Control Last Pushed At - Property ToolTip</note>
-        </trans-unit>
         <trans-unit id="Page 3571162605 - Control 1716468865 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Specifies the product ID in AuditData Manage linked to this item.</source>
+          <source>Specifies the unique product ID in AuditData Manage.</source>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Page ADM Item Mapping List - Control Manage Product ID - Property ToolTip</note>
         </trans-unit>
         <trans-unit id="Page 3571162605 - Control 2058810832 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Specifies the SKU code in AuditData Manage for this item.</source>
+          <source>Specifies the SKU of the product in AuditData Manage.</source>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Page ADM Item Mapping List - Control Manage SKU - Property ToolTip</note>
         </trans-unit>
-        <trans-unit id="Page 3571162605 - Control 856855346 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Specifies whether this item is pending synchronisation to AuditData Manage.</source>
+        <trans-unit id="Page 3571162605 - Control 2961552353 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Specifies the product name in AuditData Manage.</source>
           <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">Page ADM Item Mapping List - Control Needs Sync - Property ToolTip</note>
-        </trans-unit>
-        <trans-unit id="Page 3571162605 - Control 910119829 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Specifies the second VAT rate (0–1). First VAT + Second VAT must equal 1. Default is 0.</source>
-          <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">Page ADM Item Mapping List - Control Second VAT - Property ToolTip</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page ADM Item Mapping List - Control Name - Property ToolTip</note>
         </trans-unit>
         <trans-unit id="Page 3571162605 - Action 3012649835 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Opens the Business Central item card for the selected mapping.</source>
+          <source>Opens the Business Central item card for the linked item.</source>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Page ADM Item Mapping List - Action OpenItem - Property ToolTip</note>
         </trans-unit>
         <trans-unit id="Page 3571162605 - Action 3012649835 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Open Item</source>
+          <source>Open BC Item</source>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Page ADM Item Mapping List - Action OpenItem - Property Caption</note>
         </trans-unit>
-        <trans-unit id="Page 3571162605 - Action 2278227980 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Pushes all items to AuditData Manage immediately, regardless of the Needs Sync flag.</source>
-          <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">Page ADM Item Mapping List - Action SyncAllItems - Property ToolTip</note>
-        </trans-unit>
-        <trans-unit id="Page 3571162605 - Action 2278227980 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Sync All Items</source>
-          <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">Page ADM Item Mapping List - Action SyncAllItems - Property Caption</note>
-        </trans-unit>
-        <trans-unit id="Page 3571162605 - Action 2018552988 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Pushes the selected item to AuditData Manage immediately, regardless of the Needs Sync flag.</source>
-          <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">Page ADM Item Mapping List - Action SyncSingleItem - Property ToolTip</note>
-        </trans-unit>
-        <trans-unit id="Page 3571162605 - Action 2018552988 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Sync This Item</source>
-          <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">Page ADM Item Mapping List - Action SyncSingleItem - Property Caption</note>
-        </trans-unit>
-        <trans-unit id="Page 3571162605 - Action 4002873385 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Adds all Business Central items to the item mapping table. Items already present in the table are not duplicated.</source>
-          <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">Page ADM Item Mapping List - Action AddAllBCItems - Property ToolTip</note>
-        </trans-unit>
-        <trans-unit id="Page 3571162605 - Action 4002873385 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Add All BC Items</source>
-          <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">Page ADM Item Mapping List - Action AddAllBCItems - Property Caption</note>
-        </trans-unit>
-        <trans-unit id="Page 3571162605 - Action 4002873385 - Method 1377591017 - NamedType 1000503204" size-unit="char" translate="yes" xml:space="preserve">
-          <source>%1 item(s) added to the mapping table. %2 item(s) were already present and skipped.</source>
-          <note from="Developer" annotates="general" priority="2">%1 = added count, %2 = skipped count</note>
-          <note from="Xliff Generator" annotates="general" priority="3">Page ADM Item Mapping List - Action AddAllBCItems - Method OnAction - NamedType ResultMsg</note>
-        </trans-unit>
         <trans-unit id="Page 3571162605 - Action 481198499 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Retrieves the color, battery type and attribute assignments for the selected item from AuditData Manage.</source>
+          <source>Retrieves the color, battery type and attribute assignments for the linked BC item from AuditData Manage.</source>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Page ADM Item Mapping List - Action FetchItemAssignments - Property ToolTip</note>
         </trans-unit>
@@ -2689,7 +2724,7 @@
           <note from="Xliff Generator" annotates="general" priority="3">Page ADM Item Mapping List - Action FetchItemAssignments - Method OnAction - NamedType FetchCompleteMsg</note>
         </trans-unit>
         <trans-unit id="Page 3571162605 - Action 2043995615 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Retrieves all products from AuditData Manage and creates item mappings for any product whose SKU matches an existing BC item number.</source>
+          <source>Retrieves all products from AuditData Manage into this catalog. Where the Manage SKU matches a BC item number, the item is automatically linked.</source>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Page ADM Item Mapping List - Action FetchManageProducts - Property ToolTip</note>
         </trans-unit>
@@ -2699,19 +2734,24 @@
           <note from="Xliff Generator" annotates="general" priority="3">Page ADM Item Mapping List - Action FetchManageProducts - Property Caption</note>
         </trans-unit>
         <trans-unit id="Page 3571162605 - Action 2043995615 - Method 1377591017 - NamedType 1000503204" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Fetch complete.\Linked: %1\Already mapped: %2\No BC item match: %3</source>
-          <note from="Developer" annotates="general" priority="2">%1 = linked count, %2 = already mapped, %3 = unmatched</note>
+          <source>Fetch complete.\Linked: %1\Already linked: %2\No BC item match (manual link required): %3</source>
+          <note from="Developer" annotates="general" priority="2">%1 = linked count, %2 = already linked, %3 = unmatched</note>
           <note from="Xliff Generator" annotates="general" priority="3">Page ADM Item Mapping List - Action FetchManageProducts - Method OnAction - NamedType ResultMsg</note>
         </trans-unit>
-        <trans-unit id="Page 3571162605 - Action 2961015198 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Marks all items as needing synchronisation to AuditData Manage.</source>
+        <trans-unit id="Page 3571162605 - Action 1321107985 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Manually links the selected Manage product to a BC item. This writes the Manage Product ID onto the BC item so that sync can proceed.</source>
           <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">Page ADM Item Mapping List - Action MarkAllNeedsSync - Property ToolTip</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page ADM Item Mapping List - Action LinkToBCItem - Property ToolTip</note>
         </trans-unit>
-        <trans-unit id="Page 3571162605 - Action 2961015198 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Mark All for Sync</source>
+        <trans-unit id="Page 3571162605 - Action 1321107985 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Link to BC Item</source>
           <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">Page ADM Item Mapping List - Action MarkAllNeedsSync - Property Caption</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page ADM Item Mapping List - Action LinkToBCItem - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Page 3571162605 - Action 1321107985 - Method 1377591017 - NamedType 1163705228" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Manage product "%1" has been linked to BC item %2.</source>
+          <note from="Developer" annotates="general" priority="2">%1 = Manage SKU, %2 = BC Item No.</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page ADM Item Mapping List - Action LinkToBCItem - Method OnAction - NamedType LinkedMsg</note>
         </trans-unit>
         <trans-unit id="Page 3571162605 - Action 366990303 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
           <source>Downloads all available product categories, manufacturers, suppliers, colors, battery types and attributes from AuditData Manage into BC.</source>
@@ -3418,6 +3458,16 @@
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Page ADM Role Center - Action IntegrationSetup - Property Caption</note>
         </trans-unit>
+        <trans-unit id="Page 2925031089 - Action 1951470421 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Quickly populate the AuditData Manage fields (category, manufacturer, VAT, etc.) on all BC items in a single list view.</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page ADM Role Center - Action ItemManageSetup - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="Page 2925031089 - Action 1951470421 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Items – Manage Setup</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page ADM Role Center - Action ItemManageSetup - Property Caption</note>
+        </trans-unit>
         <trans-unit id="Page 2925031089 - Action 440241734 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
           <source>View and manage BC Item to AuditData Manage Product mappings.</source>
           <note from="Developer" annotates="general" priority="2"></note>
@@ -3923,6 +3973,41 @@
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">PageExtension ADM Item Card Ext - Control ADM ADMSupplierName - Property Caption</note>
         </trans-unit>
+        <trans-unit id="PageExtension 2493886716 - Control 67549579 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Page 1434786627">
+          <source>Specifies the first VAT rate (0–1) sent to AuditData Manage. First VAT + Second VAT must equal 1. Default is 1.</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">PageExtension ADM Item Card Ext - Control ADM First VAT - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="PageExtension 2493886716 - Control 834527952 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Page 1434786627">
+          <source>Specifies the error from the last failed push attempt to AuditData Manage.</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">PageExtension ADM Item Card Ext - Control ADM Last Push Error - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="PageExtension 2493886716 - Control 1120749972 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Page 1434786627">
+          <source>Specifies the result of the last push attempt to AuditData Manage.</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">PageExtension ADM Item Card Ext - Control ADM Last Push Status - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="PageExtension 2493886716 - Control 2371704436 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Page 1434786627">
+          <source>Specifies when this item was last pushed to AuditData Manage.</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">PageExtension ADM Item Card Ext - Control ADM Last Pushed At - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="PageExtension 2493886716 - Control 1557161977 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Page 1434786627">
+          <source>Specifies the product ID in AuditData Manage linked to this item.</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">PageExtension ADM Item Card Ext - Control ADM Manage Product ID - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="PageExtension 2493886716 - Control 16659226 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Page 1434786627">
+          <source>Specifies whether this item has pending changes to be pushed to AuditData Manage.</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">PageExtension ADM Item Card Ext - Control ADM Needs Sync - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="PageExtension 2493886716 - Control 1196542605 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Page 1434786627">
+          <source>Specifies the second VAT rate (0–1) sent to AuditData Manage. Default is 0.</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">PageExtension ADM Item Card Ext - Control ADM Second VAT - Property ToolTip</note>
+        </trans-unit>
         <trans-unit id="PageExtension 2493886716 - Control 3328449726 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Page 1434786627">
           <source>Manage Attributes</source>
           <note from="Developer" annotates="general" priority="2"></note>
@@ -4073,6 +4158,26 @@
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">PageExtension ADM Vendor Card Ext - Control ADMSupplierName - Property Caption</note>
         </trans-unit>
+        <trans-unit id="TableExtension 3426536144 - Field 67549579 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Table 3276313895">
+          <source>Manage First VAT</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">TableExtension ADM Item Ext - Field ADM First VAT - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="TableExtension 3426536144 - Field 834527952 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Table 3276313895">
+          <source>Last Push Error</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">TableExtension ADM Item Ext - Field ADM Last Push Error - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="TableExtension 3426536144 - Field 1120749972 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Table 3276313895">
+          <source>Last Push Status</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">TableExtension ADM Item Ext - Field ADM Last Push Status - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="TableExtension 3426536144 - Field 2371704436 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Table 3276313895">
+          <source>Last Pushed to Manage</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">TableExtension ADM Item Ext - Field ADM Last Pushed At - Property Caption</note>
+        </trans-unit>
         <trans-unit id="TableExtension 3426536144 - Field 3558776824 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Table 3276313895">
           <source>Manage Category ID</source>
           <note from="Developer" annotates="general" priority="2"></note>
@@ -4088,10 +4193,25 @@
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">TableExtension ADM Item Ext - Field ADM Manage Manufacturer ID - Property Caption</note>
         </trans-unit>
+        <trans-unit id="TableExtension 3426536144 - Field 1557161977 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Table 3276313895">
+          <source>Manage Product ID</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">TableExtension ADM Item Ext - Field ADM Manage Product ID - Property Caption</note>
+        </trans-unit>
         <trans-unit id="TableExtension 3426536144 - Field 1777849100 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Table 3276313895">
           <source>Manage Supplier ID</source>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">TableExtension ADM Item Ext - Field ADM Manage Supplier ID - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="TableExtension 3426536144 - Field 16659226 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Table 3276313895">
+          <source>Needs Manage Sync</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">TableExtension ADM Item Ext - Field ADM Needs Sync - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="TableExtension 3426536144 - Field 1196542605 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Table 3276313895">
+          <source>Manage Second VAT</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">TableExtension ADM Item Ext - Field ADM Second VAT - Property Caption</note>
         </trans-unit>
         <trans-unit id="TableExtension 2248823368 - Field 4245260963 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Table 3891454143">
           <source>Manage Location ID</source>

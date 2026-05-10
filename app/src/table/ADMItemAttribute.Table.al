@@ -44,6 +44,35 @@ table 80314 "ADM Item Attribute"
         }
     }
 
+    trigger OnInsert()
+    begin
+        MarkItemNeedsSync();
+    end;
+
+    trigger OnModify()
+    begin
+        MarkItemNeedsSync();
+    end;
+
+    trigger OnDelete()
+    begin
+        MarkItemNeedsSync();
+    end;
+
+    local procedure MarkItemNeedsSync()
+    var
+        Item: Record Item;
+    begin
+        if "Item No." = '' then
+            exit;
+        if not Item.Get("Item No.") then
+            exit;
+        if Item."ADM Needs Sync" then
+            exit;
+        Item."ADM Needs Sync" := true;
+        Item.Modify();
+    end;
+
     /// <summary>
     /// Builds the attributes JSON array required by the Manage ProductRequest.
     /// Groups linked values by Attribute ID, producing:

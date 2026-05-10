@@ -39,6 +39,35 @@ table 80312 "ADM Item Color"
         }
     }
 
+    trigger OnInsert()
+    begin
+        MarkItemNeedsSync();
+    end;
+
+    trigger OnModify()
+    begin
+        MarkItemNeedsSync();
+    end;
+
+    trigger OnDelete()
+    begin
+        MarkItemNeedsSync();
+    end;
+
+    local procedure MarkItemNeedsSync()
+    var
+        Item: Record Item;
+    begin
+        if "Item No." = '' then
+            exit;
+        if not Item.Get("Item No.") then
+            exit;
+        if Item."ADM Needs Sync" then
+            exit;
+        Item."ADM Needs Sync" := true;
+        Item.Modify();
+    end;
+
     procedure GetColorIDsAsJsonArray(ItemNo: Code[20]): JsonArray
     var
         ItemColor: Record "ADM Item Color";

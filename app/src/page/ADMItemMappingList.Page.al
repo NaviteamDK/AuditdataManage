@@ -7,6 +7,7 @@ page 80303 "ADM Item Mapping List"
     ApplicationArea = All;
     InsertAllowed = false;
     DeleteAllowed = true;
+    Editable = true;
 
     layout
     {
@@ -65,10 +66,8 @@ page 80303 "ADM Item Mapping List"
                     ErrorText: Text;
                     ResultMsg: Label 'Fetch complete.\Linked: %1\Already linked: %2\No BC item match (manual link required): %3', Comment = '%1 = linked count, %2 = already linked, %3 = unmatched';
                 begin
-                    if not ProductSync.FetchManageProducts(Linked, Unmatched, AlreadyLinked, ErrorText) then begin
+                    if not ProductSync.FetchManageProducts(Linked, Unmatched, AlreadyLinked, ErrorText) then
                         Error('Failed to retrieve products from AuditData Manage:\%1', ErrorText);
-                        exit;
-                    end;
                     CurrPage.Update(false);
                     Message(ResultMsg, Linked, AlreadyLinked, Unmatched);
                 end;
@@ -91,7 +90,8 @@ page 80303 "ADM Item Mapping List"
                     if Page.RunModal(Page::"Item List", Item) <> Action::LookupOK then
                         exit;
 
-                    Rec.LinkToBCItem(Item."No.");
+                    Rec.Validate("Item No.", Item."No.");
+                    Rec.Modify();
                     CurrPage.Update(false);
                     Message(LinkedMsg, Rec."Manage SKU", Item."No.");
                 end;
@@ -108,10 +108,8 @@ page 80303 "ADM Item Mapping List"
                     InvRefSync: Codeunit "ADM Inventory Reference Sync";
                     FetchCompleteMsg: Label 'Color, battery type and attribute assignments fetched for item %1.', Comment = '%1 = item no.';
                 begin
-                    if Rec."Item No." = '' then begin
+                    if Rec."Item No." = '' then
                         Error('This Manage product is not yet linked to a BC item. Use ''Link to BC Item'' first.');
-                        exit;
-                    end;
                     InvRefSync.FetchItemAssignments(Rec."Item No.");
                     CurrPage.Update(false);
                     Message(FetchCompleteMsg, Rec."Item No.");
