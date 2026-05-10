@@ -116,6 +116,45 @@ pageextension 80302 "ADM Item Card Ext" extends "Item Card"
                         end;
                     end;
                 }
+                field("ADM First VAT"; Rec."ADM First VAT")
+                {
+                    ApplicationArea = All;
+                    ToolTip = 'Specifies the first VAT rate (0–1) sent to AuditData Manage. First VAT + Second VAT must equal 1. Default is 1.';
+                }
+                field("ADM Second VAT"; Rec."ADM Second VAT")
+                {
+                    ApplicationArea = All;
+                    ToolTip = 'Specifies the second VAT rate (0–1) sent to AuditData Manage. Default is 0.';
+                }
+                field("ADM Manage Product ID"; Rec."ADM Manage Product ID")
+                {
+                    ApplicationArea = All;
+                    Editable = false;
+                    ToolTip = 'Specifies the product ID in AuditData Manage linked to this item.';
+                }
+                field("ADM Needs Sync"; Rec."ADM Needs Sync")
+                {
+                    ApplicationArea = All;
+                    ToolTip = 'Specifies whether this item has pending changes to be pushed to AuditData Manage.';
+                }
+                field("ADM Last Pushed At"; Rec."ADM Last Pushed At")
+                {
+                    ApplicationArea = All;
+                    Editable = false;
+                    ToolTip = 'Specifies when this item was last pushed to AuditData Manage.';
+                }
+                field("ADM Last Push Status"; Rec."ADM Last Push Status")
+                {
+                    ApplicationArea = All;
+                    Editable = false;
+                    ToolTip = 'Specifies the result of the last push attempt to AuditData Manage.';
+                }
+                field("ADM Last Push Error"; Rec."ADM Last Push Error")
+                {
+                    ApplicationArea = All;
+                    Editable = false;
+                    ToolTip = 'Specifies the error from the last failed push attempt to AuditData Manage.';
+                }
             }
         }
         addlast(factboxes)

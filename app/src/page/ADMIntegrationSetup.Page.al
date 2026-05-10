@@ -133,6 +133,28 @@ page 80300 "ADM Integration Setup"
                         ToolTip = 'Shows when items were last pushed to AuditData Manage.';
                     }
                 }
+                group(StockGroup)
+                {
+                    Caption = 'Stock Levels';
+                    ShowCaption = true;
+
+                    field("Stock Sync Enabled"; Rec."Stock Sync Enabled")
+                    {
+                        ApplicationArea = All;
+                        ToolTip = 'Specifies whether stock level synchronisation from Business Central to AuditData Manage is enabled.';
+                    }
+                    field("Stock Sync Interval (Min)"; Rec."Stock Sync Interval (Min)")
+                    {
+                        ApplicationArea = All;
+                        Enabled = Rec."Stock Sync Enabled";
+                        ToolTip = 'Specifies how often (in minutes) stock levels are pushed to AuditData Manage.';
+                    }
+                    field("Last Stock Sync"; Rec."Last Stock Sync")
+                    {
+                        ApplicationArea = All;
+                        ToolTip = 'Shows when stock levels were last synchronised to AuditData Manage.';
+                    }
+                }
                 field("Page Size"; Rec."Page Size")
                 {
                     ApplicationArea = All;
@@ -157,6 +179,16 @@ page 80300 "ADM Integration Setup"
                 {
                     ApplicationArea = All;
                     ToolTip = 'Specifies the configuration template used when creating new customers from AuditData Manage.';
+                }
+            }
+            group(LocationSetup)
+            {
+                Caption = 'Location Mapping';
+
+                field("Default Manage Location ID"; Rec."Default Manage Location ID")
+                {
+                    ApplicationArea = All;
+                    ToolTip = 'Specifies the AuditData Manage location used for stock synchronisation when no per-location mapping is configured on BC Locations. Run ''Sync Locations from Manage'' on the Manage Locations page to find available IDs.';
                 }
             }
         }
@@ -213,6 +245,14 @@ page 80300 "ADM Integration Setup"
                 Image = ItemLedger;
                 RunObject = page "ADM Item Mapping List";
                 ToolTip = 'Opens the item mapping list to review BC Item to AuditData Manage Product mappings.';
+            }
+            action(ManageLocations)
+            {
+                ApplicationArea = All;
+                Caption = 'Manage Locations';
+                Image = Departments;
+                RunObject = page "ADM Manage Location List";
+                ToolTip = 'Opens the list of AuditData Manage locations. Use ''Sync Locations from Manage'' on this page to fetch the available location IDs, then copy the ID into the Default Manage Location ID field or onto each BC Location card.';
             }
             action(FunderTerms)
             {

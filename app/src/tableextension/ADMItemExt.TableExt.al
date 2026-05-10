@@ -26,5 +26,48 @@ tableextension 80300 "ADM Item Ext" extends Item
             DataClassification = CustomerContent;
             TableRelation = "ADM Hearing Aid Type";
         }
+        field(80304; "ADM Manage Product ID"; Guid)
+        {
+            Caption = 'Manage Product ID';
+            DataClassification = CustomerContent;
+        }
+        field(80305; "ADM Needs Sync"; Boolean)
+        {
+            Caption = 'Needs Manage Sync';
+            DataClassification = CustomerContent;
+        }
+        field(80306; "ADM Last Pushed At"; DateTime)
+        {
+            Caption = 'Last Pushed to Manage';
+            DataClassification = CustomerContent;
+        }
+        field(80307; "ADM Last Push Status"; Enum "ADM Buffer Status")
+        {
+            Caption = 'Last Push Status';
+            DataClassification = CustomerContent;
+        }
+        field(80308; "ADM Last Push Error"; Text[500])
+        {
+            Caption = 'Last Push Error';
+            DataClassification = CustomerContent;
+        }
+        field(80309; "ADM First VAT"; Decimal)
+        {
+            Caption = 'Manage First VAT';
+            DataClassification = CustomerContent;
+            InitValue = 1;
+            MinValue = 0;
+            MaxValue = 1;
+            DecimalPlaces = 0 : 4;
+        }
+        field(80310; "ADM Second VAT"; Decimal)
+        {
+            Caption = 'Manage Second VAT';
+            DataClassification = CustomerContent;
+            InitValue = 0;
+            MinValue = 0;
+            MaxValue = 1;
+            DecimalPlaces = 0 : 4;
+        }
     }
 }

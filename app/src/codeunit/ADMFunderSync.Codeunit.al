@@ -1,5 +1,10 @@
 codeunit 80306 "ADM Funder Sync"
 {
+    trigger OnRun()
+    begin
+        SyncFunders();
+    end;
+
     procedure SyncFunders()
     var
         IntegrationSetup: Record "ADM Integration Setup";

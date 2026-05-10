@@ -52,6 +52,11 @@ table 80300 "ADM Integration Setup"
             Caption = 'Item Sync Enabled';
             DataClassification = CustomerContent;
         }
+        field(24; "Stock Sync Enabled"; Boolean)
+        {
+            Caption = 'Stock Sync Enabled';
+            DataClassification = CustomerContent;
+        }
         field(30; "Client Sync Interval (Min)"; Integer)
         {
             Caption = 'Client Sync Interval (Min)';
@@ -76,6 +81,13 @@ table 80300 "ADM Integration Setup"
         field(33; "Item Sync Interval (Min)"; Integer)
         {
             Caption = 'Item Sync Interval (Min)';
+            DataClassification = CustomerContent;
+            InitValue = 60;
+            MinValue = 5;
+        }
+        field(34; "Stock Sync Interval (Min)"; Integer)
+        {
+            Caption = 'Stock Sync Interval (Min)';
             DataClassification = CustomerContent;
             InitValue = 60;
             MinValue = 5;
@@ -122,6 +134,12 @@ table 80300 "ADM Integration Setup"
             DataClassification = CustomerContent;
             Editable = false;
         }
+        field(54; "Last Stock Sync"; DateTime)
+        {
+            Caption = 'Last Stock Sync';
+            DataClassification = CustomerContent;
+            Editable = false;
+        }
         field(60; "Page Size"; Integer)
         {
             Caption = 'Page Size';
@@ -129,6 +147,12 @@ table 80300 "ADM Integration Setup"
             InitValue = 100;
             MinValue = 10;
             MaxValue = 500;
+        }
+        field(70; "Default Manage Location ID"; Guid)
+        {
+            Caption = 'Default Manage Location ID';
+            DataClassification = CustomerContent;
+            TableRelation = "ADM Manage Location"."Manage Location ID";
         }
     }
 

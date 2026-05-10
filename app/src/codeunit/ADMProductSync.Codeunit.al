@@ -3,6 +3,11 @@ codeunit 80308 "ADM Product Sync"
     var
         ADMAPIClient: Codeunit "ADM API Client";
 
+    trigger OnRun()
+    begin
+        SyncItems();
+    end;
+
     procedure SyncItems()
     var
         IntegrationSetup: Record "ADM Integration Setup";
@@ -31,33 +36,27 @@ codeunit 80308 "ADM Product Sync"
 
     local procedure TrySyncItems(var Processed: Integer; var Failed: Integer; var ErrorText: Text): Boolean
     var
-        lItemMapping: Record "ADM Item Mapping";
-        lItem: Record Item;
+        Item: Record Item;
     begin
         ErrorText := '';
-        lItemMapping.SetRange("Needs Sync", true);
-        if not lItemMapping.FindSet(true) then
+        Item.SetRange("ADM Needs Sync", true);
+        if not Item.FindSet(true) then
             exit(true); // Nothing to sync
 
         repeat
-            if lItem.Get(lItemMapping."Item No.") then begin
-                if PushItem(lItem, lItemMapping) then
-                    Processed += 1
-                else
-                    Failed += 1;
-            end else begin
-                // Item was deleted - skip
-                lItemMapping."Needs Sync" := false;
-                lItemMapping.Modify();
-            end;
+            if PushItem(Item) then
+                Processed += 1
+            else
+                Failed += 1;
             Commit();
-        until lItemMapping.Next() = 0;
+        until Item.Next() = 0;
 
         exit(true);
     end;
 
-    local procedure PushItem(var lItem: Record Item; var lItemMapping: Record "ADM Item Mapping"): Boolean
+    local procedure PushItem(var lItem: Record Item): Boolean
     var
+        ItemMapping: Record "ADM Item Mapping";
         RequestBody: Text;
         ResponseText: Text;
         ErrorText: Text;
@@ -68,27 +67,24 @@ codeunit 80308 "ADM Product Sync"
         DataObj: JsonObject;
         ProductUrlLbl: Label 'api/v2/inventory/products/%1', Comment = '%1 = product ID';
     begin
-        IsNew := IsNullGuid(lItemMapping."Manage Product ID");
+        IsNew := IsNullGuid(lItem."ADM Manage Product ID");
 
         if IsNullGuid(lItem."ADM Manage Category ID") then begin
-            lItemMapping.MarkSyncError(lItem."No.", 'Manage Category ID is not set on the item. Open the Item Card, set the category, then re-sync.');
+            MarkItemSyncError(lItem, 'Manage Category ID is not set on the item. Open the Item Card, set the category, then re-sync.');
             exit(false);
         end;
 
         if IsHearingAidsCategory(lItem."ADM Manage Category ID") and IsNullGuid(lItem."ADM Manage Hearing Aid Type ID") then begin
-            lItemMapping.MarkSyncError(lItem."No.", 'Manage Hearing Aid Type ID is required for items in the Hearing Aids category. Open the Item Card, set the hearing aid type, then re-sync.');
+            MarkItemSyncError(lItem, 'Manage Hearing Aid Type ID is required for items in the Hearing Aids category. Open the Item Card, set the hearing aid type, then re-sync.');
             exit(false);
         end;
 
-        RequestBody := BuildProductPayload(lItem, lItemMapping);
+        RequestBody := BuildProductPayload(lItem);
 
         if IsNew then begin
             // POST - create new product
-            if not ADMAPIClient.TryPost(
-                'api/v2/inventory/products',
-                RequestBody, ResponseText, ErrorText)
-            then begin
-                lItemMapping.MarkSyncError(lItem."No.", ErrorText);
+            if not ADMAPIClient.TryPost('api/v2/inventory/products', RequestBody, ResponseText, ErrorText) then begin
+                MarkItemSyncError(lItem, ErrorText);
                 exit(false);
             end;
 
@@ -96,33 +92,40 @@ codeunit 80308 "ADM Product Sync"
             if ResponseJson.ReadFrom(ResponseText) then begin
                 ManageProductID := ADMAPIClient.GetJsonGuid(ResponseJson, 'id');
                 if IsNullGuid(ManageProductID) then
-                    // Try nested data field
                     if ADMAPIClient.GetJsonObject(ResponseJson, 'data', DataObj) then
                         ManageProductID := ADMAPIClient.GetJsonGuid(DataObj, 'id');
             end;
 
-            lItemMapping.MarkSynced(lItem."No.", ManageProductID,
-                CopyStr(lItem."No.", 1, 100));
+            // Update the catalog entry if one exists, or create it
+            if not ItemMapping.Get(ManageProductID) then begin
+                ItemMapping.Init();
+                ItemMapping."Manage Product ID" := ManageProductID;
+                ItemMapping."Manage SKU" := CopyStr(lItem."No.", 1, 100);
+                ItemMapping."Item No." := lItem."No.";
+                ItemMapping.Insert();
+            end else begin
+                if ItemMapping."Item No." = '' then begin
+                    ItemMapping."Item No." := lItem."No.";
+                    ItemMapping.Modify();
+                end;
+            end;
+
+            MarkItemSynced(lItem, ManageProductID);
         end else begin
             // PUT - update existing product
-            ManageIDText := LowerCase(Format(lItemMapping."Manage Product ID", 0, 4));
-            if not ADMAPIClient.TryPut(
-                StrSubstNo(ProductUrlLbl, ManageIDText),
-                RequestBody, ResponseText, ErrorText)
-            then begin
-                lItemMapping.MarkSyncError(lItem."No.", ErrorText);
+            ManageIDText := LowerCase(Format(lItem."ADM Manage Product ID", 0, 4));
+            if not ADMAPIClient.TryPut(StrSubstNo(ProductUrlLbl, ManageIDText), RequestBody, ResponseText, ErrorText) then begin
+                MarkItemSyncError(lItem, ErrorText);
                 exit(false);
             end;
 
-            lItemMapping.MarkSynced(lItem."No.",
-                lItemMapping."Manage Product ID",
-                CopyStr(lItem."No.", 1, 100));
+            MarkItemSynced(lItem, lItem."ADM Manage Product ID");
         end;
 
         exit(true);
     end;
 
-    local procedure BuildProductPayload(Item: Record Item; ItemMapping: Record "ADM Item Mapping"): Text
+    local procedure BuildProductPayload(Item: Record Item): Text
     var
         ItemColor: Record "ADM Item Color";
         ItemBatteryType: Record "ADM Item Battery Type";
@@ -160,8 +163,8 @@ codeunit 80308 "ADM Product Sync"
         if not IsNullGuid(Item."ADM Manage Hearing Aid Type ID") then
             JsonObj.Add('hearingAidTypeId', LowerCase(Format(Item."ADM Manage Hearing Aid Type ID", 0, 4)));
 
-        JsonObj.Add('firstVAT', ItemMapping."First VAT");
-        JsonObj.Add('secondVAT', ItemMapping."Second VAT");
+        JsonObj.Add('firstVAT', Item."ADM First VAT");
+        JsonObj.Add('secondVAT', Item."ADM Second VAT");
 
         ColorsArr := ItemColor.GetColorIDsAsJsonArray(Item."No.");
         JsonObj.Add('colors', ColorsArr);
@@ -178,97 +181,102 @@ codeunit 80308 "ADM Product Sync"
         exit(PayloadText);
     end;
 
+    local procedure MarkItemSynced(var Item: Record Item; ManageProductID: Guid)
+    begin
+        Item."ADM Manage Product ID" := ManageProductID;
+        Item."ADM Needs Sync" := false;
+        Item."ADM Last Pushed At" := CurrentDateTime();
+        Item."ADM Last Push Status" := "ADM Buffer Status"::Processed;
+        Item."ADM Last Push Error" := '';
+        Item.Modify();
+    end;
+
+    local procedure MarkItemSyncError(var Item: Record Item; ErrorText: Text)
+    begin
+        Item."ADM Needs Sync" := true;
+        Item."ADM Last Pushed At" := CurrentDateTime();
+        Item."ADM Last Push Status" := "ADM Buffer Status"::Error;
+        Item."ADM Last Push Error" := CopyStr(ErrorText, 1, 500);
+        Item.Modify();
+    end;
+
     procedure SyncSingleItem(ItemNo: Code[20])
     var
-        lItem: Record Item;
-        lItemMapping: Record "ADM Item Mapping";
+        Item: Record Item;
     begin
-        if not lItem.Get(ItemNo) then
+        if not Item.Get(ItemNo) then
             exit;
 
-        if not lItemMapping.Get(ItemNo) then begin
-            lItemMapping.Init();
-            lItemMapping."Item No." := ItemNo;
-            lItemMapping."Needs Sync" := true;
-            lItemMapping.Insert();
-        end else begin
-            lItemMapping."Needs Sync" := true;
-            lItemMapping.Modify();
-        end;
+        Item."ADM Needs Sync" := true;
+        Item.Modify();
 
-        PushItem(lItem, lItemMapping);
+        PushItem(Item);
     end;
 
     /// <summary>
-    /// Fetches all products from AuditData Manage and creates/updates ADM Item Mapping records.
-    /// Matches by SKU to BC Item No. Returns counts of linked, unmatched and already-mapped products.
+    /// Fetches all products from AuditData Manage and upserts them into the ADM Item Mapping
+    /// catalog table. Where the Manage SKU matches a BC Item No., the Manage Product ID is
+    /// written directly onto the BC item. Returns counts of linked, unmatched and already-linked products.
     /// </summary>
-    procedure FetchManageProducts(var Linked: Integer; var Unmatched: Integer; var AlreadyMapped: Integer; var ErrorText: Text): Boolean
+    procedure FetchManageProducts(var Linked: Integer; var Unmatched: Integer; var AlreadyLinked: Integer; var ErrorText: Text): Boolean
     var
         ItemMapping: Record "ADM Item Mapping";
+        Item: Record Item;
         AllProducts: JsonArray;
         ProductToken: JsonToken;
         ProductObj: JsonObject;
         ManageProductID: Guid;
         ManageSKU: Text;
+        ManageName: Text;
+        ManageIsActive: Boolean;
         ItemNo: Code[20];
-        ResponseText: Text;
     begin
-        if not ADMAPIClient.TryGet('api/v2/inventory/products', ResponseText, ErrorText) then
+        if not ADMAPIClient.TryGetPaged('api/v2/inventory/products', AllProducts, ErrorText) then
             exit(false);
-
-        ADMAPIClient.GetPaged('api/v2/inventory/products', AllProducts);
 
         foreach ProductToken in AllProducts do begin
             ProductObj := ProductToken.AsObject();
             ManageProductID := ADMAPIClient.GetJsonGuid(ProductObj, 'id');
             ManageSKU := ADMAPIClient.GetJsonText(ProductObj, 'sku');
+            ManageName := ADMAPIClient.GetJsonText(ProductObj, 'name');
+            ManageIsActive := ADMAPIClient.GetJsonBoolean(ProductObj, 'isActive');
 
             if IsNullGuid(ManageProductID) then
                 continue;
 
-            // Check if already mapped by Manage Product ID
-            ItemMapping.SetRange("Manage Product ID", ManageProductID);
-            if not ItemMapping.IsEmpty() then begin
-                AlreadyMapped += 1;
+            // Upsert into catalog
+            if not ItemMapping.Get(ManageProductID) then begin
+                ItemMapping.Init();
+                ItemMapping."Manage Product ID" := ManageProductID;
+                ItemMapping.Insert();
+            end;
+            ItemMapping."Manage SKU" := CopyStr(ManageSKU, 1, 100);
+            ItemMapping.Name := CopyStr(ManageName, 1, 250);
+            ItemMapping."Is Active" := ManageIsActive;
+            ItemMapping.Modify();
+
+            // Check if already linked to a BC item
+            ItemNo := ItemMapping."Item No.";
+            if (ItemNo <> '') and Item.Get(ItemNo) and (not IsNullGuid(Item."ADM Manage Product ID")) then begin
+                AlreadyLinked += 1;
                 continue;
             end;
-            ItemMapping.Reset();
 
-            // Try to match BC Item by SKU
+            // Try to match by SKU
             ItemNo := CopyStr(ManageSKU, 1, 20);
-            if (ItemNo <> '') and ItemMapping.Get(ItemNo) then begin
-                // Item mapping exists but without Manage Product ID — fill it in
-                ItemMapping."Manage Product ID" := ManageProductID;
-                ItemMapping."Manage SKU" := CopyStr(ManageSKU, 1, 100);
-                ItemMapping."Needs Sync" := false;
-                ItemMapping.Modify();
+            if (ItemNo <> '') and Item.Get(ItemNo) then begin
+                Item."ADM Manage Product ID" := ManageProductID;
+                Item.Modify();
+                if ItemMapping."Item No." = '' then begin
+                    ItemMapping."Item No." := ItemNo;
+                    ItemMapping.Modify();
+                end;
                 Linked += 1;
             end else
-                if (ItemNo <> '') and not ItemMapping.Get(ItemNo) then begin
-                    // No mapping yet — create one if the BC item exists
-                    if ItemExistsInBC(ItemNo) then begin
-                        ItemMapping.Init();
-                        ItemMapping."Item No." := ItemNo;
-                        ItemMapping."Manage Product ID" := ManageProductID;
-                        ItemMapping."Manage SKU" := CopyStr(ManageSKU, 1, 100);
-                        ItemMapping."Needs Sync" := false;
-                        ItemMapping.Insert();
-                        Linked += 1;
-                    end else
-                        Unmatched += 1;
-                end else
-                    Unmatched += 1;
+                Unmatched += 1;
         end;
 
         exit(true);
-    end;
-
-    local procedure ItemExistsInBC(ItemNo: Code[20]): Boolean
-    var
-        Item: Record Item;
-    begin
-        exit(Item.Get(ItemNo));
     end;
 
     local procedure IsHearingAidsCategory(CategoryID: Guid): Boolean
@@ -280,25 +288,5 @@ codeunit 80308 "ADM Product Sync"
         if not ProdCat.Get(CategoryID) then
             exit(false);
         exit(UpperCase(ProdCat.Code) = 'HEARINGAIDS');
-    end;
-
-    procedure AddAllBCItemsToMapping(var Added: Integer; var Skipped: Integer)
-    var
-        Item: Record Item;
-        ItemMapping: Record "ADM Item Mapping";
-    begin
-        if not Item.FindSet() then
-            exit;
-
-        repeat
-            if not ItemMapping.Get(Item."No.") then begin
-                ItemMapping.Init();
-                ItemMapping."Item No." := Item."No.";
-                ItemMapping."Needs Sync" := true;
-                ItemMapping.Insert();
-                Added += 1;
-            end else
-                Skipped += 1;
-        until Item.Next() = 0;
     end;
 }

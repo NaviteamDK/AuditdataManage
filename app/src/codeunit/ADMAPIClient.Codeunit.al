@@ -290,6 +290,80 @@ codeunit 80301 "ADM API Client"
         until Page > TotalPages;
     end;
 
+    procedure TryGetPaged(BaseRelativePath: Text; var AllResults: JsonArray; var ErrorText: Text): Boolean
+    var
+        ResponseText: Text;
+        ResponseToken: JsonToken;
+        ResponseJson: JsonObject;
+        DataToken: JsonToken;
+        ItemsToken: JsonToken;
+        TotalPagesToken: JsonToken;
+        ItemArray: JsonArray;
+        Item: JsonToken;
+        Page: Integer;
+        TotalPages: Integer;
+        PageSize: Integer;
+        RelativePath: Text;
+        PageSuffixAndLbl: Label '&Page=%1&PerPage=%2', Comment = '%1 = page number, %2 = page size';
+        PageSuffixQuestLbl: Label '?Page=%1&PerPage=%2', Comment = '%1 = page number, %2 = page size';
+    begin
+        EnsureSetup();
+        PageSize := IntegrationSetup."Page Size";
+        if PageSize = 0 then
+            PageSize := 100;
+        Page := 1;
+        TotalPages := 1;
+
+        repeat
+            RelativePath := BaseRelativePath;
+            if RelativePath.Contains('?') then
+                RelativePath += StrSubstNo(PageSuffixAndLbl, Page, PageSize)
+            else
+                RelativePath += StrSubstNo(PageSuffixQuestLbl, Page, PageSize);
+
+            if not TryGet(RelativePath, ResponseText, ErrorText) then
+                exit(false);
+
+            ResponseToken.ReadFrom(ResponseText);
+
+            if ResponseToken.IsArray() then begin
+                ItemArray := ResponseToken.AsArray();
+                TotalPages := Page;
+            end else begin
+                ResponseJson := ResponseToken.AsObject();
+
+                if ResponseJson.Get('data', DataToken) then begin
+                    if DataToken.IsArray() then begin
+                        ItemArray := DataToken.AsArray();
+                        TotalPages := Page;
+                    end else
+                        if DataToken.IsObject() then begin
+                            if DataToken.AsObject().Get('items', ItemsToken) then
+                                ItemArray := ItemsToken.AsArray();
+
+                            if DataToken.AsObject().Get('totalPages', TotalPagesToken) then
+                                TotalPages := TotalPagesToken.AsValue().AsInteger()
+                            else
+                                TotalPages := Page;
+                        end else
+                            TotalPages := Page;
+                end else
+                    if ResponseJson.Get('items', ItemsToken) then begin
+                        ItemArray := ItemsToken.AsArray();
+                        TotalPages := Page;
+                    end else
+                        TotalPages := Page;
+            end;
+
+            foreach Item in ItemArray do
+                AllResults.Add(Item);
+
+            Page += 1;
+        until Page > TotalPages;
+
+        exit(true);
+    end;
+
     procedure TestConnection()
     var
         ResponseText: Text;

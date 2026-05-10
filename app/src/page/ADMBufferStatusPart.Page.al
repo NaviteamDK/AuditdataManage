@@ -142,7 +142,7 @@ page 80317 "ADM Buffer Status Part"
         FunderBuffer: Record "ADM Funder Buffer";
         SaleBufferHeader: Record "ADM Sale Buffer Header";
         MasterOrderHeader: Record "ADM Master Order Header";
-        ItemMapping: Record "ADM Item Mapping";
+        Item: Record Item;
     begin
         // Client counts
         ClientBuffer.SetRange(Status, "ADM Buffer Status"::New);
@@ -178,12 +178,12 @@ page 80317 "ADM Buffer Status Part"
         OrdersCreatedCount := MasterOrderHeader.Count();
 
         // Item sync counts
-        ItemMapping.SetRange("Needs Sync", true);
-        ItemNeedsSyncCount := ItemMapping.Count();
+        Item.SetRange("ADM Needs Sync", true);
+        ItemNeedsSyncCount := Item.Count();
 
-        ItemMapping.SetRange("Needs Sync", false);
-        ItemMapping.SetRange("Last Push Status", "ADM Buffer Status"::Error);
-        ItemSyncErrorCount := ItemMapping.Count();
+        Item.SetRange("ADM Needs Sync", false);
+        Item.SetRange("ADM Last Push Status", "ADM Buffer Status"::Error);
+        ItemSyncErrorCount := Item.Count();
 
         // Set styles
         if NewClientCount > 0 then NewClientStyle := 'Ambiguous' else NewClientStyle := 'Favorable';

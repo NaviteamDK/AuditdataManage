@@ -1,141 +1,81 @@
 table 80302 "ADM Item Mapping"
 {
-    Caption = 'AuditData Manage Item Mapping';
+    Caption = 'AuditData Manage Product Catalog';
     DataClassification = CustomerContent;
     LookupPageId = "ADM Item Mapping List";
     DrillDownPageId = "ADM Item Mapping List";
 
     fields
     {
-        field(1; "Item No."; Code[20])
-        {
-            Caption = 'Item No.';
-            DataClassification = CustomerContent;
-            TableRelation = Item;
-        }
-        field(10; "Manage Product ID"; Guid)
+        field(1; "Manage Product ID"; Guid)
         {
             Caption = 'Manage Product ID';
             DataClassification = CustomerContent;
         }
-        field(20; "Manage SKU"; Text[100])
+        field(10; "Manage SKU"; Text[100])
         {
             Caption = 'Manage SKU';
             DataClassification = CustomerContent;
         }
-        field(21; "Last Pushed At"; DateTime)
+        field(20; Name; Text[250])
         {
-            Caption = 'Last Pushed At';
+            Caption = 'Name';
             DataClassification = CustomerContent;
         }
-        field(22; "Last Push Status"; Enum "ADM Buffer Status")
+        field(30; "Is Active"; Boolean)
         {
-            Caption = 'Last Push Status';
+            Caption = 'Is Active';
             DataClassification = CustomerContent;
         }
-        field(23; "Last Push Error"; Text[500])
+        field(40; "Item No."; Code[20])
         {
-            Caption = 'Last Push Error';
+            Caption = 'BC Item No.';
             DataClassification = CustomerContent;
-        }
-        field(24; "Needs Sync"; Boolean)
-        {
-            Caption = 'Needs Sync';
-            DataClassification = CustomerContent;
-        }
-        field(25; "Item Description"; Text[100])
-        {
-            Caption = 'Item Description';
-            FieldClass = FlowField;
-            CalcFormula = lookup(Item.Description where("No." = field("Item No.")));
-            Editable = false;
-        }
-        field(29; "First VAT"; Decimal)
-        {
-            Caption = 'First VAT';
-            DataClassification = CustomerContent;
-            InitValue = 1;
-            MinValue = 0;
-            MaxValue = 1;
-            DecimalPlaces = 0 : 4;
-        }
-        field(30; "Second VAT"; Decimal)
-        {
-            Caption = 'Second VAT';
-            DataClassification = CustomerContent;
-            InitValue = 0;
-            MinValue = 0;
-            MaxValue = 1;
-            DecimalPlaces = 0 : 4;
+            TableRelation = Item;
+
+            trigger OnValidate()
+            begin
+                if "Item No." <> '' then
+                    LinkToBCItem("Item No.");
+            end;
         }
     }
 
     keys
     {
-        key(PK; "Item No.")
+        key(PK; "Manage Product ID")
         {
             Clustered = true;
         }
-        key(ManageProductID; "Manage Product ID") { }
-        key(NeedsSync; "Needs Sync") { }
+        key(ItemNo; "Item No.") { }
+        key(SKU; "Manage SKU") { }
     }
 
+    /// <summary>
+    /// Returns the BC Item No. linked to the given Manage Product ID, or '' if none.
+    /// </summary>
     procedure FindByManageProductID(ManageProductID: Guid): Code[20]
     var
         ItemMapping: Record "ADM Item Mapping";
     begin
-        ItemMapping.SetRange("Manage Product ID", ManageProductID);
-        if ItemMapping.FindFirst() then
+        if ItemMapping.Get(ManageProductID) then
             exit(ItemMapping."Item No.");
         exit('');
     end;
 
-    procedure MarkNeedsSync(ItemNo: Code[20])
+    /// <summary>
+    /// Links this catalog record to a BC item and writes the Manage Product ID
+    /// back onto the BC item record so stock sync can find it.
+    /// </summary>
+    procedure LinkToBCItem(ItemNo: Code[20])
     var
-        ItemMapping: Record "ADM Item Mapping";
+        Item: Record Item;
     begin
-        if not ItemMapping.Get(ItemNo) then begin
-            ItemMapping.Init();
-            ItemMapping."Item No." := ItemNo;
-            ItemMapping."Needs Sync" := true;
-            ItemMapping.Insert();
-        end else begin
-            ItemMapping."Needs Sync" := true;
-            ItemMapping.Modify();
+        Rec."Item No." := ItemNo;
+        Rec.Modify();
+        if Item.Get(ItemNo) then begin
+            Item."ADM Manage Product ID" := Rec."Manage Product ID";
+            Item.Modify();
         end;
-    end;
-
-    procedure MarkSynced(ItemNo: Code[20]; ManageProductID: Guid; ManageSKU: Text[100])
-    var
-        ItemMapping: Record "ADM Item Mapping";
-    begin
-        if not ItemMapping.Get(ItemNo) then begin
-            ItemMapping.Init();
-            ItemMapping."Item No." := ItemNo;
-            ItemMapping.Insert();
-        end;
-        ItemMapping."Manage Product ID" := ManageProductID;
-        ItemMapping."Manage SKU" := ManageSKU;
-        ItemMapping."Last Pushed At" := CurrentDateTime();
-        ItemMapping."Last Push Status" := "ADM Buffer Status"::Processed;
-        ItemMapping."Last Push Error" := '';
-        ItemMapping."Needs Sync" := false;
-        ItemMapping.Modify();
-    end;
-
-    procedure MarkSyncError(ItemNo: Code[20]; ErrorText: Text)
-    var
-        ItemMapping: Record "ADM Item Mapping";
-    begin
-        if not ItemMapping.Get(ItemNo) then begin
-            ItemMapping.Init();
-            ItemMapping."Item No." := ItemNo;
-            ItemMapping.Insert();
-        end;
-        ItemMapping."Last Pushed At" := CurrentDateTime();
-        ItemMapping."Last Push Status" := "ADM Buffer Status"::Error;
-        ItemMapping."Last Push Error" := CopyStr(ErrorText, 1, 500);
-        ItemMapping."Needs Sync" := true;
-        ItemMapping.Modify();
     end;
 }

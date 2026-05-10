@@ -271,7 +271,7 @@ codeunit 80311 "ADM Inventory Reference Sync"
     /// </summary>
     procedure FetchItemAssignments(ItemNo: Code[20]): Boolean
     var
-        ItemMapping: Record "ADM Item Mapping";
+        Item: Record Item;
         ItemColor: Record "ADM Item Color";
         ItemBatteryType: Record "ADM Item Battery Type";
         ItemAttribute: Record "ADM Item Attribute";
@@ -302,12 +302,12 @@ codeunit 80311 "ADM Inventory Reference Sync"
         ProductUrlLbl: Label 'api/v2/inventory/products/%1', Comment = '%1 = product GUID';
         ItemNotMappedErr: Label 'Item %1 has no AuditData Manage product mapping. Use ''Fetch Products from Manage'' first.', Comment = '%1 = item no.';
     begin
-        if not ItemMapping.Get(ItemNo) then
+        if not Item.Get(ItemNo) then
             Error(ItemNotMappedErr, ItemNo);
-        if IsNullGuid(ItemMapping."Manage Product ID") then
+        if IsNullGuid(Item."ADM Manage Product ID") then
             Error(ItemNotMappedErr, ItemNo);
 
-        ManageIDText := LowerCase(Format(ItemMapping."Manage Product ID", 0, 4));
+        ManageIDText := LowerCase(Format(Item."ADM Manage Product ID", 0, 4));
 
         if not ADMAPIClient.TryGet(StrSubstNo(ProductUrlLbl, ManageIDText), ResponseText, ErrorText) then
             Error(ErrorText);
@@ -617,6 +617,61 @@ codeunit 80311 "ADM Inventory Reference Sync"
                 ADMSupplier."Is Active" := IsActive;
                 ADMSupplier.Modify();
             end;
+            Upserted += 1;
+        end;
+
+        SyncLogManager.FinishLog(LogEntryNo, Upserted, 0);
+        Message(SyncCompleteMsg, Upserted);
+        exit(true);
+    end;
+
+    /// <summary>
+    /// Fetches clinic locations from GET /api/v1/locations and upserts them
+    /// into the ADM Manage Location table. These IDs are used to configure stock
+    /// synchronisation — copy the relevant ID into the Default Manage Location ID on
+    /// the Integration Setup, or onto individual BC Location cards.
+    /// </summary>
+    procedure SyncLocations(var ErrorText: Text): Boolean
+    var
+        ManageLocation: Record "ADM Manage Location";
+        AllItems: JsonArray;
+        ItemToken: JsonToken;
+        ItemObj: JsonObject;
+        ManageID: Guid;
+        ItemName: Text;
+        IsActive: Boolean;
+        Upserted: Integer;
+        SyncLogManager: Codeunit "ADM Sync Log Manager";
+        LogEntryNo: Integer;
+        SyncLocationsLbl: Label 'Locations Sync';
+        SyncCompleteMsg: Label 'Locations sync complete. %1 record(s) upserted.', Comment = '%1 = count';
+    begin
+        LogEntryNo := SyncLogManager.StartLog("ADM Sync Direction"::Inbound, SyncLocationsLbl);
+
+        if not ADMAPIClient.TryGetPaged('api/v1/locations', AllItems, ErrorText) then begin
+            SyncLogManager.FailLog(LogEntryNo, ErrorText);
+            exit(false);
+        end;
+
+        foreach ItemToken in AllItems do begin
+            if not ItemToken.IsObject() then
+                continue;
+            ItemObj := ItemToken.AsObject();
+            ManageID := ADMAPIClient.GetJsonGuid(ItemObj, 'id');
+            ItemName := ADMAPIClient.GetJsonText(ItemObj, 'name');
+            IsActive := ADMAPIClient.GetJsonBoolean(ItemObj, 'isActive');
+
+            if IsNullGuid(ManageID) then
+                continue;
+
+            if not ManageLocation.Get(ManageID) then begin
+                ManageLocation.Init();
+                ManageLocation."Manage Location ID" := ManageID;
+                ManageLocation.Insert();
+            end;
+            ManageLocation.Name := CopyStr(ItemName, 1, 250);
+            ManageLocation."Is Active" := IsActive;
+            ManageLocation.Modify();
             Upserted += 1;
         end;
 

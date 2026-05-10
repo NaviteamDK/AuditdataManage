@@ -1,6 +1,6 @@
 page 80303 "ADM Item Mapping List"
 {
-    Caption = 'AuditData Manage Item Mappings';
+    Caption = 'AuditData Manage Product Catalog';
     PageType = List;
     SourceTable = "ADM Item Mapping";
     UsageCategory = Administration;
@@ -14,73 +14,32 @@ page 80303 "ADM Item Mapping List"
         {
             repeater(MappingLines)
             {
+                field("Manage SKU"; Rec."Manage SKU")
+                {
+                    ApplicationArea = All;
+                    ToolTip = 'Specifies the SKU of the product in AuditData Manage.';
+                }
+                field(Name; Rec.Name)
+                {
+                    ApplicationArea = All;
+                    ToolTip = 'Specifies the product name in AuditData Manage.';
+                }
+                field("Is Active"; Rec."Is Active")
+                {
+                    ApplicationArea = All;
+                    ToolTip = 'Specifies whether the product is active in AuditData Manage.';
+                }
                 field("Item No."; Rec."Item No.")
                 {
                     ApplicationArea = All;
-                    ToolTip = 'Specifies the Business Central item number.';
-
-                    trigger OnDrillDown()
-                    var
-                        Item: Record Item;
-                    begin
-                        if Item.Get(Rec."Item No.") then
-                            Page.Run(Page::"Item Card", Item);
-                    end;
-                }
-                field("Item Description"; Rec."Item Description")
-                {
-                    ApplicationArea = All;
-                    ToolTip = 'Specifies the description of the Business Central item.';
-
-                    trigger OnDrillDown()
-                    var
-                        Item: Record Item;
-                    begin
-                        if Item.Get(Rec."Item No.") then
-                            Page.Run(Page::"Item Card", Item);
-                    end;
+                    ToolTip = 'Specifies the BC item number linked to this Manage product. Empty if not yet matched.';
+                    StyleExpr = ItemLinkStyle;
                 }
                 field("Manage Product ID"; Rec."Manage Product ID")
                 {
                     ApplicationArea = All;
                     Visible = false;
-                    ToolTip = 'Specifies the product ID in AuditData Manage linked to this item.';
-                }
-                field("Manage SKU"; Rec."Manage SKU")
-                {
-                    ApplicationArea = All;
-                    ToolTip = 'Specifies the SKU code in AuditData Manage for this item.';
-                }
-                field("Needs Sync"; Rec."Needs Sync")
-                {
-                    ApplicationArea = All;
-                    ToolTip = 'Specifies whether this item is pending synchronisation to AuditData Manage.';
-                }
-                field("Last Pushed At"; Rec."Last Pushed At")
-                {
-                    ApplicationArea = All;
-                    ToolTip = 'Specifies when this item was last pushed to AuditData Manage.';
-                }
-                field("Last Push Status"; Rec."Last Push Status")
-                {
-                    ApplicationArea = All;
-                    StyleExpr = StatusStyle;
-                    ToolTip = 'Specifies the result of the last push attempt to AuditData Manage.';
-                }
-                field("Last Push Error"; Rec."Last Push Error")
-                {
-                    ApplicationArea = All;
-                    ToolTip = 'Specifies the error message from the last failed push attempt.';
-                }
-                field("First VAT"; Rec."First VAT")
-                {
-                    ApplicationArea = All;
-                    ToolTip = 'Specifies the first VAT rate (0–1). First VAT + Second VAT must equal 1. Default is 1.';
-                }
-                field("Second VAT"; Rec."Second VAT")
-                {
-                    ApplicationArea = All;
-                    ToolTip = 'Specifies the second VAT rate (0–1). First VAT + Second VAT must equal 1. Default is 0.';
+                    ToolTip = 'Specifies the unique product ID in AuditData Manage.';
                 }
             }
         }
@@ -90,62 +49,51 @@ page 80303 "ADM Item Mapping List"
     {
         area(Processing)
         {
-            action(MarkAllNeedsSync)
-            {
-                ApplicationArea = All;
-                Caption = 'Mark All for Sync';
-                Image = Refresh;
-                ToolTip = 'Marks all items as needing synchronisation to AuditData Manage.';
-
-                trigger OnAction()
-                var
-                    ItemMapping: Record "ADM Item Mapping";
-                begin
-                    ItemMapping.ModifyAll("Needs Sync", true);
-                    Message('All items have been marked for synchronisation.');
-                end;
-            }
-            action(AddAllBCItems)
-            {
-                ApplicationArea = All;
-                Caption = 'Add All BC Items';
-                Image = ItemJournal;
-                ToolTip = 'Adds all Business Central items to the item mapping table. Items already present in the table are not duplicated.';
-
-                trigger OnAction()
-                var
-                    ProductSync: Codeunit "ADM Product Sync";
-                    Added: Integer;
-                    Skipped: Integer;
-                    ResultMsg: Label '%1 item(s) added to the mapping table. %2 item(s) were already present and skipped.', Comment = '%1 = added count, %2 = skipped count';
-                begin
-                    ProductSync.AddAllBCItemsToMapping(Added, Skipped);
-                    CurrPage.Update(false);
-                    Message(ResultMsg, Added, Skipped);
-                end;
-            }
             action(FetchManageProducts)
             {
                 ApplicationArea = All;
                 Caption = 'Fetch Products from Manage';
                 Image = ImportDatabase;
-                ToolTip = 'Retrieves all products from AuditData Manage and creates item mappings for any product whose SKU matches an existing BC item number.';
+                ToolTip = 'Retrieves all products from AuditData Manage into this catalog. Where the Manage SKU matches a BC item number, the item is automatically linked.';
 
                 trigger OnAction()
                 var
                     ProductSync: Codeunit "ADM Product Sync";
                     Linked: Integer;
                     Unmatched: Integer;
-                    AlreadyMapped: Integer;
+                    AlreadyLinked: Integer;
                     ErrorText: Text;
-                    ResultMsg: Label 'Fetch complete.\Linked: %1\Already mapped: %2\No BC item match: %3', Comment = '%1 = linked count, %2 = already mapped, %3 = unmatched';
+                    ResultMsg: Label 'Fetch complete.\Linked: %1\Already linked: %2\No BC item match (manual link required): %3', Comment = '%1 = linked count, %2 = already linked, %3 = unmatched';
                 begin
-                    if not ProductSync.FetchManageProducts(Linked, Unmatched, AlreadyMapped, ErrorText) then begin
+                    if not ProductSync.FetchManageProducts(Linked, Unmatched, AlreadyLinked, ErrorText) then begin
                         Error('Failed to retrieve products from AuditData Manage:\%1', ErrorText);
                         exit;
                     end;
                     CurrPage.Update(false);
-                    Message(ResultMsg, Linked, AlreadyMapped, Unmatched);
+                    Message(ResultMsg, Linked, AlreadyLinked, Unmatched);
+                end;
+            }
+            action(LinkToBCItem)
+            {
+                ApplicationArea = All;
+                Caption = 'Link to BC Item';
+                Image = LinkWithExisting;
+                ToolTip = 'Manually links the selected Manage product to a BC item. This writes the Manage Product ID onto the BC item so that sync can proceed.';
+
+                trigger OnAction()
+                var
+                    Item: Record Item;
+                    LinkedMsg: Label 'Manage product "%1" has been linked to BC item %2.', Comment = '%1 = Manage SKU, %2 = BC Item No.';
+                begin
+                    if IsNullGuid(Rec."Manage Product ID") then
+                        exit;
+
+                    if Page.RunModal(Page::"Item List", Item) <> Action::LookupOK then
+                        exit;
+
+                    Rec.LinkToBCItem(Item."No.");
+                    CurrPage.Update(false);
+                    Message(LinkedMsg, Rec."Manage SKU", Item."No.");
                 end;
             }
             action(FetchItemAssignments)
@@ -153,15 +101,17 @@ page 80303 "ADM Item Mapping List"
                 ApplicationArea = All;
                 Caption = 'Fetch Color/Battery/Attribute Assignments';
                 Image = Import;
-                ToolTip = 'Retrieves the color, battery type and attribute assignments for the selected item from AuditData Manage.';
+                ToolTip = 'Retrieves the color, battery type and attribute assignments for the linked BC item from AuditData Manage.';
 
                 trigger OnAction()
                 var
                     InvRefSync: Codeunit "ADM Inventory Reference Sync";
                     FetchCompleteMsg: Label 'Color, battery type and attribute assignments fetched for item %1.', Comment = '%1 = item no.';
                 begin
-                    if Rec."Item No." = '' then
+                    if Rec."Item No." = '' then begin
+                        Error('This Manage product is not yet linked to a BC item. Use ''Link to BC Item'' first.');
                         exit;
+                    end;
                     InvRefSync.FetchItemAssignments(Rec."Item No.");
                     CurrPage.Update(false);
                     Message(FetchCompleteMsg, Rec."Item No.");
@@ -185,29 +135,12 @@ page 80303 "ADM Item Mapping List"
         }
         area(Navigation)
         {
-            action(SyncSingleItem)
-            {
-                ApplicationArea = All;
-                Caption = 'Sync This Item';
-                Image = SyncONPayroll;
-                ToolTip = 'Pushes the selected item to AuditData Manage immediately, regardless of the Needs Sync flag.';
-
-                trigger OnAction()
-                var
-                    ProductSync: Codeunit "ADM Product Sync";
-                begin
-                    if Rec."Item No." = '' then
-                        exit;
-                    ProductSync.SyncSingleItem(Rec."Item No.");
-                    CurrPage.Update(false);
-                end;
-            }
             action(OpenItem)
             {
                 ApplicationArea = All;
-                Caption = 'Open Item';
+                Caption = 'Open BC Item';
                 Image = Item;
-                ToolTip = 'Opens the Business Central item card for the selected mapping.';
+                ToolTip = 'Opens the Business Central item card for the linked item.';
 
                 trigger OnAction()
                 var
@@ -220,22 +153,21 @@ page 80303 "ADM Item Mapping List"
                 end;
             }
         }
+        area(Promoted)
+        {
+            actionref(FetchManageProducts_Promoted; FetchManageProducts) { }
+            actionref(LinkToBCItem_Promoted; LinkToBCItem) { }
+        }
     }
 
     trigger OnAfterGetRecord()
     begin
-        case Rec."Last Push Status" of
-            "ADM Buffer Status"::Processed:
-                StatusStyle := 'Favorable';
-            "ADM Buffer Status"::Error:
-                StatusStyle := 'Unfavorable';
-            "ADM Buffer Status"::"In Progress":
-                StatusStyle := 'Ambiguous';
-            else
-                StatusStyle := 'Standard';
-        end;
+        if Rec."Item No." = '' then
+            ItemLinkStyle := 'Unfavorable'
+        else
+            ItemLinkStyle := 'Favorable';
     end;
 
     var
-        StatusStyle: Text;
+        ItemLinkStyle: Text;
 }

@@ -428,6 +428,11 @@
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Table ADM Integration Setup - Field Default Customer Template - Property Caption</note>
         </trans-unit>
+        <trans-unit id="Table 3414399283 - Field 3852282982 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Default Manage Location ID</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table ADM Integration Setup - Field Default Manage Location ID - Property Caption</note>
+        </trans-unit>
         <trans-unit id="Table 3414399283 - Field 2706936703 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>EDI Scheme</source>
           <note from="Developer" annotates="general" priority="2"></note>
@@ -478,6 +483,11 @@
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Table ADM Integration Setup - Field Last Sale Sync - Property Caption</note>
         </trans-unit>
+        <trans-unit id="Table 3414399283 - Field 4212641759 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Last Stock Sync</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table ADM Integration Setup - Field Last Stock Sync - Property Caption</note>
+        </trans-unit>
         <trans-unit id="Table 3414399283 - Field 4187347522 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Page Size</source>
           <note from="Developer" annotates="general" priority="2"></note>
@@ -497,6 +507,16 @@
           <source>Sale Sync Interval (Min)</source>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Table ADM Integration Setup - Field Sale Sync Interval (Min) - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 3414399283 - Field 3175424926 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Stock Sync Enabled</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table ADM Integration Setup - Field Stock Sync Enabled - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 3414399283 - Field 4160960245 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Stock Sync Interval (Min)</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table ADM Integration Setup - Field Stock Sync Interval (Min) - Property Caption</note>
         </trans-unit>
         <trans-unit id="Table 3997100171 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>AuditData Manage Item Attribute</source>
@@ -637,6 +657,26 @@
           <source>Second VAT</source>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Table ADM Item Mapping - Field Second VAT - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 1968591744 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>AuditData Manage Location</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table ADM Manage Location - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 1968591744 - Field 986743050 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Is Active</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table ADM Manage Location - Field Is Active - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 1968591744 - Field 1334310955 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Manage Location ID</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table ADM Manage Location - Field Manage Location ID - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 1968591744 - Field 2961552353 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Name</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table ADM Manage Location - Field Name - Property Caption</note>
         </trans-unit>
         <trans-unit id="Table 2540862241 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>AuditData Manage Manufacturer</source>
@@ -1248,6 +1288,16 @@
           <note from="Developer" annotates="general" priority="2">%1 = page number, %2 = page size</note>
           <note from="Xliff Generator" annotates="general" priority="3">Codeunit ADM API Client - Method GetPaged - NamedType PageSuffixQuestLbl</note>
         </trans-unit>
+        <trans-unit id="Codeunit 3890226179 - Method 2312626106 - NamedType 2098066895" size-unit="char" translate="yes" xml:space="preserve">
+          <source>&amp;Page=%1&amp;PerPage=%2</source>
+          <note from="Developer" annotates="general" priority="2">%1 = page number, %2 = page size</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Codeunit ADM API Client - Method TryGetPaged - NamedType PageSuffixAndLbl</note>
+        </trans-unit>
+        <trans-unit id="Codeunit 3890226179 - Method 2312626106 - NamedType 3744885356" size-unit="char" translate="yes" xml:space="preserve">
+          <source>?Page=%1&amp;PerPage=%2</source>
+          <note from="Developer" annotates="general" priority="2">%1 = page number, %2 = page size</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Codeunit ADM API Client - Method TryGetPaged - NamedType PageSuffixQuestLbl</note>
+        </trans-unit>
         <trans-unit id="Codeunit 408026690 - NamedType 3391044478" size-unit="char" translate="yes" xml:space="preserve">
           <source>Attributes Sync</source>
           <note from="Developer" annotates="general" priority="2"></note>
@@ -1313,6 +1363,16 @@
           <note from="Developer" annotates="general" priority="2">%1 = count</note>
           <note from="Xliff Generator" annotates="general" priority="3">Codeunit ADM Inventory Reference Sync - Method SyncHearingAidTypes - NamedType SyncCompleteMsg</note>
         </trans-unit>
+        <trans-unit id="Codeunit 408026690 - Method 391503235 - NamedType 3873506053" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Locations Sync</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Codeunit ADM Inventory Reference Sync - Method SyncLocations - NamedType SyncLocationsLbl</note>
+        </trans-unit>
+        <trans-unit id="Codeunit 408026690 - Method 391503235 - NamedType 1475435937" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Locations sync complete. %1 record(s) upserted.</source>
+          <note from="Developer" annotates="general" priority="2">%1 = count</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Codeunit ADM Inventory Reference Sync - Method SyncLocations - NamedType SyncCompleteMsg</note>
+        </trans-unit>
         <trans-unit id="Codeunit 408026690 - Method 3168142349 - NamedType 1475435937" size-unit="char" translate="yes" xml:space="preserve">
           <source>Manufacturers sync complete. %1 record(s) upserted.</source>
           <note from="Developer" annotates="general" priority="2">%1 = count</note>
@@ -1367,6 +1427,31 @@
           <source>Split lines already exist for this order. Do you want to replace them?</source>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Codeunit ADM Split Suggester - Method SuggestSplitLines - NamedType SplitAlreadyExistsQst</note>
+        </trans-unit>
+        <trans-unit id="Codeunit 3164657185 - NamedType 1671159053" size-unit="char" translate="yes" xml:space="preserve">
+          <source>api/v2/inventory/stock/locations/%1/products/%2/not-serialized/adjust</source>
+          <note from="Developer" annotates="general" priority="2">%1 = Manage location ID, %2 = Manage product ID</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Codeunit ADM Stock Sync - NamedType AdjustNotSerializedUrlLbl</note>
+        </trans-unit>
+        <trans-unit id="Codeunit 3164657185 - NamedType 919543786" size-unit="char" translate="yes" xml:space="preserve">
+          <source>api/v2/inventory/stock/locations/%1/products/%2/serialized/adjust</source>
+          <note from="Developer" annotates="general" priority="2">%1 = Manage location ID, %2 = Manage product ID</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Codeunit ADM Stock Sync - NamedType AdjustSerializedUrlLbl</note>
+        </trans-unit>
+        <trans-unit id="Codeunit 3164657185 - NamedType 1517167983" size-unit="char" translate="yes" xml:space="preserve">
+          <source>No Manage Location ID is configured. Set the Default Manage Location ID in the Integration Setup, or assign a Manage Location ID to one or more BC Locations.</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Codeunit ADM Stock Sync - NamedType NoLocationConfiguredErr</note>
+        </trans-unit>
+        <trans-unit id="Codeunit 3164657185 - NamedType 2863856190" size-unit="char" translate="yes" xml:space="preserve">
+          <source>api/v2/inventory/products/%1</source>
+          <note from="Developer" annotates="general" priority="2">%1 = Manage product ID (GUID)</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Codeunit ADM Stock Sync - NamedType ProductUrlLbl</note>
+        </trans-unit>
+        <trans-unit id="Codeunit 3164657185 - NamedType 628218639" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Stock Sync</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Codeunit ADM Stock Sync - NamedType StockSyncLbl</note>
         </trans-unit>
         <trans-unit id="Codeunit 3491822324 - Method 3173202076 - NamedType 1660564527" size-unit="char" translate="yes" xml:space="preserve">
           <source>&lt;-%1D&gt;</source>
@@ -2148,6 +2233,16 @@
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Page ADM Integration Setup - Control Funder Customer Posting Group - Property ToolTip</note>
         </trans-unit>
+        <trans-unit id="Page 3414399283 - Control 914951918 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Location Mapping</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page ADM Integration Setup - Control LocationSetup - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Page 3414399283 - Control 3852282982 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Specifies the AuditData Manage location used for stock synchronisation when no per-location mapping is configured on BC Locations. Run 'Sync Locations from Manage' on the Manage Locations page to find available IDs.</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page ADM Integration Setup - Control Default Manage Location ID - Property ToolTip</note>
+        </trans-unit>
         <trans-unit id="Page 3414399283 - Control 1319494566 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Synchronisation Settings</source>
           <note from="Developer" annotates="general" priority="2"></note>
@@ -2238,6 +2333,26 @@
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Page ADM Integration Setup - Control Sale Sync Interval (Min) - Property ToolTip</note>
         </trans-unit>
+        <trans-unit id="Page 3414399283 - Control 535615857 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Stock Levels</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page ADM Integration Setup - Control StockGroup - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Page 3414399283 - Control 4212641759 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Shows when stock levels were last synchronised to AuditData Manage.</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page ADM Integration Setup - Control Last Stock Sync - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="Page 3414399283 - Control 3175424926 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Specifies whether stock level synchronisation from Business Central to AuditData Manage is enabled.</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page ADM Integration Setup - Control Stock Sync Enabled - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="Page 3414399283 - Control 4160960245 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Specifies how often (in minutes) stock levels are pushed to AuditData Manage.</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page ADM Integration Setup - Control Stock Sync Interval (Min) - Property ToolTip</note>
+        </trans-unit>
         <trans-unit id="Page 3414399283 - Action 1923928525 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
           <source>Opens the funder terms list to manage default payment split settings for all funders.</source>
           <note from="Developer" annotates="general" priority="2"></note>
@@ -2257,6 +2372,16 @@
           <source>Item Mappings</source>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Page ADM Integration Setup - Action ItemMappings - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Page 3414399283 - Action 2041812185 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Opens the list of AuditData Manage locations. Use 'Sync Locations from Manage' on this page to fetch the available location IDs, then copy the ID into the Default Manage Location ID field or onto each BC Location card.</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page ADM Integration Setup - Action ManageLocations - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="Page 3414399283 - Action 2041812185 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Manage Locations</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page ADM Integration Setup - Action ManageLocations - Property Caption</note>
         </trans-unit>
         <trans-unit id="Page 3414399283 - Action 3364542941 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
           <source>Opens the synchronisation log to review recent sync activity and errors.</source>
@@ -2513,6 +2638,16 @@
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Page ADM Item Mapping List - Action OpenItem - Property Caption</note>
         </trans-unit>
+        <trans-unit id="Page 3571162605 - Action 2278227980 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Pushes all items to AuditData Manage immediately, regardless of the Needs Sync flag.</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page ADM Item Mapping List - Action SyncAllItems - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="Page 3571162605 - Action 2278227980 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Sync All Items</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page ADM Item Mapping List - Action SyncAllItems - Property Caption</note>
+        </trans-unit>
         <trans-unit id="Page 3571162605 - Action 2018552988 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
           <source>Pushes the selected item to AuditData Manage immediately, regardless of the Needs Sync flag.</source>
           <note from="Developer" annotates="general" priority="2"></note>
@@ -2587,6 +2722,41 @@
           <source>Sync Reference Data from Manage</source>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Page ADM Item Mapping List - Action SyncAllReferenceData - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Page 3204793458 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>AuditData Manage Locations</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page ADM Manage Location List - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Page 3204793458 - Control 986743050 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Specifies whether this location is currently active in AuditData Manage.</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page ADM Manage Location List - Control Is Active - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="Page 3204793458 - Control 1334310955 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Specifies the unique identifier of this location in AuditData Manage. Use this ID when configuring the Default Manage Location ID in the Integration Setup, or when assigning a Manage Location ID to a BC Location.</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page ADM Manage Location List - Control Manage Location ID - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="Page 3204793458 - Control 2961552353 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Specifies the name of the AuditData Manage location.</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page ADM Manage Location List - Control Name - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="Page 3204793458 - Action 391503235 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Fetches the list of clinic locations (brands) from AuditData Manage and updates this table.</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page ADM Manage Location List - Action SyncLocations - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="Page 3204793458 - Action 391503235 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Sync Locations from Manage</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page ADM Manage Location List - Action SyncLocations - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Page 3204793458 - Action 391503235 - Method 1377591017 - NamedType 1649695370" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Locations synced successfully from AuditData Manage.</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page ADM Manage Location List - Action SyncLocations - Method OnAction - NamedType SyncDoneMsg</note>
         </trans-unit>
         <trans-unit id="Page 2886514519 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>AuditData Manage Manufacturers</source>
@@ -3768,6 +3938,16 @@
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">PageExtension ADM Item Card Ext - Control ADMItemColors - Property Caption</note>
         </trans-unit>
+        <trans-unit id="PageExtension 3501266548 - Control 1621372192 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Page 3870787835">
+          <source>AuditData Manage</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">PageExtension ADM Location Card Ext - Control AuditDataManage - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="PageExtension 3501266548 - Control 4245260963 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Page 3870787835">
+          <source>Specifies the AuditData Manage location that corresponds to this BC location. Used by the stock level synchronisation to push inventory to the correct clinic in Manage. Run 'Sync Locations from Manage' on the Manage Locations page to populate the available IDs.</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">PageExtension ADM Location Card Ext - Control ADM Manage Location ID - Property ToolTip</note>
+        </trans-unit>
         <trans-unit id="PageExtension 1428563356 - Action 1069001736 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Page 4105562392">
           <source>AuditData Manage</source>
           <note from="Developer" annotates="general" priority="2"></note>
@@ -3912,6 +4092,11 @@
           <source>Manage Supplier ID</source>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">TableExtension ADM Item Ext - Field ADM Manage Supplier ID - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="TableExtension 2248823368 - Field 4245260963 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Table 3891454143">
+          <source>Manage Location ID</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">TableExtension ADM Location Ext - Field ADM Manage Location ID - Property Caption</note>
         </trans-unit>
         <trans-unit id="Profile 1956655082 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>AuditData Manage Integration</source>

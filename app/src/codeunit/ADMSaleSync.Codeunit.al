@@ -1,5 +1,10 @@
 codeunit 80307 "ADM Sale Sync"
 {
+    trigger OnRun()
+    begin
+        SyncSales();
+    end;
+
     procedure SyncSales()
     var
         IntegrationSetup: Record "ADM Integration Setup";

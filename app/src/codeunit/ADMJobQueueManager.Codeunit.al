@@ -5,6 +5,7 @@ codeunit 80310 "ADM Job Queue Manager"
         FunderSyncJobDescTxt: Label 'ADM: Sync Funders from AuditData Manage', Locked = true;
         SaleSyncJobDescTxt: Label 'ADM: Sync Sales from AuditData Manage', Locked = true;
         ItemSyncJobDescTxt: Label 'ADM: Push Items to AuditData Manage', Locked = true;
+        StockSyncJobDescTxt: Label 'ADM: Sync Stock Levels to AuditData Manage', Locked = true;
 
     procedure SetupAllJobQueues()
     var
@@ -35,6 +36,12 @@ codeunit 80310 "ADM Job Queue Manager"
             ItemSyncJobDescTxt,
             IntegrationSetup."Item Sync Interval (Min)",
             IntegrationSetup."Item Sync Enabled");
+
+        SetupJobQueue(
+            Codeunit::"ADM Stock Sync",
+            StockSyncJobDescTxt,
+            IntegrationSetup."Stock Sync Interval (Min)",
+            IntegrationSetup."Stock Sync Enabled");
     end;
 
     local procedure SetupJobQueue(CodeunitID: Integer; Description: Text[250]; IntervalMinutes: Integer; IsEnabled: Boolean)
