@@ -2,6 +2,7 @@ codeunit 80311 "ADM Inventory Reference Sync"
 {
     var
         ADMAPIClient: Codeunit "ADM API Client";
+        IntegrationSetup: Record "ADM Integration Setup";
         SyncColorsLbl: Label 'Colors Sync';
         SyncBatteryTypesLbl: Label 'Battery Types Sync';
         SyncAttributesLbl: Label 'Attributes Sync';
@@ -49,9 +50,10 @@ codeunit 80311 "ADM Inventory Reference Sync"
         LogEntryNo: Integer;
         SyncCompleteMsg: Label 'Hearing aid types sync complete. %1 record(s) upserted.', Comment = '%1 = count';
     begin
+        IntegrationSetup := IntegrationSetup.GetSetup();
         LogEntryNo := SyncLogManager.StartLog("ADM Sync Direction"::Inbound, SyncHearingAidTypesLbl);
 
-        ADMAPIClient.GetPaged('api/v2/inventory/hearing-aid-types', AllItems);
+        ADMAPIClient.GetPaged(IntegrationSetup."Hearing Aid Types Endpoint", AllItems);
 
         foreach ItemToken in AllItems do begin
             if not ItemToken.IsObject() then
@@ -97,9 +99,10 @@ codeunit 80311 "ADM Inventory Reference Sync"
         LogEntryNo: Integer;
         SyncCompleteMsg: Label 'Colors sync complete. %1 record(s) upserted.', Comment = '%1 = count';
     begin
+        IntegrationSetup := IntegrationSetup.GetSetup();
         LogEntryNo := SyncLogManager.StartLog("ADM Sync Direction"::Inbound, SyncColorsLbl);
 
-        ADMAPIClient.GetPaged('api/v2/inventory/colors', AllItems);
+        ADMAPIClient.GetPaged(IntegrationSetup."Colors Endpoint", AllItems);
 
         foreach ItemToken in AllItems do begin
             if not ItemToken.IsObject() then
@@ -145,9 +148,10 @@ codeunit 80311 "ADM Inventory Reference Sync"
         LogEntryNo: Integer;
         SyncCompleteMsg: Label 'Battery types sync complete. %1 record(s) upserted.', Comment = '%1 = count';
     begin
+        IntegrationSetup := IntegrationSetup.GetSetup();
         LogEntryNo := SyncLogManager.StartLog("ADM Sync Direction"::Inbound, SyncBatteryTypesLbl);
 
-        ADMAPIClient.GetPaged('api/v2/inventory/battery-types', AllItems);
+        ADMAPIClient.GetPaged(IntegrationSetup."Battery Types Endpoint", AllItems);
 
         foreach ItemToken in AllItems do begin
             if not ItemToken.IsObject() then
@@ -204,9 +208,10 @@ codeunit 80311 "ADM Inventory Reference Sync"
         LogEntryNo: Integer;
         SyncCompleteMsg: Label 'Attributes sync complete. %1 attribute(s) upserted.', Comment = '%1 = count';
     begin
+        IntegrationSetup := IntegrationSetup.GetSetup();
         LogEntryNo := SyncLogManager.StartLog("ADM Sync Direction"::Inbound, SyncAttributesLbl);
 
-        ADMAPIClient.GetPaged('api/v2/inventory/attributes', AllItems);
+        ADMAPIClient.GetPaged(IntegrationSetup."Attributes Endpoint", AllItems);
 
         foreach ItemToken in AllItems do begin
             if not ItemToken.IsObject() then
@@ -299,9 +304,9 @@ codeunit 80311 "ADM Inventory Reference Sync"
         ManageAttrID: Guid;
         ValueName: Text[100];
         ManageIDText: Text;
-        ProductUrlLbl: Label 'api/v2/inventory/products/%1', Comment = '%1 = product GUID';
         ItemNotMappedErr: Label 'Item %1 has no AuditData Manage product mapping. Use ''Fetch Products from Manage'' first.', Comment = '%1 = item no.';
     begin
+        IntegrationSetup := IntegrationSetup.GetSetup();
         if not Item.Get(ItemNo) then
             Error(ItemNotMappedErr, ItemNo);
         if IsNullGuid(Item."ADM Manage Product ID") then
@@ -309,7 +314,7 @@ codeunit 80311 "ADM Inventory Reference Sync"
 
         ManageIDText := LowerCase(Format(Item."ADM Manage Product ID", 0, 4));
 
-        if not ADMAPIClient.TryGet(StrSubstNo(ProductUrlLbl, ManageIDText), ResponseText, ErrorText) then
+        if not ADMAPIClient.TryGet(StrSubstNo(IntegrationSetup."Product URL Pattern", ManageIDText), ResponseText, ErrorText) then
             Error(ErrorText);
 
         ResponseToken.ReadFrom(ResponseText);
@@ -489,9 +494,10 @@ codeunit 80311 "ADM Inventory Reference Sync"
         LogEntryNo: Integer;
         SyncCompleteMsg: Label 'Product categories sync complete. %1 record(s) upserted.', Comment = '%1 = count';
     begin
+        IntegrationSetup := IntegrationSetup.GetSetup();
         LogEntryNo := SyncLogManager.StartLog("ADM Sync Direction"::Inbound, SyncProductCategoriesLbl);
 
-        ADMAPIClient.GetPaged('api/v2/inventory/product-categories', AllItems);
+        ADMAPIClient.GetPaged(IntegrationSetup."Product Categories Endpoint", AllItems);
 
         foreach ItemToken in AllItems do begin
             if not ItemToken.IsObject() then
@@ -540,9 +546,10 @@ codeunit 80311 "ADM Inventory Reference Sync"
         LogEntryNo: Integer;
         SyncCompleteMsg: Label 'Manufacturers sync complete. %1 record(s) upserted.', Comment = '%1 = count';
     begin
+        IntegrationSetup := IntegrationSetup.GetSetup();
         LogEntryNo := SyncLogManager.StartLog("ADM Sync Direction"::Inbound, SyncManufacturersLbl);
 
-        ADMAPIClient.GetPaged('api/v2/inventory/manufacturers', AllItems);
+        ADMAPIClient.GetPaged(IntegrationSetup."Manufacturers Endpoint", AllItems);
 
         foreach ItemToken in AllItems do begin
             if not ItemToken.IsObject() then
@@ -591,9 +598,10 @@ codeunit 80311 "ADM Inventory Reference Sync"
         LogEntryNo: Integer;
         SyncCompleteMsg: Label 'Suppliers sync complete. %1 record(s) upserted.', Comment = '%1 = count';
     begin
+        IntegrationSetup := IntegrationSetup.GetSetup();
         LogEntryNo := SyncLogManager.StartLog("ADM Sync Direction"::Inbound, SyncSuppliersLbl);
 
-        ADMAPIClient.GetPaged('api/v2/inventory/suppliers', AllItems);
+        ADMAPIClient.GetPaged(IntegrationSetup."Suppliers Endpoint", AllItems);
 
         foreach ItemToken in AllItems do begin
             if not ItemToken.IsObject() then
@@ -646,9 +654,10 @@ codeunit 80311 "ADM Inventory Reference Sync"
         SyncLocationsLbl: Label 'Locations Sync';
         SyncCompleteMsg: Label 'Locations sync complete. %1 record(s) upserted.', Comment = '%1 = count';
     begin
+        IntegrationSetup := IntegrationSetup.GetSetup();
         LogEntryNo := SyncLogManager.StartLog("ADM Sync Direction"::Inbound, SyncLocationsLbl);
 
-        if not ADMAPIClient.TryGetPaged('api/v1/locations', AllItems, ErrorText) then begin
+        if not ADMAPIClient.TryGetPaged(IntegrationSetup."Locations Endpoint", AllItems, ErrorText) then begin
             SyncLogManager.FailLog(LogEntryNo, ErrorText);
             exit(false);
         end;

@@ -57,6 +57,7 @@ codeunit 80308 "ADM Product Sync"
     local procedure PushItem(var lItem: Record Item): Boolean
     var
         ItemMapping: Record "ADM Item Mapping";
+        IntegrationSetup: Record "ADM Integration Setup";
         RequestBody: Text;
         ResponseText: Text;
         ErrorText: Text;
@@ -65,8 +66,8 @@ codeunit 80308 "ADM Product Sync"
         ManageIDText: Text;
         IsNew: Boolean;
         DataObj: JsonObject;
-        ProductUrlLbl: Label 'api/v2/inventory/products/%1', Comment = '%1 = product ID';
     begin
+        IntegrationSetup := IntegrationSetup.GetSetup();
         IsNew := IsNullGuid(lItem."ADM Manage Product ID");
 
         if IsNullGuid(lItem."ADM Manage Category ID") then begin
@@ -83,7 +84,7 @@ codeunit 80308 "ADM Product Sync"
 
         if IsNew then begin
             // POST - create new product
-            if not ADMAPIClient.TryPost('api/v2/inventory/products', RequestBody, ResponseText, ErrorText) then begin
+            if not ADMAPIClient.TryPost(IntegrationSetup."Products Endpoint", RequestBody, ResponseText, ErrorText) then begin
                 MarkItemSyncError(lItem, ErrorText);
                 exit(false);
             end;
@@ -114,7 +115,7 @@ codeunit 80308 "ADM Product Sync"
         end else begin
             // PUT - update existing product
             ManageIDText := LowerCase(Format(lItem."ADM Manage Product ID", 0, 4));
-            if not ADMAPIClient.TryPut(StrSubstNo(ProductUrlLbl, ManageIDText), RequestBody, ResponseText, ErrorText) then begin
+            if not ADMAPIClient.TryPut(StrSubstNo(IntegrationSetup."Product URL Pattern", ManageIDText), RequestBody, ResponseText, ErrorText) then begin
                 MarkItemSyncError(lItem, ErrorText);
                 exit(false);
             end;
@@ -221,6 +222,7 @@ codeunit 80308 "ADM Product Sync"
     procedure FetchManageProducts(var Linked: Integer; var Unmatched: Integer; var AlreadyLinked: Integer; var ErrorText: Text): Boolean
     var
         ItemMapping: Record "ADM Item Mapping";
+        IntegrationSetup: Record "ADM Integration Setup";
         Item: Record Item;
         AllProducts: JsonArray;
         ProductToken: JsonToken;
@@ -231,7 +233,8 @@ codeunit 80308 "ADM Product Sync"
         ManageIsActive: Boolean;
         ItemNo: Code[20];
     begin
-        if not ADMAPIClient.TryGetPaged('api/v2/inventory/products', AllProducts, ErrorText) then
+        IntegrationSetup := IntegrationSetup.GetSetup();
+        if not ADMAPIClient.TryGetPaged(IntegrationSetup."Products Endpoint", AllProducts, ErrorText) then
             exit(false);
 
         foreach ProductToken in AllProducts do begin

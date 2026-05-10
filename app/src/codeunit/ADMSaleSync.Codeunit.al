@@ -34,6 +34,7 @@ codeunit 80307 "ADM Sale Sync"
     local procedure TrySyncSales(var Processed: Integer; var Failed: Integer; var ErrorText: Text): Boolean
     var
         SaleBufferHeader: Record "ADM Sale Buffer Header";
+        IntegrationSetup: Record "ADM Integration Setup";
         ADMAPIClient: Codeunit "ADM API Client";
         AllResults: JsonArray;
         SaleToken: JsonToken;
@@ -41,10 +42,11 @@ codeunit 80307 "ADM Sale Sync"
         ManageSaleID: Guid;
         ResponseText: Text;
     begin
-        if not ADMAPIClient.TryGet('api/v2/invoicing/sales', ResponseText, ErrorText) then
+        IntegrationSetup := IntegrationSetup.GetSetup();
+        if not ADMAPIClient.TryGet(IntegrationSetup."Sale Sync Endpoint", ResponseText, ErrorText) then
             exit(false);
 
-        ADMAPIClient.GetPaged('api/v2/invoicing/sales', AllResults);
+        ADMAPIClient.GetPaged(IntegrationSetup."Sale Sync Endpoint", AllResults);
 
         foreach SaleToken in AllResults do begin
             SaleObj := SaleToken.AsObject();
@@ -76,17 +78,18 @@ codeunit 80307 "ADM Sale Sync"
     local procedure ImportSale(ManageSaleID: Guid; ADMAPIClient: Codeunit "ADM API Client"): Boolean
     var
         SaleBufferHeader: Record "ADM Sale Buffer Header";
+        IntegrationSetup: Record "ADM Integration Setup";
         SaleObj: JsonObject;
         ResponseText: Text;
         ErrorText: Text;
         SaleIDText: Text;
-        SaleUrlLbl: Label 'api/v2/invoicing/sales/%1', Comment = '%1 = sale ID';
     begin
+        IntegrationSetup := IntegrationSetup.GetSetup();
         SaleIDText := LowerCase(Format(ManageSaleID, 0, 4));
 
         // Fetch full sale details
         if not ADMAPIClient.TryGet(
-            StrSubstNo(SaleUrlLbl, SaleIDText),
+            StrSubstNo(IntegrationSetup."Sale URL Pattern", SaleIDText),
             ResponseText, ErrorText)
         then
             exit(false);
@@ -168,12 +171,13 @@ codeunit 80307 "ADM Sale Sync"
         ProductsArray: JsonArray;
         ProductToken: JsonToken;
         ProductObj: JsonObject;
+        IntegrationSetup: Record "ADM Integration Setup";
         LineNo: Integer;
         ManageProductID: Guid;
-        SaleLinesUrlLbl: Label 'api/v2/invoicing/sales/%1/products', Comment = '%1 = sale ID';
     begin
+        IntegrationSetup := IntegrationSetup.GetSetup();
         if not ADMAPIClient.TryGet(
-            StrSubstNo(SaleLinesUrlLbl, SaleIDText),
+            StrSubstNo(IntegrationSetup."Sale Lines URL Pattern", SaleIDText),
             ResponseText, ErrorText)
         then
             exit;

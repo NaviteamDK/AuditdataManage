@@ -154,6 +154,109 @@ table 80300 "ADM Integration Setup"
             DataClassification = CustomerContent;
             TableRelation = "ADM Manage Location"."Manage Location ID";
         }
+        // ── API Endpoint Configuration ───────────────────────────────────────────
+        field(80; "Client Sync Endpoint"; Text[250])
+        {
+            Caption = 'Client Sync Endpoint';
+            DataClassification = CustomerContent;
+            InitValue = 'api/v1/patients/last?hours=10000';
+        }
+        field(81; "Funder Sync Endpoint"; Text[250])
+        {
+            Caption = 'Funder Sync Endpoint';
+            DataClassification = CustomerContent;
+            InitValue = 'api/v2/invoicing/funders';
+        }
+        field(82; "Sale Sync Endpoint"; Text[250])
+        {
+            Caption = 'Sale Sync Endpoint';
+            DataClassification = CustomerContent;
+            InitValue = 'api/v2/invoicing/sales';
+        }
+        field(83; "Products Endpoint"; Text[250])
+        {
+            Caption = 'Products Endpoint';
+            DataClassification = CustomerContent;
+            InitValue = 'api/v2/inventory/products';
+        }
+        field(84; "Hearing Aid Types Endpoint"; Text[250])
+        {
+            Caption = 'Hearing Aid Types Endpoint';
+            DataClassification = CustomerContent;
+            InitValue = 'api/v2/inventory/hearing-aid-types';
+        }
+        field(85; "Colors Endpoint"; Text[250])
+        {
+            Caption = 'Colors Endpoint';
+            DataClassification = CustomerContent;
+            InitValue = 'api/v2/inventory/colors';
+        }
+        field(86; "Battery Types Endpoint"; Text[250])
+        {
+            Caption = 'Battery Types Endpoint';
+            DataClassification = CustomerContent;
+            InitValue = 'api/v2/inventory/battery-types';
+        }
+        field(87; "Attributes Endpoint"; Text[250])
+        {
+            Caption = 'Attributes Endpoint';
+            DataClassification = CustomerContent;
+            InitValue = 'api/v2/inventory/attributes';
+        }
+        field(88; "Product Categories Endpoint"; Text[250])
+        {
+            Caption = 'Product Categories Endpoint';
+            DataClassification = CustomerContent;
+            InitValue = 'api/v2/inventory/product-categories';
+        }
+        field(89; "Manufacturers Endpoint"; Text[250])
+        {
+            Caption = 'Manufacturers Endpoint';
+            DataClassification = CustomerContent;
+            InitValue = 'api/v2/inventory/manufacturers';
+        }
+        field(90; "Suppliers Endpoint"; Text[250])
+        {
+            Caption = 'Suppliers Endpoint';
+            DataClassification = CustomerContent;
+            InitValue = 'api/v2/inventory/suppliers';
+        }
+        field(91; "Locations Endpoint"; Text[250])
+        {
+            Caption = 'Locations Endpoint';
+            DataClassification = CustomerContent;
+            InitValue = 'api/v1/locations';
+        }
+        field(92; "Product URL Pattern"; Text[250])
+        {
+            Caption = 'Product URL Pattern';
+            DataClassification = CustomerContent;
+            InitValue = 'api/v2/inventory/products/%1';
+        }
+        field(93; "Sale URL Pattern"; Text[250])
+        {
+            Caption = 'Sale URL Pattern';
+            DataClassification = CustomerContent;
+            InitValue = 'api/v2/invoicing/sales/%1';
+        }
+        field(94; "Sale Lines URL Pattern"; Text[250])
+        {
+            Caption = 'Sale Lines URL Pattern';
+            DataClassification = CustomerContent;
+            InitValue = 'api/v2/invoicing/sales/%1/products';
+        }
+        field(95; "Non-Serial Stock URL Pattern"; Text[250])
+        {
+            Caption = 'Non-Serialized Stock URL Pattern';
+            DataClassification = CustomerContent;
+            InitValue = 'api/v2/inventory/stock/locations/%1/products/%2/not-serialized/adjust';
+        }
+        field(96; "Stock Serialized URL Pattern"; Text[250])
+        {
+            Caption = 'Stock Serialized URL Pattern';
+            DataClassification = CustomerContent;
+            InitValue = 'api/v2/inventory/stock/locations/%1/products/%2/serialized/adjust';
+        }
     }
 
     keys
@@ -188,5 +291,27 @@ table 80300 "ADM Integration Setup"
     procedure HasValidAPIConfig(): Boolean
     begin
         exit(("API Base URL" <> '') and ("API Key" <> ''));
+    end;
+
+    procedure ResetEndpoints()
+    begin
+        Rec."Client Sync Endpoint" := 'api/v1/patients/last?hours=10000';
+        Rec."Funder Sync Endpoint" := 'api/v2/invoicing/funders';
+        Rec."Sale Sync Endpoint" := 'api/v2/invoicing/sales';
+        Rec."Products Endpoint" := 'api/v2/inventory/products';
+        Rec."Hearing Aid Types Endpoint" := 'api/v2/inventory/hearing-aid-types';
+        Rec."Colors Endpoint" := 'api/v2/inventory/colors';
+        Rec."Battery Types Endpoint" := 'api/v2/inventory/battery-types';
+        Rec."Attributes Endpoint" := 'api/v2/inventory/attributes';
+        Rec."Product Categories Endpoint" := 'api/v2/inventory/product-categories';
+        Rec."Manufacturers Endpoint" := 'api/v2/inventory/manufacturers';
+        Rec."Suppliers Endpoint" := 'api/v2/inventory/suppliers';
+        Rec."Locations Endpoint" := 'api/v1/locations';
+        Rec."Product URL Pattern" := 'api/v2/inventory/products/%1';
+        Rec."Sale URL Pattern" := 'api/v2/invoicing/sales/%1';
+        Rec."Sale Lines URL Pattern" := 'api/v2/invoicing/sales/%1/products';
+        Rec."Non-Serial Stock URL Pattern" := 'api/v2/inventory/stock/locations/%1/products/%2/not-serialized/adjust';
+        Rec."Stock Serialized URL Pattern" := 'api/v2/inventory/stock/locations/%1/products/%2/serialized/adjust';
+        Rec.Modify();
     end;
 }

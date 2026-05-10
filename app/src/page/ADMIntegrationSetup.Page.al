@@ -191,6 +191,96 @@ page 80300 "ADM Integration Setup"
                     ToolTip = 'Specifies the AuditData Manage location used for stock synchronisation when no per-location mapping is configured on BC Locations. Run ''Sync Locations from Manage'' on the Manage Locations page to find available IDs.';
                 }
             }
+            group(EndpointsGroup)
+            {
+                Caption = 'API Endpoints';
+
+                field("Client Sync Endpoint"; Rec."Client Sync Endpoint")
+                {
+                    ApplicationArea = All;
+                    ToolTip = 'Specifies the API endpoint used to fetch clients (patients) from AuditData Manage.';
+                }
+                field("Funder Sync Endpoint"; Rec."Funder Sync Endpoint")
+                {
+                    ApplicationArea = All;
+                    ToolTip = 'Specifies the API endpoint used to fetch funders from AuditData Manage.';
+                }
+                field("Sale Sync Endpoint"; Rec."Sale Sync Endpoint")
+                {
+                    ApplicationArea = All;
+                    ToolTip = 'Specifies the API endpoint used to fetch sales from AuditData Manage.';
+                }
+                field("Products Endpoint"; Rec."Products Endpoint")
+                {
+                    ApplicationArea = All;
+                    ToolTip = 'Specifies the API endpoint used for product list and create operations.';
+                }
+                field("Product URL Pattern"; Rec."Product URL Pattern")
+                {
+                    ApplicationArea = All;
+                    ToolTip = 'Specifies the API URL pattern (with %1 = product ID) used for single product GET and PUT operations.';
+                }
+                field("Sale URL Pattern"; Rec."Sale URL Pattern")
+                {
+                    ApplicationArea = All;
+                    ToolTip = 'Specifies the API URL pattern (with %1 = sale ID) used to fetch a single sale.';
+                }
+                field("Sale Lines URL Pattern"; Rec."Sale Lines URL Pattern")
+                {
+                    ApplicationArea = All;
+                    ToolTip = 'Specifies the API URL pattern (with %1 = sale ID) used to fetch sale lines.';
+                }
+                field("Hearing Aid Types Endpoint"; Rec."Hearing Aid Types Endpoint")
+                {
+                    ApplicationArea = All;
+                    ToolTip = 'Specifies the API endpoint used to fetch hearing aid types from AuditData Manage.';
+                }
+                field("Colors Endpoint"; Rec."Colors Endpoint")
+                {
+                    ApplicationArea = All;
+                    ToolTip = 'Specifies the API endpoint used to fetch colors from AuditData Manage.';
+                }
+                field("Battery Types Endpoint"; Rec."Battery Types Endpoint")
+                {
+                    ApplicationArea = All;
+                    ToolTip = 'Specifies the API endpoint used to fetch battery types from AuditData Manage.';
+                }
+                field("Attributes Endpoint"; Rec."Attributes Endpoint")
+                {
+                    ApplicationArea = All;
+                    ToolTip = 'Specifies the API endpoint used to fetch attributes from AuditData Manage.';
+                }
+                field("Product Categories Endpoint"; Rec."Product Categories Endpoint")
+                {
+                    ApplicationArea = All;
+                    ToolTip = 'Specifies the API endpoint used to fetch product categories from AuditData Manage.';
+                }
+                field("Manufacturers Endpoint"; Rec."Manufacturers Endpoint")
+                {
+                    ApplicationArea = All;
+                    ToolTip = 'Specifies the API endpoint used to fetch manufacturers from AuditData Manage.';
+                }
+                field("Suppliers Endpoint"; Rec."Suppliers Endpoint")
+                {
+                    ApplicationArea = All;
+                    ToolTip = 'Specifies the API endpoint used to fetch suppliers from AuditData Manage.';
+                }
+                field("Locations Endpoint"; Rec."Locations Endpoint")
+                {
+                    ApplicationArea = All;
+                    ToolTip = 'Specifies the API endpoint used to fetch clinic locations from AuditData Manage.';
+                }
+                field("Non-Serial Stock URL Pattern"; Rec."Non-Serial Stock URL Pattern")
+                {
+                    ApplicationArea = All;
+                    ToolTip = 'Specifies the API URL pattern (with %1 = location ID, %2 = product ID) for non-serialized stock adjustments.';
+                }
+                field("Stock Serialized URL Pattern"; Rec."Stock Serialized URL Pattern")
+                {
+                    ApplicationArea = All;
+                    ToolTip = 'Specifies the API URL pattern (with %1 = location ID, %2 = product ID) for serialized stock adjustments.';
+                }
+            }
         }
     }
 
@@ -198,6 +288,22 @@ page 80300 "ADM Integration Setup"
     {
         area(Processing)
         {
+            action(ResetEndpoints)
+            {
+                ApplicationArea = All;
+                Caption = 'Reset Endpoints to Default';
+                Image = Restore;
+                ToolTip = 'Resets all API endpoint fields to their default values.';
+
+                trigger OnAction()
+                var
+                    ResetMsg: Label 'All API endpoints have been reset to their default values.';
+                begin
+                    Rec.ResetEndpoints();
+                    CurrPage.Update(false);
+                    Message(ResetMsg);
+                end;
+            }
             action(TestConnection)
             {
                 ApplicationArea = All;

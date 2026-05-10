@@ -34,6 +34,7 @@ codeunit 80306 "ADM Funder Sync"
     local procedure TrySyncFunders(var Processed: Integer; var Failed: Integer; var ErrorText: Text): Boolean
     var
         FunderBuffer: Record "ADM Funder Buffer";
+        IntegrationSetup: Record "ADM Integration Setup";
         ADMAPIClient: Codeunit "ADM API Client";
         AllResults: JsonArray;
         FunderToken: JsonToken;
@@ -41,10 +42,11 @@ codeunit 80306 "ADM Funder Sync"
         ManageID: Guid;
         ResponseText: Text;
     begin
-        if not ADMAPIClient.TryGet('api/v2/invoicing/funders', ResponseText, ErrorText) then
+        IntegrationSetup := IntegrationSetup.GetSetup();
+        if not ADMAPIClient.TryGet(IntegrationSetup."Funder Sync Endpoint", ResponseText, ErrorText) then
             exit(false);
 
-        ADMAPIClient.GetPaged('api/v2/invoicing/funders', AllResults);
+        ADMAPIClient.GetPaged(IntegrationSetup."Funder Sync Endpoint", AllResults);
 
         foreach FunderToken in AllResults do begin
             FunderObj := FunderToken.AsObject();

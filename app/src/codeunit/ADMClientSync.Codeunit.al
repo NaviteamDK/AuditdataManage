@@ -34,6 +34,7 @@ codeunit 80305 "ADM Client Sync"
     local procedure TrySyncClients(var Processed: Integer; var Failed: Integer; var ErrorText: Text): Boolean
     var
         ClientBuffer: Record "ADM Client Buffer";
+        IntegrationSetup: Record "ADM Integration Setup";
         ADMAPIClient: Codeunit "ADM API Client";
         AllResults: JsonArray;
         ClientToken: JsonToken;
@@ -41,13 +42,11 @@ codeunit 80305 "ADM Client Sync"
         ManageID: Guid;
         ResponseText: Text;
     begin
-        // The Manage API uses "patients" as the client endpoint concept
-        // based on the hearing care domain. Adjust path if the actual
-        // endpoint differs once confirmed with AuditData.
-        if not ADMAPIClient.TryGet('api/v1/patients/last?hours=10000', ResponseText, ErrorText) then
+        IntegrationSetup := IntegrationSetup.GetSetup();
+        if not ADMAPIClient.TryGet(IntegrationSetup."Client Sync Endpoint", ResponseText, ErrorText) then
             exit(false);
 
-        ADMAPIClient.GetPaged('api/v1/patients/last?hours=10000', AllResults);
+        ADMAPIClient.GetPaged(IntegrationSetup."Client Sync Endpoint", AllResults);
 
         foreach ClientToken in AllResults do begin
             ClientObj := ClientToken.AsObject();

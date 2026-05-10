@@ -9,10 +9,8 @@ codeunit 80312 "ADM Stock Sync"
 
     var
         ADMAPIClient: Codeunit "ADM API Client";
+        IntegrationSetup: Record "ADM Integration Setup";
         StockSyncLbl: Label 'Stock Sync';
-        ProductUrlLbl: Label 'api/v2/inventory/products/%1', Comment = '%1 = Manage product ID (GUID)';
-        AdjustNotSerializedUrlLbl: Label 'api/v2/inventory/stock/locations/%1/products/%2/not-serialized/adjust', Comment = '%1 = Manage location ID, %2 = Manage product ID';
-        AdjustSerializedUrlLbl: Label 'api/v2/inventory/stock/locations/%1/products/%2/serialized/adjust', Comment = '%1 = Manage location ID, %2 = Manage product ID';
         NoLocationConfiguredErr: Label 'No Manage Location ID is configured. Set the Default Manage Location ID in the Integration Setup, or assign a Manage Location ID to one or more BC Locations.';
 
     procedure SyncStock()
@@ -26,7 +24,6 @@ codeunit 80312 "ADM Stock Sync"
         IntegrationSetup := IntegrationSetup.GetSetup();
         if not IntegrationSetup."Stock Sync Enabled" then
             exit;
-
         LogEntryNo := SyncLogManager.StartLog("ADM Sync Direction"::Outbound, StockSyncLbl);
 
         if not HasAnyLocationConfigured(IntegrationSetup) then begin
@@ -289,7 +286,7 @@ codeunit 80312 "ADM Stock Sync"
         ProductIDStr: Text;
     begin
         ProductIDStr := LowerCase(Format(ManageProductID, 0, 4));
-        if not ADMAPIClient.TryGet(StrSubstNo(ProductUrlLbl, ProductIDStr), ResponseText, ErrorText) then
+        if not ADMAPIClient.TryGet(StrSubstNo(IntegrationSetup."Product URL Pattern", ProductIDStr), ResponseText, ErrorText) then
             exit(-1);
         if not ResponseObj.ReadFrom(ResponseText) then
             exit(-1);
@@ -354,7 +351,7 @@ codeunit 80312 "ADM Stock Sync"
         Payload.Add('quantity', Delta);
         Payload.WriteTo(RequestBody);
         exit(ADMAPIClient.TryPost(
-            StrSubstNo(AdjustNotSerializedUrlLbl, LocationIDStr, ProductIDStr),
+            StrSubstNo(IntegrationSetup."Non-Serial Stock URL Pattern", LocationIDStr, ProductIDStr),
             RequestBody, ResponseText, ErrorText));
     end;
 
@@ -388,7 +385,7 @@ codeunit 80312 "ADM Stock Sync"
         RequestBody := RequestBody + ',"batteryTypeId":null,"colorId":null,"attributes":[]}';
 
         exit(ADMAPIClient.TryPost(
-            StrSubstNo(AdjustSerializedUrlLbl, LocationIDStr, ProductIDStr),
+            StrSubstNo(IntegrationSetup."Stock Serialized URL Pattern", LocationIDStr, ProductIDStr),
             RequestBody, ResponseText, ErrorText));
     end;
 }

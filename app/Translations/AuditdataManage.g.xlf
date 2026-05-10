@@ -408,6 +408,16 @@
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Table ADM Integration Setup - Field API Key - Property Caption</note>
         </trans-unit>
+        <trans-unit id="Table 3414399283 - Field 682026984 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Attributes Endpoint</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table ADM Integration Setup - Field Attributes Endpoint - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 3414399283 - Field 104596351 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Battery Types Endpoint</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table ADM Integration Setup - Field Battery Types Endpoint - Property Caption</note>
+        </trans-unit>
         <trans-unit id="Table 3414399283 - Field 295673086 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Client Customer Posting Group</source>
           <note from="Developer" annotates="general" priority="2"></note>
@@ -418,10 +428,20 @@
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Table ADM Integration Setup - Field Client Sync Enabled - Property Caption</note>
         </trans-unit>
+        <trans-unit id="Table 3414399283 - Field 2853836191 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Client Sync Endpoint</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table ADM Integration Setup - Field Client Sync Endpoint - Property Caption</note>
+        </trans-unit>
         <trans-unit id="Table 3414399283 - Field 1816732726 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Client Sync Interval (Min)</source>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Table ADM Integration Setup - Field Client Sync Interval (Min) - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 3414399283 - Field 1061195407 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Colors Endpoint</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table ADM Integration Setup - Field Colors Endpoint - Property Caption</note>
         </trans-unit>
         <trans-unit id="Table 3414399283 - Field 1956907457 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Default Customer Template</source>
@@ -448,10 +468,20 @@
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Table ADM Integration Setup - Field Funder Sync Enabled - Property Caption</note>
         </trans-unit>
+        <trans-unit id="Table 3414399283 - Field 3331557526 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Funder Sync Endpoint</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table ADM Integration Setup - Field Funder Sync Endpoint - Property Caption</note>
+        </trans-unit>
         <trans-unit id="Table 3414399283 - Field 508333247 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Funder Sync Interval (Min)</source>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Table ADM Integration Setup - Field Funder Sync Interval (Min) - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 3414399283 - Field 3849995798 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Hearing Aid Types Endpoint</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table ADM Integration Setup - Field Hearing Aid Types Endpoint - Property Caption</note>
         </trans-unit>
         <trans-unit id="Table 3414399283 - Field 1138381097 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Item Sync Enabled</source>
@@ -488,6 +518,21 @@
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Table ADM Integration Setup - Field Last Stock Sync - Property Caption</note>
         </trans-unit>
+        <trans-unit id="Table 3414399283 - Field 1702816503 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Locations Endpoint</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table ADM Integration Setup - Field Locations Endpoint - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 3414399283 - Field 657869761 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Manufacturers Endpoint</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table ADM Integration Setup - Field Manufacturers Endpoint - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 3414399283 - Field 3839746747 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Non-Serialized Stock URL Pattern</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table ADM Integration Setup - Field Non-Serial Stock URL Pattern - Property Caption</note>
+        </trans-unit>
         <trans-unit id="Table 3414399283 - Field 4187347522 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Page Size</source>
           <note from="Developer" annotates="general" priority="2"></note>
@@ -498,15 +543,50 @@
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Table ADM Integration Setup - Field Primary Key - Property Caption</note>
         </trans-unit>
+        <trans-unit id="Table 3414399283 - Field 1599615970 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Product Categories Endpoint</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table ADM Integration Setup - Field Product Categories Endpoint - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 3414399283 - Field 899024276 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Product URL Pattern</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table ADM Integration Setup - Field Product URL Pattern - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 3414399283 - Field 2883897229 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Products Endpoint</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table ADM Integration Setup - Field Products Endpoint - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 3414399283 - Field 2328119463 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Sale Lines URL Pattern</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table ADM Integration Setup - Field Sale Lines URL Pattern - Property Caption</note>
+        </trans-unit>
         <trans-unit id="Table 3414399283 - Field 3189455243 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Sale Sync Enabled</source>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Table ADM Integration Setup - Field Sale Sync Enabled - Property Caption</note>
         </trans-unit>
+        <trans-unit id="Table 3414399283 - Field 4039302569 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Sale Sync Endpoint</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table ADM Integration Setup - Field Sale Sync Endpoint - Property Caption</note>
+        </trans-unit>
         <trans-unit id="Table 3414399283 - Field 1119807004 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Sale Sync Interval (Min)</source>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Table ADM Integration Setup - Field Sale Sync Interval (Min) - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 3414399283 - Field 1689664060 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Sale URL Pattern</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table ADM Integration Setup - Field Sale URL Pattern - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 3414399283 - Field 2866396315 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Stock Serialized URL Pattern</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table ADM Integration Setup - Field Stock Serialized URL Pattern - Property Caption</note>
         </trans-unit>
         <trans-unit id="Table 3414399283 - Field 3175424926 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Stock Sync Enabled</source>
@@ -517,6 +597,11 @@
           <source>Stock Sync Interval (Min)</source>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Table ADM Integration Setup - Field Stock Sync Interval (Min) - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 3414399283 - Field 3261296984 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Suppliers Endpoint</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table ADM Integration Setup - Field Suppliers Endpoint - Property Caption</note>
         </trans-unit>
         <trans-unit id="Table 3997100171 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>AuditData Manage Item Attribute</source>
@@ -1308,11 +1393,6 @@
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Codeunit ADM Inventory Reference Sync - NamedType SyncSuppliersLbl</note>
         </trans-unit>
-        <trans-unit id="Codeunit 408026690 - Method 481198499 - NamedType 2863856190" size-unit="char" translate="yes" xml:space="preserve">
-          <source>api/v2/inventory/products/%1</source>
-          <note from="Developer" annotates="general" priority="2">%1 = product GUID</note>
-          <note from="Xliff Generator" annotates="general" priority="3">Codeunit ADM Inventory Reference Sync - Method FetchItemAssignments - NamedType ProductUrlLbl</note>
-        </trans-unit>
         <trans-unit id="Codeunit 408026690 - Method 481198499 - NamedType 1098178484" size-unit="char" translate="yes" xml:space="preserve">
           <source>Item %1 has no AuditData Manage product mapping. Use 'Fetch Products from Manage' first.</source>
           <note from="Developer" annotates="general" priority="2">%1 = item no.</note>
@@ -1373,21 +1453,6 @@
           <note from="Developer" annotates="general" priority="2">%1 = Master Order No.</note>
           <note from="Xliff Generator" annotates="general" priority="3">Codeunit ADM Order Splitter - Method CreateSalesOrders - NamedType AlreadyCreatedErr</note>
         </trans-unit>
-        <trans-unit id="Codeunit 3833143592 - Method 2383582301 - NamedType 2863856190" size-unit="char" translate="yes" xml:space="preserve">
-          <source>api/v2/inventory/products/%1</source>
-          <note from="Developer" annotates="general" priority="2">%1 = product ID</note>
-          <note from="Xliff Generator" annotates="general" priority="3">Codeunit ADM Product Sync - Method PushItem - NamedType ProductUrlLbl</note>
-        </trans-unit>
-        <trans-unit id="Codeunit 1951388464 - Method 3699486466 - NamedType 3898728502" size-unit="char" translate="yes" xml:space="preserve">
-          <source>api/v2/invoicing/sales/%1</source>
-          <note from="Developer" annotates="general" priority="2">%1 = sale ID</note>
-          <note from="Xliff Generator" annotates="general" priority="3">Codeunit ADM Sale Sync - Method ImportSale - NamedType SaleUrlLbl</note>
-        </trans-unit>
-        <trans-unit id="Codeunit 1951388464 - Method 886917757 - NamedType 1335908449" size-unit="char" translate="yes" xml:space="preserve">
-          <source>api/v2/invoicing/sales/%1/products</source>
-          <note from="Developer" annotates="general" priority="2">%1 = sale ID</note>
-          <note from="Xliff Generator" annotates="general" priority="3">Codeunit ADM Sale Sync - Method ImportSaleLines - NamedType SaleLinesUrlLbl</note>
-        </trans-unit>
         <trans-unit id="Codeunit 4244520147 - Method 545722788 - NamedType 2122012636" size-unit="char" translate="yes" xml:space="preserve">
           <source>The split total (%1) does not match the order total (%2). Please adjust the split lines before confirming.</source>
           <note from="Developer" annotates="general" priority="2">%1 = split total, %2 = order total</note>
@@ -1403,25 +1468,10 @@
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Codeunit ADM Split Suggester - Method SuggestSplitLines - NamedType SplitAlreadyExistsQst</note>
         </trans-unit>
-        <trans-unit id="Codeunit 3164657185 - NamedType 1671159053" size-unit="char" translate="yes" xml:space="preserve">
-          <source>api/v2/inventory/stock/locations/%1/products/%2/not-serialized/adjust</source>
-          <note from="Developer" annotates="general" priority="2">%1 = Manage location ID, %2 = Manage product ID</note>
-          <note from="Xliff Generator" annotates="general" priority="3">Codeunit ADM Stock Sync - NamedType AdjustNotSerializedUrlLbl</note>
-        </trans-unit>
-        <trans-unit id="Codeunit 3164657185 - NamedType 919543786" size-unit="char" translate="yes" xml:space="preserve">
-          <source>api/v2/inventory/stock/locations/%1/products/%2/serialized/adjust</source>
-          <note from="Developer" annotates="general" priority="2">%1 = Manage location ID, %2 = Manage product ID</note>
-          <note from="Xliff Generator" annotates="general" priority="3">Codeunit ADM Stock Sync - NamedType AdjustSerializedUrlLbl</note>
-        </trans-unit>
         <trans-unit id="Codeunit 3164657185 - NamedType 1517167983" size-unit="char" translate="yes" xml:space="preserve">
           <source>No Manage Location ID is configured. Set the Default Manage Location ID in the Integration Setup, or assign a Manage Location ID to one or more BC Locations.</source>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Codeunit ADM Stock Sync - NamedType NoLocationConfiguredErr</note>
-        </trans-unit>
-        <trans-unit id="Codeunit 3164657185 - NamedType 2863856190" size-unit="char" translate="yes" xml:space="preserve">
-          <source>api/v2/inventory/products/%1</source>
-          <note from="Developer" annotates="general" priority="2">%1 = Manage product ID (GUID)</note>
-          <note from="Xliff Generator" annotates="general" priority="3">Codeunit ADM Stock Sync - NamedType ProductUrlLbl</note>
         </trans-unit>
         <trans-unit id="Codeunit 3164657185 - NamedType 628218639" size-unit="char" translate="yes" xml:space="preserve">
           <source>Stock Sync</source>
@@ -2208,6 +2258,96 @@
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Page ADM Integration Setup - Control Funder Customer Posting Group - Property ToolTip</note>
         </trans-unit>
+        <trans-unit id="Page 3414399283 - Control 93727537 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>API Endpoints</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page ADM Integration Setup - Control EndpointsGroup - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Page 3414399283 - Control 682026984 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Specifies the API endpoint used to fetch attributes from AuditData Manage.</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page ADM Integration Setup - Control Attributes Endpoint - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="Page 3414399283 - Control 104596351 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Specifies the API endpoint used to fetch battery types from AuditData Manage.</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page ADM Integration Setup - Control Battery Types Endpoint - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="Page 3414399283 - Control 2853836191 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Specifies the API endpoint used to fetch clients (patients) from AuditData Manage.</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page ADM Integration Setup - Control Client Sync Endpoint - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="Page 3414399283 - Control 1061195407 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Specifies the API endpoint used to fetch colors from AuditData Manage.</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page ADM Integration Setup - Control Colors Endpoint - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="Page 3414399283 - Control 3331557526 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Specifies the API endpoint used to fetch funders from AuditData Manage.</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page ADM Integration Setup - Control Funder Sync Endpoint - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="Page 3414399283 - Control 3849995798 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Specifies the API endpoint used to fetch hearing aid types from AuditData Manage.</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page ADM Integration Setup - Control Hearing Aid Types Endpoint - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="Page 3414399283 - Control 1702816503 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Specifies the API endpoint used to fetch clinic locations from AuditData Manage.</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page ADM Integration Setup - Control Locations Endpoint - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="Page 3414399283 - Control 657869761 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Specifies the API endpoint used to fetch manufacturers from AuditData Manage.</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page ADM Integration Setup - Control Manufacturers Endpoint - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="Page 3414399283 - Control 3839746747 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Specifies the API URL pattern (with %1 = location ID, %2 = product ID) for non-serialized stock adjustments.</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page ADM Integration Setup - Control Non-Serial Stock URL Pattern - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="Page 3414399283 - Control 1599615970 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Specifies the API endpoint used to fetch product categories from AuditData Manage.</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page ADM Integration Setup - Control Product Categories Endpoint - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="Page 3414399283 - Control 899024276 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Specifies the API URL pattern (with %1 = product ID) used for single product GET and PUT operations.</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page ADM Integration Setup - Control Product URL Pattern - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="Page 3414399283 - Control 2883897229 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Specifies the API endpoint used for product list and create operations.</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page ADM Integration Setup - Control Products Endpoint - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="Page 3414399283 - Control 2328119463 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Specifies the API URL pattern (with %1 = sale ID) used to fetch sale lines.</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page ADM Integration Setup - Control Sale Lines URL Pattern - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="Page 3414399283 - Control 4039302569 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Specifies the API endpoint used to fetch sales from AuditData Manage.</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page ADM Integration Setup - Control Sale Sync Endpoint - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="Page 3414399283 - Control 1689664060 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Specifies the API URL pattern (with %1 = sale ID) used to fetch a single sale.</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page ADM Integration Setup - Control Sale URL Pattern - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="Page 3414399283 - Control 2866396315 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Specifies the API URL pattern (with %1 = location ID, %2 = product ID) for serialized stock adjustments.</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page ADM Integration Setup - Control Stock Serialized URL Pattern - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="Page 3414399283 - Control 3261296984 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Specifies the API endpoint used to fetch suppliers from AuditData Manage.</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page ADM Integration Setup - Control Suppliers Endpoint - Property ToolTip</note>
+        </trans-unit>
         <trans-unit id="Page 3414399283 - Control 914951918 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Location Mapping</source>
           <note from="Developer" annotates="general" priority="2"></note>
@@ -2367,6 +2507,21 @@
           <source>Sync Log</source>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Page ADM Integration Setup - Action SyncLog - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Page 3414399283 - Action 1521893975 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Resets all API endpoint fields to their default values.</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page ADM Integration Setup - Action ResetEndpoints - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="Page 3414399283 - Action 1521893975 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Reset Endpoints to Default</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page ADM Integration Setup - Action ResetEndpoints - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Page 3414399283 - Action 1521893975 - Method 1377591017 - NamedType 1374098168" size-unit="char" translate="yes" xml:space="preserve">
+          <source>All API endpoints have been reset to their default values.</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page ADM Integration Setup - Action ResetEndpoints - Method OnAction - NamedType ResetMsg</note>
         </trans-unit>
         <trans-unit id="Page 3414399283 - Action 1242865262 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
           <source>Creates or updates all Job Queue Entries for the AuditData Manage synchronisation jobs.</source>
